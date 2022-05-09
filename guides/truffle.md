@@ -8,7 +8,7 @@ Set up a Truffle Ethermint local development environment. {synopsis}
 
 ## Pre-requisite Readings
 
-- [Installation](./../quickstart/installation.md) {prereq}
+- [Installation](quickstart/install-binary.md) {prereq}
 - [Run a node](./../quickstart/run_node.md) {prereq}
 
 [Truffle](https://www.trufflesuite.com/truffle) is a development framework for deploying and managing [Solidity](https://github.com/ethereum/solidity) smart contracts. In this guide, we will learn how to deploy a contract to a running Ethermint network.
@@ -21,7 +21,7 @@ First, install the latest Truffle version on your machine globally.
 yarn install truffle -g
 ```
 
-You will also need to install Ethermint. Check this [document](./../quickstart/installation.md) for the full instructions.
+You will also need to install Ethermint. Check this [document](quickstart/install-binary.md) for the full instructions.
 
 ## Create Truffle Project
 

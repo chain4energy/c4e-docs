@@ -1,5 +1,5 @@
 <!--
-order: 2
+order: 5
 -->
 
 # Run a Node
@@ -8,7 +8,7 @@ Run a local node and start the REST and JSON-RPC clients {synopsis}
 
 ## Pre-requisite Readings
 
-- [Installation](./installation.md) {prereq}
+- [Installation](quickstart/install-binary.md) {prereq}
 
 ## Automated deployment
 

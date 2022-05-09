@@ -8,7 +8,7 @@ Set up a Remix Ethermint local development environment. {synopsis}
 
 ## Pre-requisite Readings
 
-- [Installation](./../quickstart/installation.md) {prereq}
+- [Installation](quickstart/install-binary.md) {prereq}
 - [Run a node](./../quickstart/run_node.md) {prereq}
 - [Metamask](./metamask.md) {prereq}
 

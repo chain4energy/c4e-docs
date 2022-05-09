@@ -44,3 +44,7 @@ Also, we need to make sure the following requirements are met:
 | Number of CPUs | 8 |
 | RAM | 32GB |
 | SSD/NVME | 120GB (need grow up dimension in the future) |
+
+## Next {hide}
+
+Learn how to [System preparation](./system-preparation.md) {hide}

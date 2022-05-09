@@ -1,5 +1,5 @@
 <!--
-order: 3
+order: 8
 -->
 
 # Testnet
@@ -8,7 +8,7 @@ Learn how to deploy a local testnet or connect to an existing public one {synops
 
 ## Pre-requisite Readings
 
-- [Install Ethermint](./installation.md) {prereq}
+- [Install Ethermint](quickstart/install-binary.md) {prereq}
 - [Install Docker](https://docs.docker.com/engine/installation/)  {prereq}
 - [Install docker-compose](https://docs.docker.com/compose/install/)  {prereq}
 

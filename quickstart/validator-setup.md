@@ -8,7 +8,7 @@ Configure a validator node to propose blocks and earn staking rewards {synopsis}
 
 ## Pre-requisite Readings
 
-- [Installation](./installation.md) {prereq}
+- [Installation](quickstart/install-binary.md) {prereq}
 - [Run a Full Node](./run_node.md) {prereq}
 
 ## What is a Validator?

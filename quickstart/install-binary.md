@@ -1,8 +1,8 @@
 <!--
-order: 1
+order: 4
 -->
 
-# Installation
+# Binary Installation 
 
 ## Binaries
 
