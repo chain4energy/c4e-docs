@@ -17,7 +17,7 @@ export CHAINID=mainnet
 
 Init chain and delete generated genesis:
 ```bash
-c4ed init add <MONIKER> --chain-id $CHAINID
+c4ed init <MONIKER> --chain-id $CHAINID
 rm -rf ~/.c4e-chain/config/genesis.json
 ```
 
