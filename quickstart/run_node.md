@@ -47,6 +47,7 @@ Change `external_address` value to contact your node using public ip of your nod
 PUB_IP=`curl -s -4 icanhazip.com`
 sed -e "s|external_address = \".*\"|external_address = \"$PUB_IP:26656\"|g" ~/.c4e-chain/config/config.toml > ~/.c4e-chain/config/config.toml.tmp
 mv ~/.c4e-chain/config/config.toml.tmp  ~/.c4e-chain/config/config.toml
+c4ed config node tcp://$PUB_IP:26657
 ```
 
 Run a node:
