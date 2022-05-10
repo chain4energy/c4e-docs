@@ -6,7 +6,7 @@ order: 2
 
 
 ```bash
-sudo apt update && apt upgrade -y
+sudo apt update && sudo apt upgrade -y
 sudo apt install -y git gcc make unzip jq
 ```
 
