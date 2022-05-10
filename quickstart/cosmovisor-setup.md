@@ -38,7 +38,7 @@ Description=cosmovisor
 After=network-online.target
 
 [Service]
-User=c4e
+User=$USER
 ExecStart=/home/$USER/go/bin/cosmovisor start
 Restart=always
 RestartSec=3
