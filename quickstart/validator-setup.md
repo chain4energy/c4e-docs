@@ -19,7 +19,7 @@ If you want to become a Commercio.network validator you need to:
    To become a validator you need two wallets: one with at least one token to create the validator
 
 ## 1. Add wallet key
-Inside the testnet you can use the **Ledger**, but you can also use the wallet software with the `commercionetworkd`.     
+Inside the testnet you can use the **Ledger**, but you can also use the wallet software with the `c4ed`.     
 However, if you wish to use **Ledger**, please add the `--ledger` flat to any command.
 
 :::warning  
