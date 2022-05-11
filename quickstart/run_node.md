@@ -12,7 +12,7 @@ order: 6
 
 Select a chain:
 ```bash
-export CHAINID=mainnet
+export CHAINID=mainnet todo: change to proper name before mainnet start
 ```
 
 Init chain and delete generated genesis:
