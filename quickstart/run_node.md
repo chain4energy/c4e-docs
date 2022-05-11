@@ -24,9 +24,7 @@ rm -rf ~/.c4e-chain/config/genesis.json
 Clone repository with chains
 ```bash
 git clone https://github.com/chain4energy/chains
-cd chains
-git checkout $CHAINID
-cd $CHAINID
+cd chains/$CHAINID
 ```
 
 Copy genesis file from repo:

@@ -4,12 +4,44 @@ order: 7
 
 # Run a Validator
 
-Configure a validator node to propose blocks and earn staking rewards {synopsis}
+# Becoming a validator
+Once you've properly set up a [full node](run_node.md), if you wish you can become a validator node and
+start in earning by  validating  the chain transactions. 
 
-## Pre-requisite Readings
 
-- [Installation](quickstart/install-binary.md) {prereq}
-- [Run a Full Node](./run_node.md) {prereq}
+## Requirements
+If you want to become a Commercio.network validator you need to:
+
+1. Be a full node.  
+   If you are not, please follow the [full node installation guide](run_node.md).
+   
+2. Own enough tokens.  
+   To become a validator you need two wallets: one with at least one token to create the validator
+
+## 1. Add wallet key
+Inside the testnet you can use the **Ledger**, but you can also use the wallet software with the `commercionetworkd`.     
+However, if you wish to use **Ledger**, please add the `--ledger` flat to any command.
+
+:::warning  
+Please remember to copy the 24 words seed phrase in a secure place.  
+They are your mnemonic and if you loose them you lose all your tokens and the whole access to your validator.  
+
+Create the first wallet with the following command
+```bash
+c4ed keys add <KEY_NAME>
+# Enter a password that you can remember
+```
+The output of the command will provide the 24 words that are the mnemonic.    
+      
+
+If you are using the **Ledger** device you must first connect it to your computer, start the commercionetworkd application and run the command 
+```bash
+c4ed keys add <KEY_NAME> --ledger
+# Enter a password that you can remember
+```
+In this case the 24 words are not provided because they have already been configured in the **Ledger** initialization
+
+
 
 ## What is a Validator?
 
@@ -43,7 +75,7 @@ c4ed tx staking create-validator \
   --min-self-delegation="1" \
   --gas="auto" \
   --gas-prices="0.025uc4e" \
-  --from=<key_name>
+  --from=<KEY_NAME>
 ```
 
 ::: tip
