@@ -25,7 +25,7 @@ mkdir -p $DAEMON_HOME/cosmovisor/upgrades
 Copy c4e binary to cosmovisor genesis bin:
 
 ```bash
-cp $HOME/go/bin/chainforenergyd $DAEMON_HOME/cosmovisor/genesis/bin
+cp $HOME/go/bin/c4ed $DAEMON_HOME/cosmovisor/genesis/bin
 ```
 
 

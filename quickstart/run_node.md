@@ -50,6 +50,6 @@ c4ed config node tcp://$PUB_IP:26657
 
 Run a node:
 ```bash
-systemctl enable cosmovisor  
-systemctl start cosmovisor
+sudo systemctl enable cosmovisor  
+sudo systemctl start cosmovisor
 ```
