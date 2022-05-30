@@ -85,6 +85,13 @@ module.exports = {
         url: 'https://t.me/+60rmPWzlo3c2YWY8',
         bg: 'linear-gradient(103.75deg, #1B1E36 0%, #22253F 100%)'
       },
+      forum: {
+        title: 'Cosmos Developer Forum',
+        text: 'Cosmos Developer Forum to learn more.',
+        url: 'https://forum.cosmos.network/',
+        bg: 'linear-gradient(221.79deg, #3D6B99 -1.08%, #336699 95.88%)',
+        logo: 'ethereum-white'
+      },
       github: {
         title: 'Found an Issue?',
         text: 'Help us improve this page by suggesting edits on GitHub.',
