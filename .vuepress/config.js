@@ -81,16 +81,9 @@ module.exports = {
       title: 'Help & Support',
       chat: {
         title: 'Developer Chat',
-        text: 'Chat with Ethermint developers on Discord.',
-        url: 'https://discordapp.com/channels/669268347736686612',
+        text: 'Chat with C4E teams on telegram.',
+        url: 'https://t.me/+60rmPWzlo3c2YWY8',
         bg: 'linear-gradient(103.75deg, #1B1E36 0%, #22253F 100%)'
-      },
-      forum: {
-        title: 'Ethermint Developer Forum',
-        text: 'Join the Ethermint Developer Forum to learn more.',
-        url: 'https://forum.cosmos.network/',
-        bg: 'linear-gradient(221.79deg, #3D6B99 -1.08%, #336699 95.88%)',
-        logo: 'ethereum-white'
       },
       github: {
         title: 'Found an Issue?',
