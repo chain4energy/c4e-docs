@@ -16,7 +16,7 @@
           icon-rocket.features__item__image__img
         .features__item__text
           .features__item__text__h2 read
-          .features__item__text__h1 Quick start
+          .features__item__text__h1 Quick start testnet
           .features__item__text__p Deploy your own node, setup your testnet and more.
       router-link(to="/guides").features__item.features__item__dark
         .features__item__image

@@ -12,7 +12,7 @@ order: 6
 
 Select a chain:
 ```bash
-export CHAINID=mainnet todo: change to proper name before mainnet start
+export CHAINID=c4e-testnet-0.1.0
 ```
 
 Init chain and delete generated genesis:
@@ -23,8 +23,8 @@ rm -rf ~/.c4e-chain/config/genesis.json
 
 Clone repository with chains
 ```bash
-git clone https://github.com/chain4energy/chains
-cd chains/$CHAINID
+git clone https://github.com/chain4energy/c4e-chains.git
+cd c4e-chains/$CHAINID
 ```
 
 Copy genesis file from repo:
@@ -52,4 +52,10 @@ Run a node:
 ```bash
 sudo systemctl enable cosmovisor  
 sudo systemctl start cosmovisor
+```
+
+
+Check status
+```bash
+sudo systemctl status cosmovisor
 ```

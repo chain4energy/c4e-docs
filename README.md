@@ -40,7 +40,6 @@ aside: false
 
 ## Get Started
 
-- **[Introduction](./intro/overview.md)**: High-level overview of Ethermint.
 
 ## Reference
 
@@ -52,7 +51,6 @@ aside: false
 ## Other Resources
 
 - **[Module Directory](../x/)**: Module implementations and their respective documentation.
-- **[Ethermint API Reference](https://godoc.org/github.com/cosmos/ethermint)**: Godocs of Ethermint.
 - **[REST API spec](https://cosmos.network/rpc/)**: List of REST endpoints to interact with an full-node through REST.
 
 ## Contribute

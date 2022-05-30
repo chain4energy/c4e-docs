@@ -16,14 +16,15 @@ If you want to become a Commercio.network validator you need to:
    If you are not, please follow the [full node installation guide](run_node.md).
    
 2. Own enough tokens.  
-   To become a validator you need two wallets: one with at least one token to create the validator
+   To become a validator you need two wallets: one with at least one token to create the validator,
+   second wallet with vesting token to delegate
 
 ## 1. Add wallet key
 Inside the testnet you can use the **Ledger**, but you can also use the wallet software with the `c4ed`.     
 However, if you wish to use **Ledger**, please add the `--ledger` flat to any command.
 
 :::warning  
-Please remember to copy the 24 words seed phrase in a secure place.  
+Please remember to copy the 12 words seed phrase in a secure place.  
 They are your mnemonic and if you loose them you lose all your tokens and the whole access to your validator.  
 
 Create the first wallet with the following command
@@ -31,17 +32,49 @@ Create the first wallet with the following command
 c4ed keys add <KEY_NAME>
 # Enter a password that you can remember
 ```
-The output of the command will provide the 24 words that are the mnemonic.    
+The output of the command will provide the 24 words that are the mnemonic.
+
+Create two wallet one for validator and second for vesting account:
+example
       
 
-If you are using the **Ledger** device you must first connect it to your computer, start the commercionetworkd application and run the command 
+If you are using the **Ledger** device you must first connect it to your computer, start the commercionetworkd application and run the command
 ```bash
 c4ed keys add <KEY_NAME> --ledger
 # Enter a password that you can remember
 ```
-In this case the 24 words are not provided because they have already been configured in the **Ledger** initialization
+In this case the 12 words are not provided because they have already been configured in the **Ledger** initialization
 
+```bash
+c4e@c4e-fn1:~$ c4ed keys add validator
+Enter keyring passphrase:
+Re-enter keyring passphrase:
 
+- name: validator
+  type: local
+  address: c4e1atqq8lmeptgn2jlx2q8r42p572yhh6lzle7vng
+  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"A8D47crCW+YkFGduj6brpuzectp3D61xRIx/qbEGGTif"}'
+  mnemonic: ""
+c4e@c4e-fn1:~$
+c4e@c4e-fn1:~$ c4ed keys add vesting
+Enter keyring passphrase:
+
+- name: vesting
+  type: local
+  address: c4e1e2kq0w7pxpqn9ce5leyfl2h6v2kd7l94ksp04j
+  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"A2AUrhH/iLutlZQ5K/jHniqnZSj61N++ytQF798WBn1I"}'
+  mnemonic: ""
+c4e@c4e-fn1:~$
+```
+
+Send C4E team email with validator and vesting account address to email: dev@chain4.energy
+
+```bash
+email to: dev@chain4.energy
+content:
+    validator address: c4e1atqq8lmeptgn2jlx2q8r42p572yhh6lzle7vng
+    vesting account address: c4e1e2kq0w7pxpqn9ce5leyfl2h6v2kd7l94ksp04j
+```
 
 ## What is a Validator?
 
@@ -82,10 +115,30 @@ When specifying commission parameters, the `commission-max-change-rate` is used 
 :::
 
 ::: tip
-`Min-self-delegation` is a stritly positive integer that represents the minimum amount of self-delegated voting power your validator must always have. A `min-self-delegation` of 1 means your validator will never have a self-delegation lower than `1000000aphoton`
+`Min-self-delegation` is a stritly positive integer that represents the minimum amount of self-delegated voting power your validator must always have. A `min-self-delegation` of 1 means your validator will never have a self-delegation lower than `1000000uc4e`
 :::
 
-You can confirm that you are in the validator set by using a third party explorer.
+You can confirm that you are in the validator set by using a explorer.
+
+
+### Troubleshooting
+
+If you inspect your `create-validator` transaction in the explorer, and see the following error:
+```
+out of gas in location: WritePerByte; gasWanted: 177140, gasUsed: 177979: out of gas
+```
+
+Please try subsituting:
+```
+--gas="auto" \
+--gas-prices="0.0025uc4e"
+```
+
+with
+
+```
+--gas=<value significantly larger than gasUsed value from the error>
+```
 
 
 ## Confirm Your Validator is Running
