@@ -35,7 +35,7 @@ module.exports = {
               path: '/intro'
             },
             {
-              title: 'Quick Start',
+              title: 'Quick Start testnet',
               directory: true,
               path: '/quickstart'
             },
