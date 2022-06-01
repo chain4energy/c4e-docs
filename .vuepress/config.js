@@ -38,21 +38,6 @@ module.exports = {
               title: 'Quick Start testnet',
               directory: true,
               path: '/quickstart'
-            },
-            {
-              title: 'Basics',
-              directory: true,
-              path: '/basics'
-            },
-            {
-              title: 'Core Concepts',
-              directory: true,
-              path: '/core'
-            },
-            {
-              title: 'Guides',
-              directory: true,
-              path: '/guides'
             }
           ]
         },
