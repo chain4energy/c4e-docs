@@ -1,6 +1,6 @@
 module.exports = {
   theme: 'cosmos',
-  title: 'C4e Documentation',
+  title: 'C4E Documentation',
   locales: {
     '/': {
       lang: 'en-US'
@@ -101,7 +101,7 @@ module.exports = {
     footer: {
       logo: '/logo.svg',
       textLink: {
-        text: 'CHAIN 4 ENERGY',
+        text: 'chain4Energy',
         url: 'https://chain4.energy/'
       },
       services: [{
