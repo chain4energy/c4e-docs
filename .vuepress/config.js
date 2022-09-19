@@ -32,13 +32,19 @@ module.exports = {
           children: [{
               title: 'Introduction',
               directory: true,
-              path: '/intro'
+              path: '/intro/',
+              order: true
             },
             {
               title: 'Quick Start testnet',
               directory: true,
               path: '/quickstart'
-            }
+            },
+            {
+              title: 'Web Wallet',
+              directory: true,
+              path: '/wallet'
+            },
           ]
         },
         {
