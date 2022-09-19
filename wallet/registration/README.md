@@ -1,7 +1,7 @@
 <!--
-order: false
+order: true
 parent:
-  order: 
+  order: 7
 -->
 
 # Registration
@@ -14,7 +14,7 @@ Note: Keplr now available only with Google Chrome web browser. If you are using 
 
 If you don’t have an account please use PC with chrome to create one.
 
-If you have an account, please use the authentication section instructions to logIn;
+If you have an account, please use the [authentication section instructions to logIn](../auth.md);
 
 1. [Registration via Email](./email.md)
 2. [Registration without Email](./noMail.md)
