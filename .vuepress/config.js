@@ -55,6 +55,11 @@ module.exports = {
               path: '/quickstart'
             },
             {
+              title: 'Quick Start Mainnet',
+              directory: true,
+              path: '/quickstart'
+            },
+            {
               title: 'Fields in genesis',
               directory: false,
               path: '/genesisFields',
