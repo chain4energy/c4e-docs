@@ -32,8 +32,22 @@ module.exports = {
           children: [{
               title: 'Introduction',
               directory: true,
-              path: '/intro/',
-              order: true
+              path: '/intro/'
+            },
+            {
+              title: 'Web Wallet',
+              directory: true,
+              path: '/wallet',
+            },
+            {
+              title: 'Validators',
+              directory: true,
+              path: '/validators',
+            },
+            {
+              title: 'Governance',
+              directory: false,
+              path: '/governance',
             },
             {
               title: 'Quick Start testnet',
@@ -41,9 +55,9 @@ module.exports = {
               path: '/quickstart'
             },
             {
-              title: 'Web Wallet',
-              directory: true,
-              path: '/wallet'
+              title: 'Fields in genesis',
+              directory: false,
+              path: '/genesisFields',
             },
           ]
         },
