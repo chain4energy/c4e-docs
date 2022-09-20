@@ -2,7 +2,7 @@
 order: 4
 -->
 
-# C4E binary installation
+# Install binary from source code (option A)
 
 
 Clone repository and checkout to proper tag

@@ -2,7 +2,7 @@
 order: 6
 -->
 
-# Run a node
+# Configure a node
 
 
 ## Pre-requisite Readings

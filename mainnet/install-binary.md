@@ -1,8 +1,8 @@
 <!--
-order: 4
+order: 5
 -->
 
-# Binary Installation 
+# Install prebuild binary (option B)
 
 The c4ed binary serves as the node client and the application client. In other words, the c4ed binary can be used to both run a node and interact with it.
 ## Pre-Built Package
