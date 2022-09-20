@@ -13,31 +13,32 @@ The c4ed binary serves as the node client and the application client. In other w
 Download the tar.gz file:
 
 ```bash
-curl -LO https://repo-testnet.chain4energy.org/c4e-chain-testrepo_latest_linux_amd64.tar.gz
+to be done
 ```
 
 Verify the checksum:
 
 ```bash
-sha256sum c4e-chain-testrepo_latest_linux_amd64.tar.gz
+to be done
 ```
 
 You should see the following:
 
 ```bash
-fd35f39b4b8ca078c5cc3dd718e15b13f753cc60d3839e9cc7b409a932d4cd15  c4e-chain-testrepo_latest_linux_amd64.tar.gz
+to be done
 ```
 
 Unpack the tar.gz file:
 
 ```bash
-tar -xvf c4e-chain-testrepo_latest_linux_amd64.tar.gz
+to be done
 ```
 
 Move the binary to your local bin directory:
 
 ```bash
-sudo mv c4e-chaind /usr/local/bin/c4ed
+mkdir ~/go/bin
+sudo mv c4ed ~/go/bin
 ```
 
 Open a new terminal window and check if the installation was successful:
@@ -49,7 +50,7 @@ c4ed version
 You should see the following:
 
 ```bash
-0.1.0-db77cfac
+1.0.0
 ```
 
 ## Next {hide}

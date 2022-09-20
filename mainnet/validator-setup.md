@@ -77,13 +77,12 @@ Enter keyring passphrase:
 c4e@c4e-fn1:~$
 ```
 
-Send C4E team email with validator and vesting account address to email: dev@chain4.energy
+If you dont have token send C4E team email with validator account address to email: dev@chain4.energy
 
 ```bash
 email to: dev@chain4.energy
 content:
     validator address: c4e1atqq8lmeptgn2jlx2q8r42p572yhh6lzle7vng
-    vesting account address: c4e1e2kq0w7pxpqn9ce5leyfl2h6v2kd7l94ksp04j
 ```
 
 ## What is a Validator?
