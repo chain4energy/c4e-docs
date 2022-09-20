@@ -3,14 +3,6 @@ layout: home
 title: C4e Documentation
 description: The world's first blockchain network based on green energy production.
 sections:
-  - title: Introduction
-    desc: Read a high-level overview of Ethermint and its architecture.
-    url: /intro
-    icon: ethereum-intro
-  - title: Basics
-    desc: Start with the basic concepts of Ethermint, like accounts and transactions.
-    url: /basics
-    icon: basics
   - title: Core Concepts
     desc: Read about the core concepts like encoding and events.
     url: /core
@@ -21,11 +13,6 @@ stack:
     color: "#5064FB"
     label: sdk
     url: http://docs.cosmos.network
-  - title: Ethereum
-    desc: Ethereum is a global, open-source platform for decentralized applications.
-    color: "#1A1F36"
-    label: ethereum-black
-    url: https://eth.wiki
   - title: Tendermint Core
     desc: The leading BFT engine for building blockchains, powering Ethermint.
     color: "#00BB00"

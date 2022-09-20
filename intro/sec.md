@@ -19,7 +19,7 @@ Chain4Energy is an app specific blockchain for green energy use cases. We decide
 
 The Cosmos-SDK is an open-source framework for building multi-asset public Proof-of-Stake (PoS) blockchains like the Cosmos Hub, as well as permissioned Proof-Of-Authority (PoA) blockchains. The COSMOS ecosystem is an open space that enables the development of a vast number of other projects which could cooperate together by Inter Blockchain Communication (IBC), generating further values and creating additional opportunities.
 
-![alt_text](./images/map.png "image_tooltip")
+[comment]: <> (![alt_text]&#40;./images/map.png "image_tooltip"&#41;)
 
 
 Security and decentralization</p>
