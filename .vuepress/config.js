@@ -23,7 +23,7 @@ module.exports = {
       index: 'ethermint'
     },
     topbar: {
-      banner: false
+      banner: true
     },
     sidebar: {
       auto: false,
@@ -68,18 +68,7 @@ module.exports = {
             directory: true,
             path: '/modules'
           }]
-        }, {
-          title: 'Resources',
-          children: [{
-              title: 'TODO',
-              path: 'todo'
-            },
-            {
-              title: 'Cosmos REST API Spec',
-              path: 'https://cosmos.network/rpc/'
-            }
-          ]
-        }
+        },
       ]
     },
     gutter: {
