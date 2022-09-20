@@ -12,12 +12,22 @@ start in earning by  validating  the chain transactions.
 ## Requirements
 If you want to become a Commercio.network validator you need to:
 
-1. Be a full node.  
-   If you are not, please follow the [full node installation guide](run_node.md).
+1. Be a full node and cosmovisor up 
+   If you are not, please follow the [full node configuration guide](run_node.md) and [Cosmovisor setup](cosmovisor-setup.md)
    
-2. Own enough tokens.  
-   To become a validator you need two wallets: one with at least one token to create the validator,
-   second wallet with vesting token to delegate
+2. Node must be synchronized
+
+```bash
+c4ed status | jq .SyncInfo.catching_up
+```
+Command above should return
+```bash
+false
+```
+
+   
+3. Own enough tokens.  
+   To become a validator you need at least 2[c4e] token to create the validator, and for transaction fee
 
 ## 1. Add wallet key
 Inside the testnet you can use the **Ledger**, but you can also use the wallet software with the `c4ed`.     
@@ -152,22 +162,7 @@ You should now see your validator in one of the block explorers. You are looking
 encoded `address` in the `~/.c4e-chain/config/priv_validator_key.json` file.
 
 ::: tip
-To be in the validator set, you need to have more total voting power than the 100th validator.
+To be in the validator set, you need to have more total voting power than the 50th validator.
 :::
 
-## Halt Your Validator Node
 
-When attempting to perform routine maintenance or planning for an upcoming coordinated
-upgrade, it can be useful to have your validator systematically and gracefully halt the chain and shutdown the node.
-
-You can achieve this by setting one of the following flags during when using the `ethermintd start` command:
-
-- `--halt-height`: to the block height at which to shutdown the node
-- `--halt-time`: to the minimum block time (in Unix seconds) at which to shutdown the node
-
-The node will stop processing blocks with a zero exit code at that given height/time after
-committing the block.
-
-## Next {hide}
-
-Start and connect a [client](./clients.md) to a running network {hide}

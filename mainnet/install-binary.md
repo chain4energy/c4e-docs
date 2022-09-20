@@ -54,4 +54,4 @@ You should see the following:
 
 ## Next {hide}
 
-Learn how to [run a node](/.run_node.md) {hide}
+Learn how to [run and configure node](.run_node.md) {hide}

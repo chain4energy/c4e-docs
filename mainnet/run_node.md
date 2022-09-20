@@ -47,3 +47,4 @@ sed -e "s|external_address = \".*\"|external_address = \"$PUB_IP:26656\"|g" ~/.c
 mv ~/.c4e-chain/config/config.toml.tmp  ~/.c4e-chain/config/config.toml
 ```
 
+Learn how to [Setup cosmovisor](cosmovisor-setup.md) {hide}

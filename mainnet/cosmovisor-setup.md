@@ -73,4 +73,4 @@ sudo journalctl -f -u cosmovisor
 
 ## Next {hide}
 
-Learn how to [run a node](.run_node.md) {hide}
+Learn how to [run validator](validator-setup.md) {hide}

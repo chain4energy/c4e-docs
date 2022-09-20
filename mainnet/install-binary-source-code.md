@@ -25,4 +25,4 @@ output: 1.0.0-rc2
 ```
 ## Next {hide}
 
-Learn how to [installation(./.installation.md) {hide}
+Learn how to [run and configure node](.run_node.md) {hide}
