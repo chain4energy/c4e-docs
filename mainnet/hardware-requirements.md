@@ -10,19 +10,19 @@ the chances of getting slashed due to downtime.
 ## Requirements
 - [Validator hardware](#validator-hardware)
   - [Requirements](#requirements)
-  - [Testnet](#testnet)
+  - [Mainnet](#mainnet)
 
 
-## Testnet
+## Mainnet
 We recommend the following hardware specifications:
      
 
 | Characteristic | Specification |
 | :------------: | :-----------: |
-| Operative System | Ubuntu 18.04 or later LTS |
+| Operative System | Ubuntu 20.04 or later LTS |
 | Number of CPUs | 4 |
 | RAM | 16GB |
-| SSD | 120GB | 
+| SSD | 300GB | 
 
 Also, we need to make sure the following requirements are met: 
 * Allow incoming connections on port `26656`
