@@ -11,14 +11,28 @@
     .h2 Getting Started
     .p__alt Read all about chain4energy or dive straight into the code with guides.
     .features
-      router-link(to="/quickstart").features__item.features__item__light
+      router-link(to="/usersGuide/introduction").features__item.features__item__light
         .features__item__image
           icon-rocket.features__item__image__img
         .features__item__text
-          .features__item__text__h2 read
-          .features__item__text__h1 Quick start testnet
-          .features__item__text__p Deploy your own node, setup your testnet and more.
-
+          .features__item__text__h2 Looking for
+          .features__item__text__h1 Information?
+          .features__item__text__p Know more about the product with our introduction.
+            .features
+      router-link(to="/usersGuide/walletBasics").features__item.features__item__light
+        .features__item__image
+          icon-rocket.features__item__image__img
+        .features__item__text
+          .features__item__text__h1 Newbie?
+          .features__item__text__h2 Learn more with our
+          .features__item__text__p Step by step guide for users.
+      router-link(to="/validatorsGuide/quickstart").features__item.features__item__dark
+        .features__item__image
+          icon-rocket.features__item__image__img
+        .features__item__text
+          .features__item__text__h1 Want to become Validator?
+          .features__item__text__h2 See our tutorial for
+          .features__item__text__p becoming Validator on C4E platform
     .sections__wrapper
       .h2 Explore Chain 4 energy
       .p__alt Get familiar with C4E and explore its main concepts.
