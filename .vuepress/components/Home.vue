@@ -11,19 +11,11 @@
     .h2 Getting Started
     .p__alt Read all about chain4energy or dive straight into the code with guides.
     .features
-      router-link(to="/usersGuide/introduction").features__item.features__item__light
-        .features__item__image
-          icon-rocket.features__item__image__img
-        .features__item__text
-          .features__item__text__h2 Looking for
-          .features__item__text__h1 Information?
-          .features__item__text__p Know more about the product with our introduction.
-            .features
       router-link(to="/usersGuide/walletBasics").features__item.features__item__light
         .features__item__image
           icon-rocket.features__item__image__img
         .features__item__text
-          .features__item__text__h1 Newbie?
+          .features__item__text__h1 User?
           .features__item__text__h2 Learn more with our
           .features__item__text__p Step by step guide for users.
       router-link(to="/validatorsGuide/quickstart").features__item.features__item__dark
@@ -36,14 +28,6 @@
     .sections__wrapper
       .h2 Explore Chain 4 energy
       .p__alt Get familiar with C4E and explore its main concepts.
-      .sections
-        router-link.sections__item(tag="a" :to="section.url" v-for="section in $frontmatter.sections")
-          component(:is="`tm-icon-${section.icon}`").sections__item__icon
-          .sections__item__wrapper
-            .sections__item__title {{section.title}}
-            .sections__item__desc {{section.desc}}
-    .h2 Explore the stack
-    .p__alt Check out the docs for the various parts of the Ethermint stack.
     .stack
       a.stack__item(:href="item.url" v-for="item in $frontmatter.stack" :style="{'--accent': item.color, '--opacity': '5%'}")
         .stack__item__wrapper

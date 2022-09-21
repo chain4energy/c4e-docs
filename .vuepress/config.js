@@ -125,7 +125,6 @@ module.exports = {
     footer: {
       logo: '/logo.svg',
       textLink: {
-        text: 'chain4Energy',
         url: 'https://chain4.energy/'
       },
       services: [{
