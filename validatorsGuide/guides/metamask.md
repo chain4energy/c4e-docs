@@ -32,13 +32,13 @@ Open the Metamask extension on your browser, you may have to log in to your Meta
 are not already. Then click the top right circle and go to `Settings` > `Networks`. Press the `Add
 Network` button and fill the form as shown below with your application `ChainID`.
 
-![metamask networks settings](img/metamask_network_settings.png)
+![metamask networks settings](./img/metamask_network_settings.png)
 
 ## Import Account to Metamask
 
 Then close the settings, and go to `My Accounts` (top right circle) and select `Import Account`. You should see and image like the following one:
 
-![metamask import account page](img/metamask_import.png)
+![metamask import account page](./img/metamask_import.png)
 
 Now you can export your private key from the terminal using the following command. Again, make sure
 to replace `mykey` with the name of the key that you want to export:

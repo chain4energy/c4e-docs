@@ -92,6 +92,11 @@ module.exports = {
               directory: true,
               path: '/validatorsGuide/mainnet'
             },
+            {
+              title: 'Modules',
+              directory: true,
+              path: '/validatorsGuide/modules'
+            },
         ]
         },
       ]

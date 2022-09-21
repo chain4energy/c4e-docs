@@ -28,7 +28,7 @@
           .features__item__text__p Step by step guide for users.
       router-link(to="/validatorsGuide/quickstart").features__item.features__item__dark
         .features__item__image
-          icon-rocket.features__item__image__img
+          icon-code.features__item__image__img
         .features__item__text
           .features__item__text__h1 Want to become Validator?
           .features__item__text__h2 See our tutorial for

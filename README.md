@@ -5,7 +5,7 @@ description: The world's first blockchain network based on green energy producti
 sections:
   - title: Core Concepts
     desc: Read about the core concepts like encoding and events.
-    url: /core
+    url: /usersGuide/introduction/
     icon: core
 stack:
   - title: Cosmos SDK

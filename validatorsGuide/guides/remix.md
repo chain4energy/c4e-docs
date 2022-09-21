@@ -24,7 +24,7 @@ Next, select the `Deploy and Run` option. Select `injected web3` as the environm
 
 You should see your account show up in the left-hand panel.
 
-![remix connected to ethermint](img/remix_deploy.png)
+![remix connected to ethermint](./img/remix_deploy.png)
 
 ## Deploy and Interact
 
@@ -36,8 +36,8 @@ I[2020-07-15|17:26:43.155] Added good transaction                       module=m
 
 Once the contract has been successfully deployed, you will see it show up in the `Deployed Contracts` section in the left-hand side, as well as a green check in the Remix console showing the transaction details.
 
-![deployed contract through remix](img/remix_deployed.png)
+![deployed contract through remix](./img/remix_deployed.png)
 
 Now, you are able to interact with the contract through Remix. For `Counter.sol`, click `add`. This will open a Metamask pop-up asking you to confirm. Confirm the transaction. Then, click `getCounter` to get the count, which should be `1`.
 
-![interacting with deployed contract through remix](img/remix_interact.png)
+![interacting with deployed contract through remix](./img/remix_interact.png)
