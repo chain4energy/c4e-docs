@@ -23,7 +23,7 @@ module.exports = {
       index: 'ethermint'
     },
     topbar: {
-      banner: false
+      banner: true
     },
     sidebar: {
       auto: false,
@@ -55,6 +55,11 @@ module.exports = {
               path: '/quickstart'
             },
             {
+              title: 'Quick Start Mainnet',
+              directory: true,
+              path: '/mainnet'
+            },
+            {
               title: 'Fields in genesis',
               directory: false,
               path: '/genesisFields',
@@ -68,18 +73,7 @@ module.exports = {
             directory: true,
             path: '/modules'
           }]
-        }, {
-          title: 'Resources',
-          children: [{
-              title: 'TODO',
-              path: 'todo'
-            },
-            {
-              title: 'Cosmos REST API Spec',
-              path: 'https://cosmos.network/rpc/'
-            }
-          ]
-        }
+        },
       ]
     },
     gutter: {
