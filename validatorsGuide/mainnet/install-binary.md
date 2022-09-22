@@ -13,31 +13,31 @@ The c4ed binary serves as the node client and the application client. In other w
 Download the tar.gz file:
 
 ```bash
-to be done
+curl -LO https://github.com/chain4energy/c4e-chain/releases/download/v1.0.0/c4ed_v1.0.0_linux_amd64.tar.gz
 ```
 
 Verify the checksum:
 
 ```bash
-to be done
+sha256sum c4ed_v1.0.0_linux_amd64.tar.gz
 ```
 
 You should see the following:
 
 ```bash
-to be done
+065a7ad8de4a01bb24bad77e6e162c7d4600e54bdb2da922cf565a9a41c5bbec  c4ed_v1.0.0_linux_amd64.tar.gz
 ```
 
 Unpack the tar.gz file:
 
 ```bash
-to be done
+tar -xvf c4ed_v1.0.0_linux_amd64.tar.gz
 ```
 
 Move the binary to your local bin directory:
 
 ```bash
-mkdir ~/go/bin
+mkdir -p ~/go/bin
 sudo mv c4ed ~/go/bin
 ```
 

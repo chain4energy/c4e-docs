@@ -26,6 +26,7 @@ Copy c4e binary to cosmovisor genesis bin:
 
 ```bash
 cp ~/go/bin/c4ed $DAEMON_HOME/cosmovisor/genesis/bin
+$DAEMON_HOME/cosmovisor/genesis/bin/c4ed version
 ```
 
 
