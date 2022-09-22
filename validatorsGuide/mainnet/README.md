@@ -6,7 +6,7 @@ parent:
 
 # Quick Start
 
-This repository contains reference documentation on how to install and run an Etheremint full node.
+This repository contains reference documentation on how to install and run a C4E full node.
 1. [Hardware requirements](hardware-requirements.md)
 2. [System preparation](system-preparation.md)
 3. [Go installlation](install-go.md)
