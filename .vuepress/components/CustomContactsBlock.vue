@@ -63,7 +63,6 @@ export default {
     border-radius 0.5rem
     padding 2rem
     cursor: pointer;
-    opacity: 95%
     &:hover:not(:active) {
       box-shadow: 0px 12px 24px rgba(22, 25, 49, 0.07), 0px 4px 8px rgba(22, 25, 49, 0.05), 0px 1px 0px rgba(22, 25, 49, 0.05);
       transform: translateY(-2px);
