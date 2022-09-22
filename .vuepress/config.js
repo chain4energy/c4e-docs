@@ -68,7 +68,7 @@ module.exports = {
           title: 'Validators Guide',
           children: [
             {
-              title: 'Quick start',
+              title: 'Quick start testnet',
               directory: true,
               path: '/validatorsGuide/quickstart'
             },
@@ -88,7 +88,7 @@ module.exports = {
               path: '/validatorsGuide/guides'
             },
             {
-              title: 'Start mainnet',
+              title: 'Join mainnet',
               directory: true,
               path: '/validatorsGuide/mainnet'
             },
