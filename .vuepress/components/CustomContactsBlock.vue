@@ -27,7 +27,7 @@ export default {
           header: 'Telegram for validators',
           text: 'Ask question from community of validators in telegram',
           icon: TelegramIcon,
-          url: '',
+          url: 'https://t.me/+60rmPWzlo3c2YWY8',
         },
         {
           header: 'Tweeter',
