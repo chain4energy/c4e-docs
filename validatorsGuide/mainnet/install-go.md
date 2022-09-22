@@ -18,7 +18,7 @@ Add go to path:
 
 ```bash
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.profile
-echo 'export PATH=$PATH:/home/ubuntu/go/bin' >> ~/.profile
+echo 'export PATH=$PATH:/home/$USER/go/bin' >> ~/.profile
 
 source ~/.profile
 ```
