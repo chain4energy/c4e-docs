@@ -68,24 +68,14 @@ module.exports = {
           title: 'Validators Guide',
           children: [
             {
-              title: 'Quick start',
+              title: 'Start testnet',
               directory: true,
-              path: '/validatorsGuide/quickstart'
-            },
-            {
-              title: 'Basics',
-              directory: true,
-              path: '/validatorsGuide/basics'
+              path: '/validatorsGuide/Starttestnet'
             },
             {
               title: 'Genesis Fields',
               directory: true,
               path: '/validatorsGuide/genesisFields'
-            },
-            {
-              title: 'Guides',
-              directory: true,
-              path: '/validatorsGuide/guides'
             },
             {
               title: 'Start mainnet',

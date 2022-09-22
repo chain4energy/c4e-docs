@@ -4,7 +4,7 @@ parent:
   order: 6
 -->
 
-# Quick Start
+# Start testnet
 
 This repository contains reference documentation on how to install and run an Etheremint full node.
 1. [Hardware requirements](hardware-requirements.md)

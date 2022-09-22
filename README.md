@@ -12,7 +12,7 @@ stack:
     desc: Start from introduction to platform
     color: "#00BB00"
     label: sdk
-    url: /validatorsGuide/quickstart
+    url: /validatorsGuide/Starttestnet
 footer:
   newsletter: false
 aside: false
