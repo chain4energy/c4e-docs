@@ -11,25 +11,23 @@
     .h2 Getting Started
     .p__alt Read all about chain4energy or dive straight into the code with guides.
     .features
-      router-link(to="/quickstart").features__item.features__item__light
+      router-link(to="/usersGuide/walletBasics").features__item.features__item__light
         .features__item__image
           icon-rocket.features__item__image__img
         .features__item__text
-          .features__item__text__h2 read
-          .features__item__text__h1 Quick start testnet
-          .features__item__text__p Deploy your own node, setup your testnet and more.
-
+          .features__item__text__h1 User?
+          .features__item__text__h2 Learn more with our
+          .features__item__text__p Step by step guide for users.
+      router-link(to="/validatorsGuide/quickstart").features__item.features__item__dark
+        .features__item__image
+          icon-code.features__item__image__img
+        .features__item__text
+          .features__item__text__h1 Want to become Validator?
+          .features__item__text__h2 See our tutorial for
+          .features__item__text__p becoming Validator on C4E platform
     .sections__wrapper
       .h2 Explore Chain 4 energy
       .p__alt Get familiar with C4E and explore its main concepts.
-      .sections
-        router-link.sections__item(tag="a" :to="section.url" v-for="section in $frontmatter.sections")
-          component(:is="`tm-icon-${section.icon}`").sections__item__icon
-          .sections__item__wrapper
-            .sections__item__title {{section.title}}
-            .sections__item__desc {{section.desc}}
-    .h2 Explore the stack
-    .p__alt Check out the docs for the various parts of the Ethermint stack.
     .stack
       a.stack__item(:href="item.url" v-for="item in $frontmatter.stack" :style="{'--accent': item.color, '--opacity': '5%'}")
         .stack__item__wrapper
@@ -39,7 +37,7 @@
           div
             .stack__item__h1 {{item.title}}
             .stack__item__p {{item.desc}}
-    tm-help-support
+    custom-contacts-block
 </template>
 
 <style lang="stylus" scoped>
@@ -504,3 +502,9 @@
   }
 }
 </style>
+<script>
+import CustomContactsBlock from "./CustomContactsBlock";
+export default {
+  components: {CustomContactsBlock}
+}
+</script>

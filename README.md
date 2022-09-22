@@ -2,22 +2,17 @@
 layout: home
 title: C4e Documentation
 description: The world's first blockchain network based on green energy production.
-sections:
-  - title: Core Concepts
-    desc: Read about the core concepts like encoding and events.
-    url: /core
-    icon: core
 stack:
-  - title: Cosmos SDK
-    desc: The SDK is the world’s most popular framework for building application-specific blockchains.
+  - title: Wallet Basics
+    desc: Start with the basic concepts of C4E wallet.
     color: "#5064FB"
-    label: sdk
-    url: http://docs.cosmos.network
-  - title: Tendermint Core
-    desc: The leading BFT engine for building blockchains, powering Ethermint.
+    label: hub
+    url: /usersGuide/walletBasics
+  - title: Main information
+    desc: Start from introduction to platform
     color: "#00BB00"
-    label: core
-    url: http://docs.tendermint.com
+    label: sdk
+    url: /validatorsGuide/quickstart
 footer:
   newsletter: false
 aside: false

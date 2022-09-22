@@ -27,52 +27,77 @@ module.exports = {
     },
     sidebar: {
       auto: false,
-      nav: [{
-          title: 'Reference',
-          children: [{
-              title: 'Introduction',
-              directory: true,
-              path: '/intro/'
-            },
-            {
-              title: 'Web Wallet',
-              directory: true,
-              path: '/wallet',
-            },
-            {
-              title: 'Validators',
-              directory: true,
-              path: '/validators',
-            },
-            {
-              title: 'Governance',
-              directory: false,
-              path: '/governance',
-            },
-            {
-              title: 'Quick Start testnet',
-              directory: true,
-              path: '/quickstart'
-            },
-            {
-              title: 'Quick Start Mainnet',
-              directory: true,
-              path: '/mainnet'
-            },
-            {
-              title: 'Fields in genesis',
-              directory: false,
-              path: '/genesisFields',
-            },
-          ]
-        },
+      nav: [
+          {
+            title: 'User guide',
+            children: [
+              {
+                title: 'Introduction',
+                directory: true,
+                path: '/usersGuide/introduction'
+              },
+              {
+                title: 'Wallet Basics',
+                directory: false,
+                path: '/usersGuide/walletBasics'
+              },
+              {
+                title: 'Registration',
+                directory: true,
+                path: '/usersGuide/registration'
+              },
+              {
+                title: 'Authorisation',
+                directory: false,
+                path: '/usersGuide/auth'
+              },
+              {
+                title: 'Validators',
+                directory: true,
+                path: '/usersGuide/validators'
+              },
+              {
+                title: 'Governance',
+                directory: false,
+                path: '/usersGuide/governance'
+              },
+
+            ]
+          },
         {
-          title: 'Specifications',
-          children: [{
-            title: 'Modules',
-            directory: true,
-            path: '/modules'
-          }]
+          title: 'Validators Guide',
+          children: [
+            {
+              title: 'Quick start',
+              directory: true,
+              path: '/validatorsGuide/quickstart'
+            },
+            {
+              title: 'Basics',
+              directory: true,
+              path: '/validatorsGuide/basics'
+            },
+            {
+              title: 'Genesis Fields',
+              directory: true,
+              path: '/validatorsGuide/genesisFields'
+            },
+            {
+              title: 'Guides',
+              directory: true,
+              path: '/validatorsGuide/guides'
+            },
+            {
+              title: 'Start mainnet',
+              directory: true,
+              path: '/validatorsGuide/mainnet'
+            },
+            {
+              title: 'Modules',
+              directory: true,
+              path: '/validatorsGuide/modules'
+            },
+        ]
         },
       ]
     },
@@ -82,7 +107,14 @@ module.exports = {
         title: 'Developer Chat',
         text: 'Chat with C4E teams on telegram.',
         url: 'https://t.me/+60rmPWzlo3c2YWY8',
-        bg: 'linear-gradient(103.75deg, #1B1E36 0%, #22253F 100%)'
+        bg: 'linear-gradient(103.75deg, #1B1E36 0%, #22253F 100%)',
+      },
+      telegram: {
+        title: 'Telegram Chat',
+        text: 'Chat with C4E teams on telegram.',
+        url: 'https://t.me/Chain4Energy_Official',
+        bg: 'linear-gradient(103.75deg, #1B1E36 0%, #22253F 100%)',
+        logo: '/logo.svg',
       },
       forum: {
         title: 'Cosmos Developer Forum',
@@ -100,7 +132,6 @@ module.exports = {
     footer: {
       logo: '/logo.svg',
       textLink: {
-        text: 'chain4Energy',
         url: 'https://chain4.energy/'
       },
       services: [{
