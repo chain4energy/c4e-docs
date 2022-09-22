@@ -6,7 +6,6 @@ order: 4
 
 
 Clone repository and checkout to proper tag
-//to be done tag isn't available yet
 ```bash
 git clone --depth 1 --branch  v1.0.0  https://github.com/chain4energy/c4e-chain.git
 ```

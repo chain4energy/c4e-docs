@@ -14,9 +14,6 @@ module.exports = {
     docsDir: 'docs',
     editLinks: true,
     custom: true,
-    favicon: {
-      src: '/logo.svg'
-    },
     logo: {
       src: '/logo.svg',
     },
