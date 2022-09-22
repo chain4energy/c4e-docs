@@ -107,7 +107,14 @@ module.exports = {
         title: 'Developer Chat',
         text: 'Chat with C4E teams on telegram.',
         url: 'https://t.me/+60rmPWzlo3c2YWY8',
-        bg: 'linear-gradient(103.75deg, #1B1E36 0%, #22253F 100%)'
+        bg: 'linear-gradient(103.75deg, #1B1E36 0%, #22253F 100%)',
+      },
+      telegram: {
+        title: 'Telegram Chat',
+        text: 'Chat with C4E teams on telegram.',
+        url: 'https://t.me/Chain4Energy_Official',
+        bg: 'linear-gradient(103.75deg, #1B1E36 0%, #22253F 100%)',
+        logo: '/logo.svg',
       },
       forum: {
         title: 'Cosmos Developer Forum',
