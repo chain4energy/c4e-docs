@@ -18,7 +18,7 @@
           .features__item__text__h1 User?
           .features__item__text__h2 Learn more with our
           .features__item__text__p Step by step guide for users.
-      router-link(to="/validatorsGuide/quickstart").features__item.features__item__dark
+      router-link(to="/validatorsGuide/mainnet/").features__item.features__item__dark
         .features__item__image
           icon-code.features__item__image__img
         .features__item__text
