@@ -68,14 +68,14 @@ module.exports = {
           title: 'Validators Guide',
           children: [
             {
-              title: 'basics',
-              directory: true,
-              path: '/validatorsGuide/basics'
-            },
-            {
               title: 'Quick start',
               directory: true,
               path: '/validatorsGuide/quickstart'
+            },
+            {
+              title: 'Basics',
+              directory: true,
+              path: '/validatorsGuide/basics'
             },
             {
               title: 'Genesis Fields',

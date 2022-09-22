@@ -8,11 +8,11 @@ stack:
     color: "#5064FB"
     label: hub
     url: /usersGuide/walletBasics
-  - title: Core Concepts
-    desc: Read about the core concepts of C4E platform
+  - title: Main information
+    desc: Start from introduction to platform
     color: "#00BB00"
     label: sdk
-    url: /usersGuide/introduction/
+    url: /validatorsGuide/quickstart
 footer:
   newsletter: false
 aside: false
