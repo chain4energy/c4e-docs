@@ -34,32 +34,32 @@ module.exports = {
               {
                 title: 'Introduction',
                 directory: true,
-                path: '/usersGuide/introduction'
+                path: '/usersGuide/introduction',
               },
               {
                 title: 'Wallet Basics',
                 directory: false,
-                path: '/usersGuide/walletBasics'
+                path: '/usersGuide/walletBasics',
               },
               {
                 title: 'Registration',
                 directory: true,
-                path: '/usersGuide/registration'
+                path: '/usersGuide/registration',
               },
               {
                 title: 'Authorisation',
                 directory: false,
-                path: '/usersGuide/auth'
+                path: '/usersGuide/auth',
               },
               {
                 title: 'Validators',
                 directory: true,
-                path: '/usersGuide/validators'
+                path: '/usersGuide/validators',
               },
               {
                 title: 'Governance',
                 directory: false,
-                path: '/usersGuide/governance'
+                path: '/usersGuide/governance',
               },
 
             ]
@@ -70,22 +70,22 @@ module.exports = {
             {
               title: 'Start testnet',
               directory: true,
-              path: '/validatorsGuide/Starttestnet'
+              path: '/validatorsGuide/Starttestnet',
             },
             {
               title: 'Genesis Fields',
               directory: true,
-              path: '/validatorsGuide/genesisFields'
+              path: '/validatorsGuide/genesisFields',
             },
             {
               title: 'Start mainnet',
               directory: true,
-              path: '/validatorsGuide/mainnet'
+              path: '/validatorsGuide/mainnet',
             },
             {
               title: 'Modules',
               directory: true,
-              path: '/validatorsGuide/modules'
+              path: '/validatorsGuide/modules',
             },
           ]
         },
