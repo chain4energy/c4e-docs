@@ -100,6 +100,10 @@ module.exports = {
               title: 'Wallet',
               path: 'https://wallet.c4e.io'
             },
+            {
+              title: 'explorer',
+              path: 'https://explorer.c4e.io'
+            }
           ]
         },
       ]
