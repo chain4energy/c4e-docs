@@ -18,3 +18,5 @@ If you Have an account you can import it in Keplr extension. To do it follow thi
 5. Click next;Registration completed
 
 ![alt_text](./images/keplr/3.png "image_tooltip")
+
+## Next {hide}

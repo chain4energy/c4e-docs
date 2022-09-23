@@ -26,3 +26,5 @@
 6. Registration completed
 
 ![alt_text](./images/keplr/3.png "image_tooltip")
+
+## Next {hide}

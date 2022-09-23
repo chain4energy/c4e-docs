@@ -18,5 +18,3 @@ Individual investors and users of the Chain4Energy platform will be able to gain
 
 
 ## Next {hide}
-
-Get an high-level [overview](README.md) of Ethermint {hide}

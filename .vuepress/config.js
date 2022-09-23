@@ -87,7 +87,20 @@ module.exports = {
               directory: true,
               path: '/validatorsGuide/modules'
             },
-        ]
+          ]
+        },
+        {
+          title: 'Our products',
+          children: [
+            {
+              title: 'Billing system',
+              path: 'https://platformadlaenergii.pl'
+            },
+            {
+              title: 'Wallet',
+              path: 'https://wallet.c4e.io'
+            },
+          ]
         },
       ]
     },

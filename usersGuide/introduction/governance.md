@@ -56,4 +56,3 @@ Each Green House will be able to individually determine what will depend on the 
 
 ## Next {hide}
 
-Get an high-level [overview](README.md) of Ethermint {hide}

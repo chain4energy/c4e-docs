@@ -6,7 +6,7 @@ parent:
 
 # Web Wallet Basics
 
-To start using Wallet, users have to [install Keplr](../registration/keplrInstall.md).
+To start using Wallet, users have to [install Keplr](./registration/keplrInstall.md).
 
 Keplr restrictions:
 

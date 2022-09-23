@@ -123,3 +123,5 @@ Having an energy token which represents energy 1-1 is a dream for everyone. Ever
 This risk can be described as a cost value function from time. This mechanism is called Demurrage (fractal burning in time). This mechanism prevents the local prosumers from collecting energy tokens and encourages them to utilize them as quickly as possible.
 
 Each energy supplier can apply its own demurrage rules, which are stored in the smart contract. 
+
+## Next {hide}

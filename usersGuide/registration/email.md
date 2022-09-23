@@ -21,3 +21,4 @@ To registrate account via Email:
 ![alt_text](./images/email/2.png "image_tooltip")
 
 5. Success window will infor you that your Keplr extension is ready to use;
+## Next {hide}

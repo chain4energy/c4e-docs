@@ -44,5 +44,3 @@ The fee is divided into following parts:
 Above share is the initial proposal before TGE. It is subject to adjustment by the DAO governance. The burn share is set to 0% to concentrate on the growth of the network.
 
 ## Next {hide}
-
-Get an high-level [overview](README.md) of Ethermint {hide}

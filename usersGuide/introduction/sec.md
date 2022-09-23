@@ -70,5 +70,3 @@ As part of our project, we need to build a number of applications and dApps that
 
 
 ## Next {hide}
-
-Get an high-level [overview](README.md) of Ethermint {hide}
