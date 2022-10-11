@@ -1,5 +1,5 @@
 <!--
-order: 5
+order: 7
 -->
 
 # Cosmovisor setup
@@ -25,7 +25,8 @@ mkdir -p $DAEMON_HOME/cosmovisor/upgrades
 Copy c4e binary to cosmovisor genesis bin:
 
 ```bash
-cp /usr/local/bin/c4ed $DAEMON_HOME/cosmovisor/genesis/bin
+cp ~/go/bin/c4ed $DAEMON_HOME/cosmovisor/genesis/bin
+$DAEMON_HOME/cosmovisor/genesis/bin/c4ed version
 ```
 
 
@@ -53,7 +54,24 @@ WantedBy=multi-user.target
 EOF
 ```
 
+Run a node:
+```bash
+sudo systemctl enable cosmovisor  
+sudo systemctl start cosmovisor
+```
+
+Check status
+```bash
+sudo systemctl status cosmovisor
+```
+
+Logs from cosmovisor
+```bash
+sudo journalctl -f -u cosmovisor
+```
+
+
 
 ## Next {hide}
 
-Learn how to [run a node](./.run_node.md) {hide}
+Learn how to [run validator](validator-setup.md) {hide}

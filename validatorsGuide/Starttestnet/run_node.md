@@ -2,17 +2,17 @@
 order: 6
 -->
 
-# Run a node
+# Configure a node
 
 
 ## Pre-requisite Readings
 
-- [Installation](nary.md) {prereq}
+- [Installation](../quickstartart/install-binary.md) {prereq}
 
 
 Select a chain:
 ```bash
-export CHAINID=c4e-testnet-0.1.0
+export CHAINID=veles-1
 ```
 
 Init chain and delete generated genesis:
@@ -47,14 +47,4 @@ sed -e "s|external_address = \".*\"|external_address = \"$PUB_IP:26656\"|g" ~/.c
 mv ~/.c4e-chain/config/config.toml.tmp  ~/.c4e-chain/config/config.toml
 ```
 
-Run a node:
-```bash
-sudo systemctl enable cosmovisor  
-sudo systemctl start cosmovisor
-```
-
-
-Check status
-```bash
-sudo systemctl status cosmovisor
-```
+Learn how to [Setup cosmovisor](cosmovisor-setup.md) {hide}
