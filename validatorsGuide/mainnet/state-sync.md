@@ -29,7 +29,7 @@ snapshot-interval = 1000
 snapshot-keep-recent = 10
 ```
 
-Set `SNAP_RPC1` and `SNAP_RPC2` variable to the polkachu snapshot RPC
+Set `SNAP_RPC1` and `SNAP_RPC2` variable
 
 ```bash
 SNAP_RPC1="https://rpc1.c4e.io:443"
