@@ -14,7 +14,8 @@ This repository contains reference documentation on how to install and run a C4E
 5.  [Install prebuild binary (option B)](install-binary.md)
 6. [Cosmovisor Setup](cosmovisor-setup.md)
 7. [Configure a node](run_node.md)
-8. [Validator Setup](validator-setup.md)
+8. [State sync](state-sync.md)
+9. [Validator Setup](validator-setup.md)
 
 After going throught the Quick Start contents, head over to the [basics](../basicsEADME.md) to learn more.
 

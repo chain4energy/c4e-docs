@@ -74,4 +74,4 @@ sudo journalctl -f -u cosmovisor
 
 ## Next {hide}
 
-Learn how to [run validator](validator-setup.md) {hide}
+Learn how to [state sync](state-sync.md) {hide}
