@@ -10,7 +10,7 @@ start in earning by  validating  the chain transactions.
 
 
 ## Requirements
-If you want to become a Commercio.network validator you need to:
+If you want to become a C4E validator you need to:
 
 1. Be a full node and cosmovisor up 
    If you are not, please follow the [full node configuration guide](run_node.md) and [Cosmovisor setup](cosmovisor-setup.md)
