@@ -1,13 +1,8 @@
 <!--
-order: 5
+order: 10
 -->
 
-# Install prebuild binary (option B)
-
-The c4ed binary serves as the node client and the application client. In other words, the c4ed binary can be used to both run a node and interact with it.
-## Pre-Built Package
-
-
+# Migration 1.0.1
 ### For Linux Distributions
 
 Download the tar.gz file:
@@ -41,8 +36,7 @@ mkdir -p ~/go/bin
 sudo mv c4ed ~/go/bin
 ```
 
-Open a new terminal window and check if the installation was successful:
-
+Check the version
 ```bash
 c4ed version
 ```
@@ -52,7 +46,19 @@ You should see the following:
 ```bash
 1.0.1
 ```
+Stop cosmovisor service
+```bash
+sudo systemctl stop cosmovisor
+```
 
-## Next {hide}
+Replace cosmovisor binary
+```bash
+export DAEMON_HOME=$HOME/.c4e-chain/
+cp ~/go/bin/c4ed $DAEMON_HOME/cosmovisor/genesis/bin
+$DAEMON_HOME/cosmovisor/genesis/bin/c4ed version
+```
 
-Learn how to [run and configure node](.run_node.md) {hide}
+Restart cosmovisor
+```bash
+sudo systemctl restart cosmovisor && journalctl -u cosmovisor -f
+```

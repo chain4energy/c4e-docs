@@ -16,6 +16,7 @@ This repository contains reference documentation on how to install and run a C4E
 7. [Configure a node](run_node.md)
 8. [State sync](state-sync.md)
 9. [Validator Setup](validator-setup.md)
+10. [Migration 1.0.1](migration-101.md)
 
 After going throught the Quick Start contents, head over to the [basics](../basicsEADME.md) to learn more.
 

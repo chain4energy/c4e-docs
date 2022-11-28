@@ -7,7 +7,7 @@ order: 4
 
 Clone repository and checkout to proper tag
 ```bash
-git clone --depth 1 --branch  v1.0.0  https://github.com/chain4energy/c4e-chain.git
+git clone --depth 1 --branch  v1.0.1  https://github.com/chain4energy/c4e-chain.git
 ```
 Go to dir and build project
 ```bash
@@ -19,7 +19,7 @@ Check binary version should me equal
 ```bash
 c4ed version
 
-output: 1.0.0
+output: 1.0.1
 ```
 ## Next {hide}
 
