@@ -83,7 +83,7 @@ mkdir -p $DAEMON_HOME/cosmovisor/upgrades/v1.1.0/bin
 
 Put binary in proper dir
 ```bash
-cp ~/go/bin/c4ed $DAEMON_HOME/cosmovisor/upgrades/v1.0.1/bin
+cp ~/go/bin/c4ed $DAEMON_HOME/cosmovisor/upgrades/v1.1.0/bin
 ```
 
 Just to be sure check version
