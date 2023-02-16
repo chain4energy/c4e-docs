@@ -8,7 +8,7 @@
     "serve": "vuepress dev --no-cache",
     "postserve": "post.sh",
     "prebuild": "pre.sh",
-    "build": "trap 'exit 0' SIGINT; vuepress build --no-cache",
+    "build": "vuepress build --no-cache",
     "postbuild": "post.sh"
   },
   "keywords": [
