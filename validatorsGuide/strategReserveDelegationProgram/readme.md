@@ -6,21 +6,21 @@ order: 1
 
 Chain4Energy will allocate 54.000.000 C4E 
 from the Strategic Pool for the Strategic Reserve 
-Delegation Program. This allocation will be splitted 
-into Objective and Subjective criteria.
+Delegation Program. This allocation will be splitted
+four categories: Eligibility, Early supporter, Objective and Subjective.
 Objective criteria will be evaluated automatically 
-based on parameters that are tracked by the Observatory. 
+based on parameters that are tracked by the Smart Delegation Program (SDP). 
 Subjective criteria are parameters which are not possible
 to evaluate on-chain,
 therefore the CORE Team will take care of this and score
 them individually.
 
-| Delegation Program category          |   Amount of token in the category |
-|:-------------------------------------|----------------------------------:|
-| Delegation Program - Eligibility     |                     4.000.000 C4E |
-| Delegation Program - Early supporter |                    10.000.000 C4E |
-| Delegation Program - Objective       |                    34.000.000 C4E |
-| Delegation Program - Subjective      |                     6.000.000 C4E | 
+| Delegation Program category |   Amount of token in the category |
+|:----------------------------|----------------------------------:|
+| Eligibility                 |                     4.000.000 C4E |
+| Early supporter             |                    10.000.000 C4E |
+| Objective                   |                    34.000.000 C4E |
+| Subjective                  |                     6.000.000 C4E | 
 
 **Note: 
 Some validators who are managed by the team or who have a separate contract with Chain4Energy are excluded from this program. This means that most of the tokens from this program may be intended for community validators.**
@@ -63,8 +63,6 @@ It is untouchable nevertheless what is the score of your node.
 | December 2022            |                    5 |                   100.000 |
 | **Total**                |                   57 |               ~10.000.000 |
 
-**NOTE**:
-Tokens not utilized or excluded from this Validators will be shifted to Objective Parameters criteria. If a Validator gets jailed the amount of Tokens which was delegated to him will be shifted to the Delegation Pool of Objective Parameters
 
 # Objective Parameters
 
