@@ -68,7 +68,7 @@ module.exports = {
           title: 'Validators Guide',
           children: [
             {
-              title: 'strategic Reserve Delegation Program',
+              title: 'Strategic reserve delegation program',
               directory: false,
               path: '/validatorsGuide/strategReserveDelegationProgram',
             },
