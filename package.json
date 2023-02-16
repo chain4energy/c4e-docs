@@ -4,12 +4,12 @@
   "description": "C4E Documentation",
   "main": "index.js",
   "scripts": {
-    "preserve": "pre.sh",
+    "preserve": "./pre.sh",
     "serve": "vuepress dev --no-cache",
-    "postserve": "post.sh",
-    "prebuild": "pre.sh",
-    "build": "vuepress build --no-cache",
-    "postbuild": "post.sh"
+    "postserve": "./post.sh",
+    "prebuild": "./pre.sh",
+    "build": "trap 'exit 0' SIGINT; vuepress build --no-cache",
+    "postbuild": "./post.sh"
   },
   "keywords": [
     "ethermint",
