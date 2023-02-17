@@ -1,28 +1,22 @@
-<!--
+!--
 order: 1
 -->
 
 # C4E Strategic Reserve Delegation Program v1.0
 
-Chain4Energy will allocate 54.000.000 C4E 
-from the Strategic Pool for the Strategic Reserve 
-Delegation Program. This allocation will be splitted
-four categories: Eligibility, Early supporter, Objective and Subjective.
-Objective criteria will be evaluated automatically 
-based on parameters that are tracked by the Smart Delegation Program (SDP). 
-Subjective criteria are parameters which are not possible
-to evaluate on-chain,
-therefore the CORE Team will take care of this and score
-them individually.
+Chain4Energy will allocate 54.000.000 C4E from the Strategic Pool for the **Strategic Reserve
+Delegation Program**. This allocation will be splitted into four categories: Eligibility, Early supporter, Objective and Subjective.
+Objective criteria will be evaluated automatically based on parameters that are tracked by the Smart Delegation Program (SDP).
+Subjective criteria are parameters which are not possible to evaluate on-chain, therefore the CORE Team will take care of this and score them individually.
 
-| Delegation Program category |   Amount of token in the category |
-|:----------------------------|----------------------------------:|
-| Eligibility                 |                     4.000.000 C4E |
-| Early supporter             |                    10.000.000 C4E |
-| Objective                   |                    34.000.000 C4E |
-| Subjective                  |                     6.000.000 C4E | 
+| Delegation Program category          |   Amount of token in the category |
+|:-------------------------------------|----------------------------------:|
+| Delegation Program - Eligibility     |                     4.000.000 C4E |
+| Delegation Program - Early supporter |                    10.000.000 C4E |
+| Delegation Program - Objective       |                    34.000.000 C4E |
+| Delegation Program - Subjective      |                     6.000.000 C4E | 
 
-**Note: 
+**Note:
 Some validators who are managed by the team or who have a separate contract with Chain4Energy are excluded from this program. This means that most of the tokens from this program may be intended for community validators.**
 
 ## Eligibility criteria
@@ -35,7 +29,7 @@ Some validators who are managed by the team or who have a separate contract with
 
 ***
 &#185; Embargo lists taken into consideration:
- 
+
 - [https://www.tradecompliance.pitt.edu/embargoed-and-sanctioned-countries](https://www.tradecompliance.pitt.edu/embargoed-and-sanctioned-countries).
 - [https://en.wikipedia.org/wiki/United_States_sanctions ](https://en.wikipedia.org/wiki/United_States_sanctions).
 - [ https://www.sanctionsmap.eu/#/main]( https://www.sanctionsmap.eu/#/main).
@@ -118,7 +112,7 @@ This will allow Validators to abstain on certain Gov. proposals without pushing 
 
 The amount of the Strategic Reserve Delegation for the Subjective Parameters will subsequently be quarterly as the C4E-core team evaluates current and future applications as well as contributions.
 
-The subjective Parameters are divided into three different sectors. All sectors are weighted equally. To qualify for Strategic Reserve Delegation within the subjective parameters the Validator has to send in an application with their contributions. More information down below. 
+The subjective Parameters are divided into three different sectors. All sectors are weighted equally. To qualify for Strategic Reserve Delegation within the subjective parameters the Validator has to send in an application with their contributions. More information down below.
 
 
 Community Contribution:
@@ -128,23 +122,23 @@ Community Contribution:
 - Adding Chain4Energy at own web page
 - Marketing materials e.g. Christmas greetings
 - Participation in C4E Twitter Spaces and asking useful questions
-- Social media contribution (writing Threads, posts, and being active across various C4E channels)  
+- Social media contribution (writing Threads, posts, and being active across various C4E channels)
 - AMA with validator team
 
-Technical Contribution: 
+Technical Contribution:
 - Code contributions (bug fixes, improvements etc.)
 - Github proposals
 - Adding to documentation
 
 Public Goods:
 - IBC Relayer
-- RPC Nodes 
+- RPC Nodes
 - Seed Nodes
 - Archive Nodes
 - Building Explorer (forks of Ping.Pub do NOT count)
-- Testnet participation 
+- Testnet participation
 
-The Applications for any kind of Contributions can be handed in here via google form (LINK) every 3 months so basically 4 times a year. The applications have to be submitted 2 - 4 weeks prior to the new period. These Contributions in kind of public good, technical or community contributions will be evaluated through the C4E Team. As these contributions are difficult to standardize and measure objectively the Foundation decided to evaluate these contributions subjectively. Whereas the scoring and the Strategic Reserve Delegation will remain public and transparent. The C4E Team was in favor of the approach which Stride was following by evaluating the subjective parameters by an Advisory council formed by Validators. But decided to not go with that approach in the beginning as a council needs resources to organize, structure and monitor the council. Furthermore the resources will be concentrated even more in focusing on the product and infrastructure. 
+The Applications for any kind of Contributions can be handed in here via google form (LINK) every 3 months so basically 4 times a year. The applications have to be submitted 2 - 4 weeks prior to the new period. These Contributions in kind of public good, technical or community contributions will be evaluated through the C4E Team. As these contributions are difficult to standardize and measure objectively the Foundation decided to evaluate these contributions subjectively. Whereas the scoring and the Strategic Reserve Delegation will remain public and transparent. The C4E Team was in favor of the approach which Stride was following by evaluating the subjective parameters by an Advisory council formed by Validators. But decided to not go with that approach in the beginning as a council needs resources to organize, structure and monitor the council. Furthermore the resources will be concentrated even more in focusing on the product and infrastructure.
 
 Strategic Reserve Delegations for subjective parameters starts on the following dates:
 
