@@ -75,7 +75,7 @@ It is untouchable nevertheless what is the score of your node.
 | **Total**                |                   57 |                ~10.000.000 |
 
 
-# Objective Parameters
+## Objective Parameters
 
 The amount of the Strategic Reserve Delegation for Objective Parameters will be consistently tracked and evaluated. Therefore a consistent re-delegation in a period of 14-30 Days will happen.
 

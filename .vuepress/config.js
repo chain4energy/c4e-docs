@@ -69,8 +69,8 @@ module.exports = {
           children: [
             {
               title: 'strategic reserve delegation program',
-              directory: false,
-              path: '/validatorsGuide/strategReserveDelegationProgram',
+              directory: true,
+              path: '/validatorsGuide/strategicReserveDelegationProgram',
             },
             {
               title: 'Start testnet',
