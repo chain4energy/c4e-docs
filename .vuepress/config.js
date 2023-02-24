@@ -70,7 +70,7 @@ module.exports = {
             {
               title: 'strategic reserve delegation program',
               directory: true,
-              path: '/validatorsGuide/strategicReserveDelegationProgram',
+              path: '/validatorsGuide/strategReserveDelegationProgram',
             },
             {
               title: 'Start testnet',
