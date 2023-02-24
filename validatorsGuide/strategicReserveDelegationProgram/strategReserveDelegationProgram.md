@@ -4,6 +4,23 @@ order: 1
 
 # C4E Strategic Reserve Delegation Program v1.0
 
+**Revision 1.1 - 2023/02/24**
+
+## Document versions
+
+| Version          |   Date     | Author         | 
+|------------------|------------|----------------|
+| Revision 1.0     | 2023/-2/17 | C4E Team       |
+| Revision 1.1     | 2023/-2/24 | Greg Sikora    |
+
+**Revision 1.1 changes**
+
+Small cosmetic changes
+- Should be *"Amount of delegated tokens"* instead *"Amount of delegated nodes"* in [Early supporter criteria](#early-supporter-criteria)
+- Changes FDP to SRDP in the last section
+
+## Overview
+
 Chain4Energy will allocate 54.000.000 C4E from the Strategic Pool for the **Strategic Reserve
 Delegation Program**. This allocation will be splitted into four categories: Eligibility, Early supporter, Objective and Subjective.
 Objective criteria will be evaluated automatically based on parameters that are tracked by the Smart Delegation Program (SDP).
@@ -49,13 +66,13 @@ We want to incentivise them by supporting the project without any incentive at t
 **Criteria:** As long as your validator node is running without being jailed or disqualified from the Strategic Reserve Delegation program you have rights for this delegation!
 It is untouchable nevertheless what is the score of your node.
 
-| Spin up node date        | Number of validators | Amount of delegated nodes |
-|:-------------------------|---------------------:|--------------------------:|
-| September - October 2022 |                    6 |                   250.000 |
-| November 1-15 2022       |                   10 |                   200.000 |
-| November 16-30 2022      |                   36 |                   150.000 |
-| December 2022            |                    5 |                   100.000 |
-| **Total**                |                   57 |               ~10.000.000 |
+| Spin up node date        | Number of validators | Amount of delegated tokens |
+|:-------------------------|---------------------:|---------------------------:|
+| September - October 2022 |                    6 |                    250.000 |
+| November 1-15 2022       |                   10 |                    200.000 |
+| November 16-30 2022      |                   36 |                    150.000 |
+| December 2022            |                    5 |                    100.000 |
+| **Total**                |                   57 |                ~10.000.000 |
 
 
 # Objective Parameters
@@ -142,7 +159,7 @@ The Applications for any kind of Contributions can be handed in here via google 
 
 Strategic Reserve Delegations for subjective parameters starts on the following dates:
 
-Q1 FDP 01.01 → Q2 FDP 01.04  → Q3 FDP 01.07 → Q4 01.09
+Q1 SRDP 01.01 → Q2 SRDP 01.04  → Q3 SRDP 01.07 → Q4 01.09
 
 To qualify for Q1 (01.12 - 14.12 Application // 15.12 - 30.12. Scoring and evaluating)
 
