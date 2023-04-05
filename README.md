@@ -1,7 +1,7 @@
 <!--
 layout: home
-title: C4e Documentation
-description: The world's first blockchain network based on green energy production.
+title: Chain4Energy Documentation
+description: A modular blockchain built for decentralized energy.
 stack:
   - title: Wallet Basics
     desc: Start with the basic concepts of C4E wallet.
@@ -12,16 +12,17 @@ stack:
     desc: Start from introduction to platform
     color: "#00BB00"
     label: sdk
-    url: /validatorsGuide/Starttestnet
+    url: /validatorsGuide/mainnet
 footer:
   newsletter: false
 aside: false
 -->
 
-# C4e Documentation
+# Chain4Energy Documentation
+
+A modular blockchain built for decentralized energy.
 
 ## Get Started
-
 
 ## Reference
 
