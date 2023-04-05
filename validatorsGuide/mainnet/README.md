@@ -17,7 +17,8 @@ This repository contains reference documentation on how to install and run a C4E
 8. [State sync](state-sync.md)
 9. [Validator Setup](validator-setup.md)
 10. [Migration 1.0.1](migration-101.md)
-1. [Migration 1.1.0](migration-110.md)
+11. [Migration 1.1.0](migration-110.md)
+12. [Migration 1.2.0](migration-120.md)
 
 After going throught the Quick Start contents, head over to the [basics](../basicsEADME.md) to learn more.
 
