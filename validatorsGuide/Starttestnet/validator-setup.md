@@ -69,20 +69,12 @@ c4e@c4e-fn1:~$
 c4e@c4e-fn1:~$ c4ed keys add vesting
 Enter keyring passphrase:
 
-- name: vesting
-  type: local
-  address: c4e1e2kq0w7pxpqn9ce5leyfl2h6v2kd7l94ksp04j
-  pubkey: '{"@type":"/cosmos.crypto.secp256k1.PubKey","key":"A2AUrhH/iLutlZQ5K/jHniqnZSj61N++ytQF798WBn1I"}'
-  mnemonic: ""
-c4e@c4e-fn1:~$
 ```
 
-If you dont have token send C4E team email with validator account address to email: dev@chain4.energy
+If you dont have token faucet for testnet available on:
 
 ```bash
-email to: dev@chain4.energy
-content:
-    validator address: c4e1atqq8lmeptgn2jlx2q8r42p572yhh6lzle7vng
+https://faucet-testnet.c4e.io/
 ```
 
 ## What is a Validator?
