@@ -13,19 +13,19 @@ The c4ed binary serves as the node client and the application client. In other w
 Download the tar.gz file:
 
 ```bash
-curl -LO https://github.com/chain4energy/c4e-chain/releases/download/v1.0.0/c4ed_v1.0.0_linux_amd64.tar.gz
+curl -LO https://github.com/chain4energy/c4e-chain/releases/download/v1.2.0/c4ed_v1.2.0_linux_amd64.tar.gz
 ```
 
 Verify the checksum:
 
 ```bash
-sha256sum c4ed_v1.0.0_linux_amd64.tar.gz
+sha256sum c4ed_v1.2.0_linux_amd64.tar.gz
 ```
 
 You should see the following:
 
 ```bash
-065a7ad8de4a01bb24bad77e6e162c7d4600e54bdb2da922cf565a9a41c5bbec  c4ed_v1.0.0_linux_amd64.tar.gz
+7b36ac7b1ebc6b5aad37f4770cb4a8eae205c6a7dad7275ff4723f0f1511d198  c4ed_v1.2.0_linux_amd64.tar.gz
 ```
 
 Unpack the tar.gz file:
@@ -50,7 +50,7 @@ c4ed version
 You should see the following:
 
 ```bash
-1.0.0
+1.2.0
 ```
 
 ## Next {hide}

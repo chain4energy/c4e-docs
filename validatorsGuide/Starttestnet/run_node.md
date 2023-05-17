@@ -12,7 +12,7 @@ order: 6
 
 Select a chain:
 ```bash
-export CHAINID=veles-1
+export CHAINID=babajaga-1
 ```
 
 Init chain and delete generated genesis:
