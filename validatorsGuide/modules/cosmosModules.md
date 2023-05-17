@@ -1,4 +1,9 @@
-# Standart modules
+<!--
+order: 5
+-->
+
+
+# Cosmos modules
 
 * Authz - Facilitates authorizations granted to one account to perform actions on behalf of another account;
 
