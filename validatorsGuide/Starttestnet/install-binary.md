@@ -31,7 +31,7 @@ You should see the following:
 Unpack the tar.gz file:
 
 ```bash
-tar -xvf c4ed_v1.0.0_linux_amd64.tar.gz
+tar -xvf c4ed_v1.2.0_linux_amd64.tar.gz
 ```
 
 Move the binary to your local bin directory:
