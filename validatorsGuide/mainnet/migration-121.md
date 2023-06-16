@@ -52,7 +52,6 @@ cp ~/go/bin/c4ed ~/.c4e-chain/cosmovisor/current/bin
 
 sed -i 's/halt-height = 3689227/halt-height = 0/g' ~/.c4e-chain/config/app.toml
 sudo systemctl start cosmovisor
-journalctl -u cosmovisor -f
 ```
 
 Check cosmovisor logs
