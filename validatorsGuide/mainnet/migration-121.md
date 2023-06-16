@@ -8,7 +8,7 @@ Before migration prepare halt height
 ```bash
    sudo systemctl stop cosmovisor
    #Setup proper height
-   sed -i 's/halt-height = 0/halt-height = 3689227/g' ~/.c4e-chain/config/app.toml
+   sed -i 's/halt-height = 0/halt-height = 3767300/g' ~/.c4e-chain/config/app.toml
    sudo systemctl start cosmovisor
    journalctl -u cosmovisor -f
 ```
@@ -50,7 +50,7 @@ cp ~/go/bin/c4ed ~/.c4e-chain/cosmovisor/current/bin
 
 ## should match 1.2.1
 
-sed -i 's/halt-height = 3689227/halt-height = 0/g' ~/.c4e-chain/config/app.toml
+sed -i 's/halt-height = 3767300/halt-height = 0/g' ~/.c4e-chain/config/app.toml
 sudo systemctl start cosmovisor
 ```
 
