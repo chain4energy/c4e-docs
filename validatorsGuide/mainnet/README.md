@@ -19,6 +19,7 @@ This repository contains reference documentation on how to install and run a C4E
 10. [Migration 1.0.1](migration-101.md)
 11. [Migration 1.1.0](migration-110.md)
 12. [Migration 1.2.0](migration-120.md)
+13. [Migration 1.2.1](migration-121.md)
 
 After going throught the Quick Start contents, head over to the [basics](../basicsEADME.md) to learn more.
 
