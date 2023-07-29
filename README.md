@@ -1,7 +1,7 @@
 <!--
 layout: home
 title: Chain4Energy Documentation
-description: A modular blockchain built for decentralized energy.
+description: A modular blockchain built for the decentralized energy.
 stack:
   - title: Wallet Basics
     desc: Start with the basic concepts of C4E wallet.
@@ -20,7 +20,7 @@ aside: false
 
 # Chain4Energy Documentation
 
-A modular blockchain built for decentralized energy.
+A modular blockchain built for the decentralized energy.
 
 ## Get Started
 
