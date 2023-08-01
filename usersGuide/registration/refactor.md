@@ -1,26 +1,26 @@
 <!--
-order: true
-parent:
-  order: 4
+σειρά: αλήθεια
+μητρική εταιρεία:
+   παραγγελία: 4
 -->
 
-# Registration
+# Εγγραφή
 
-To start using Wallet, users have to install Keplr.
+Για να ξεκινήσουν να χρησιμοποιούν το Πορτοφόλι, οι χρήστες πρέπει να εγκαταστήσουν το Keplr.
 
-Keplr restrictions:
+Περιορισμοί Keplr:
 
-Note: Keplr now available only with Google Chrome web browser. If you are using different browsers or mobile phones but you already have an account, please follow the “Login via Email”.
+Σημείωση: Το Keplr είναι πλέον διαθέσιμο μόνο με το πρόγραμμα περιήγησης Google Chrome. Εάν χρησιμοποιείτε διαφορετικά προγράμματα περιήγησης ή κινητά τηλέφωνα, αλλά έχετε ήδη λογαριασμό, ακολουθήστε την "Σύνδεση μέσω email".
 
-If you don’t have an account please use PC with chrome to create one.
+Εάν δεν έχετε λογαριασμό, χρησιμοποιήστε υπολογιστή με chrome για να δημιουργήσετε έναν.
 
-If you have an account, please use the [authentication section instructions to logIn](../auth.md);
+Εάν έχετε λογαριασμό, χρησιμοποιήστε τις [οδηγίες ενότητας ελέγχου ταυτότητας για να συνδεθείτε](../auth.md);
 
-1. [Registration via Email](./email.md)
-2. [Registration without Email](./noMail.md)
-3. [Import Keplr account](./importKeplr.md)
-4. [Registration with Ledger](./ledger.md)
+1. [Εγγραφή μέσω email](./email.md)
+2. [Εγγραφή χωρίς email](./noMail.md)
+3. [Εισαγωγή λογαριασμού Keplr](./importKeplr.md)
+4. [Εγγραφή στο Ledger](./ledger.md)
 
-After reading the introduction material, head over to the [basics](../basics/README.md) to learn more.
+Αφού διαβάσετε το εισαγωγικό υλικό, μεταβείτε στα [βασικά] (../basics/README.md) για να μάθετε περισσότερα.
 
-## Next {hide}
+## Επόμενο {απόκρυψη}
