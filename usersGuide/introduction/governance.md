@@ -1,58 +1,57 @@
 <!--
-order: 7
+παραγγελία: 7
 -->
 
-# Governance
+# Διακυβέρνηση
 
-## Decentralized Autonomous Organization (DAO)
+## Αποκεντρωμένος Αυτόνομος Οργανισμός (DAO)
 
-C4E is designed to become a digital collaborative space that is owned, controlled, operated, maintained and updated by a community of its users and builders.
+Το C4E έχει σχεδιαστεί για να γίνει ένας ψηφιακός συνεργατικός χώρος που ανήκει, ελέγχεται, λειτουργεί, συντηρείται και ενημερώνεται από μια κοινότητα χρηστών και κατασκευαστών του.
 
-Like many other ecosystems at the very beginning, our project may be susceptible to the actions of people or institutions who, consciously or unconsciously, may harm the ecosystem. Therefore, in the first stage of the network's operation, we will be able to use the potential of the Strategic Reserve pool to support governance decisions for the project.
+Όπως πολλά άλλα οικοσυστήματα στην αρχή, το έργο μας μπορεί να είναι ευαίσθητο στις ενέργειες ανθρώπων ή ιδρυμάτων που, συνειδητά ή ασυνείδητα, μπορεί να βλάψουν το οικοσύστημα. Ως εκ τούτου, στο πρώτο στάδιο της λειτουργίας του δικτύου, θα είμαστε σε θέση να χρησιμοποιήσουμε τις δυνατότητες του Στρατηγικού Αποθεματικού για να υποστηρίξουμε αποφάσεις διακυβέρνησης για το έργο.
 
-The Strategic Reserve will affect voting power only at the beginning of the project and gradually decrease by selling tokens to future panthers during expansion to new markets.
+Το Strategic Reserve θα επηρεάσει την ισχύ ψήφου μόνο στην αρχή του έργου και θα μειωθεί σταδιακά πουλώντας μάρκες σε μελλοντικούς πάνθηρες κατά την επέκταση σε νέες αγορές.
 
-DAO 1.0 - on-chain governance</p>
+DAO 1.0 - Διακυβέρνηση στην αλυσίδα</p>
 
 
-After the project starts we will utilize the native gov module of [Cosmos SDK](https://docs.cosmos.network/v0.42/modules/gov/). The gov module enables Chain4Energy blockchain to support an on-chain governance system and utilize all supporting tools like wallets, explorers. Holders of the native staking token of the chain can vote on proposals on a 1 staked token 1 vote basis.
+Μετά την έναρξη του έργου, θα χρησιμοποιήσουμε τη μονάδα εγγενούς gov του [Cosmos SDK](https://docs.cosmos.network/v0.42/modules/gov/). Η ενότητα gov δίνει τη δυνατότητα στο blockchain Chain4Energy να υποστηρίζει ένα σύστημα διακυβέρνησης εντός της αλυσίδας και να χρησιμοποιεί όλα τα υποστηρικτικά εργαλεία, όπως πορτοφόλια, εξερευνητές. Οι κάτοχοι του εγγενούς διακριτικού πονταρίσματος της αλυσίδας μπορούν να ψηφίσουν επί των προτάσεων βάσει 1 πονταρίσματος 1 ψήφου.
 
 DAO 2.0 - Governance Booster and Green Houses</p>
 
 
-The governance model that is provided with the SDK does not provide incentive and reward mechanisms for active DAO participants. We would like the community, users and stakeholders to actively influence the development of our project. This is our ultimate goal and the primary focus.
+Το μοντέλο διακυβέρνησης που παρέχεται με το SDK δεν παρέχει μηχανισμούς κινήτρων και ανταμοιβής για ενεργούς συμμετέχοντες στο DAO. Θα θέλαμε η κοινότητα, οι χρήστες και τα ενδιαφερόμενα μέρη να επηρεάσουν ενεργά την ανάπτυξη του έργου μας. Αυτός είναι ο απώτερος στόχος μας και η πρωταρχική εστίαση.
 
-Therefore, we would like to design a mechanism that will be more adapted to the specifics of the Chain4Energy project and the energy market.
-
-
-## Governance Booster
-
-The blockchain will inventivice additionally advent participants of governance and long term stakers through a lock mechanism similar to veCurve Model. The longer and more active participant the higher incentive received. The reward will come from the distribution mechanism. Up to 33% of the usage incentive for transaction fees and inflation will be allocated to the governance booster. For details see [Fee distribution mechanism](https://docs.google.com/document/d/1sUKBTKP1rcmrrD1c8uc6xOdzcXmF0iDd61klYCZHPTM/edit#heading=h.9m7k1rwmauih).
-
-We are inspired by the work of [Curve finance](https://resources.curve.fi/faq/vote-locking-boost) and [MahaDAO](https://docs.mahadao.com/governance/mahax-staking) who introduced a locking mechanism for governance allowance and boosting rewards for stakers. Apparently we realized that the same mechanism was adopted by other protocols like: [Cream finance](https://docs.cream.finance/icecream/icecream-tokenomics).
-
-How the mechanism can be adopted to Chain4energy case:
-
-We are Introducing veC4E, converting staked C4E token into a locked asset with governance properties. veC4E stands for voting escrow C4E. They are your C4E locked for voting. The longer you lock your C4E for, the more voting power you have (and the bigger boost you can reach). You can lock 1,000 C4E for a year to have a 250 veC4E weight. Each C4E locked for four years is equal to 1 veC4E.
-
-Why Introduce veC4E?
+Ως εκ τούτου, θα θέλαμε να σχεδιάσουμε έναν μηχανισμό που θα είναι πιο προσαρμοσμένος στις ιδιαιτερότητες του έργου Chain4Energy και της αγοράς ενέργειας.
 
 
+## Ενίσχυση Διακυβέρνησης
 
-* Allocate and boost voting power to long-term holders of C4E through veC4E.
-* Allow veC4E holders to boost staking rewards.
-* Improve security of the network by guaranteeing long-term staking and lockup of C4E tokens.
-* All ecosystem benefits which we can design in the future
+Το blockchain θα εφεύρει επιπλέον συμμετέχοντες διακυβέρνησης και μακροπρόθεσμους παίκτες μέσω ενός μηχανισμού κλειδώματος παρόμοιου με το μοντέλο veCurve. Όσο μεγαλύτερος και πιο ενεργός συμμετέχων τόσο υψηλότερο κίνητρο λαμβάνει. Η ανταμοιβή θα προέλθει από τον μηχανισμό διανομής. Έως και 33% του κινήτρου χρήσης για προμήθειες συναλλαγών και πληθωρισμό θα διατεθεί στον ενισχυτή διακυβέρνησης. Για λεπτομέρειες, ανατρέξτε στο [Μηχανισμός διανομής προμηθειών](https://docs.google.com/document/d/1sUKBTKP1rcmrrD1c8uc6xOdzcXmF0iDd61klYCZHPTM/edit#heading=h.9m7k1rwmauih).
 
-Users may lock up their C4E for up to 4 years for 1-1 ratio of veC4E (e.g. 1000 C4E locked for 4 years returns 1000 veC4E). veC4E is not a transferable token nor does it trade on liquid markets. It is more akin to an account based point system that signifies the vesting duration of the wallet's locked C4E tokens within the protocol.
+Είμαστε εμπνευσμένοι από το έργο του [Curve finance](https://resources.curve.fi/faq/vote-locking-boost) και του [MahaDAO](https://docs.mahadao.com/governance/mahax-staking ) που εισήγαγε έναν μηχανισμό κλειδώματος για το επίδομα διακυβέρνησης και την ενίσχυση των ανταμοιβών για τους συμμετέχοντες. Προφανώς συνειδητοποιήσαμε ότι ο ίδιος μηχανισμός υιοθετήθηκε από άλλα πρωτόκολλα όπως: [Cream finance](https://docs.cream.finance/icecream/icecream-tokenomics).
+
+Πώς μπορεί να υιοθετηθεί ο μηχανισμός στην υπόθεση Chain4energy:
+
+Παρουσιάζουμε το veC4E, μετατρέποντας το πονταρισμένο διακριτικό C4E σε ένα κλειδωμένο περιουσιακό στοιχείο με ιδιότητες διακυβέρνησης. Το veC4E σημαίνει voting escrow C4E. Είναι το C4E σας κλειδωμένο για ψηφοφορία. Όσο περισσότερο κλειδώνετε το C4E σας, τόσο περισσότερη δύναμη ψήφου έχετε (και τόσο μεγαλύτερη ώθηση μπορείτε να φτάσετε). Μπορείτε να κλειδώσετε 1.000 C4E για ένα χρόνο για να έχετε βάρος 250 veC4E. Κάθε C4E κλειδωμένο για τέσσερα χρόνια ισούται με 1 veC4E.
+
+Γιατί να εισαγάγετε το veC4E;
 
 
 
-##Green Houses community DAO
+* Κατανείμετε και ενισχύστε τη δύναμη ψήφου στους μακροπρόθεσμους κατόχους C4E μέσω του veC4E.
+* Επιτρέψτε στους κατόχους veC4E να ενισχύσουν τις ανταμοιβές πονταρίσματος.
+* Βελτιώστε την ασφάλεια του δικτύου διασφαλίζοντας μακροπρόθεσμο ποντάρισμα και κλείδωμα των κουπονιών C4E.
+* Όλα τα οφέλη του οικοσυστήματος που μπορούμε να σχεδιάσουμε στο μέλλον
 
-Green Houses is an innovative concept that allows local communities to connect in microDAOs. These are communities grouped under: collective prosumer, micro grids, VPP, sustainable  community energy systems - SCES etc. Green Houses will allow you to manage and make joint decisions, manage treasury, set the distribution of profits for revenues, etc.
+Οι χρήστες μπορούν να κλειδώσουν το C4E τους για έως και 4 χρόνια για αναλογία 1-1 veC4E (π.χ. 1000 C4E κλειδωμένο για 4 χρόνια επιστρέφει 1000 veC4E). Το veC4E δεν είναι μεταβιβάσιμο διακριτικό ούτε διαπραγματεύεται σε αγορές υγρών. Είναι περισσότερο παρόμοιο με ένα σύστημα σημείων που βασίζεται σε λογαριασμό που υποδηλώνει τη διάρκεια κατοχύρωσης των κλειδωμένων κουπονιών C4E του πορτοφολιού εντός του πρωτοκόλλου.
 
-Each Green House will be able to individually determine what will depend on the strength of the vote. Will it be the production capacity, the size of the energy storage, the number of C4E tokens blocked in the Governance module, or some combination of these factors.
 
-## Next {hide}
 
+##Κοινότητα Green Houses DAO
+
+Τα Green Houses είναι μια καινοτόμος ιδέα που επιτρέπει στις τοπικές κοινότητες να συνδέονται σε microDAO. Αυτές είναι κοινότητες που ομαδοποιούνται στις εξής κατηγορίες: συλλογικοί προμηθευτές, μικροδίκτυα, VPP, βιώσιμα κοινοτικά ενεργειακά συστήματα - SCES κ.λπ. Τα Green Houses θα σας επιτρέψουν να διαχειρίζεστε και να λαμβάνετε κοινές αποφάσεις, να διαχειρίζεστε το ταμείο, να ορίζετε τη διανομή των κερδών για τα έσοδα κ.λπ.
+
+Κάθε Πράσινο Σώμα θα μπορεί να προσδιορίζει μεμονωμένα τι θα εξαρτηθεί από τη δύναμη της ψήφου. Θα είναι η παραγωγική ικανότητα, το μέγεθος της αποθήκευσης ενέργειας, ο αριθμός των μπλοκ C4E στη μονάδα Διακυβέρνησης ή κάποιος συνδυασμός αυτών των παραγόντων.
+
+## Επόμενο {απόκρυψη}
