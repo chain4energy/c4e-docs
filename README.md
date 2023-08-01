@@ -18,22 +18,22 @@ footer:
 aside: false
 -->
 
-# Chain4Energy Documentation
+# Chain4Energy βιβλιογραφία
 
-A modular blockchain built for decentralized energy.
+Ένα αρθρωτό blockchain κατασκευασμένο για αποκεντρωμένη ενέργεια.
 
-## Get Started
+## Ας ξεκινήσουμε
 
-## Reference
+## Αναφορά
 
 - **[Building Modules](./building-modules/)**: Important concepts for module developers like `message`s, `keeper`s, `handler`s and `querier`s.
-- **[Interfaces](./interfaces/)**: Documentation on building interfaces for Ethermint applications.
+- **[Interfaces](./interfaces/)**: Τεκμηρίωση για διεπαφές κτιρίου για εφαρμογές Ethermint.
 
-## Other Resources
+## Άλλοι πόροι
 
-- **[Module Directory](../x/)**: Module implementations and their respective documentation.
-- **[REST API spec](https://cosmos.network/rpc/)**: List of REST endpoints to interact with an full-node through REST.
+- **[Κατάλογος Ενοτήτων](../x/)**: Υλοποιήσεις ενοτήτων και η αντίστοιχη τεκμηρίωσή τους.
+- **[Προδιαγραφές API REST](https://cosmos.network/rpc/)**: Λίστα τελικών σημείων REST για αλληλεπίδραση με έναν πλήρη κόμβο μέσω του REST.
 
 
-## Licence 
-See [Licence](./LICENCE)
+## Άδεια 
+Δείτε [Licence](./LICENCE)
