@@ -1,54 +1,54 @@
 <!--
-  order: 4
+   παραγγελία: 4
 -->
 
-# Undelegate
+# Αναθέστε
 
-Undelegating tokens from validator can be done with validators that was delegated by user;
-
-
-#### Undelegation restrictions
-
-Undelegation amount can’t be more than previously delegated tokens
-
-Complete undelegation is passing 21 day, so after undelegation started  user:
+Η κατάργηση ανάθεσης διακριτικών από τον επικυρωτή μπορεί να γίνει με επικυρωτές που έχουν εκχωρηθεί από τον χρήστη.
 
 
+#### Περιορισμοί κατάργησης αναθέσεων
 
-1. Will stop receiving staking rewards
-2. Will not be able to cancel the unbonding
-3. Will need to wait 21 day for the amount to be liquid
+Το ποσό κατάργησης ανάθεσης δεν μπορεί να είναι μεγαλύτερο από τα διακριτικά που είχαν ανατεθεί προηγουμένως
 
-To undelegate coins from validators you have to be:
+Η πλήρης κατάργηση αναθέσεων έχει περάσει 21 ημέρες, οπότε μετά την κατάργηση των αναθέσεων ο χρήστης ξεκίνησε:
 
 
 
-1.  LoggedIn with Keplr
-2. Validator have to have delegated amount (user delegated tokens on this validator in the past)
+1. Θα σταματήσει να λαμβάνει ανταμοιβές πονταρίσματος
+2. Δεν θα είναι δυνατή η ακύρωση της αποδέσμευσης
+3. Θα χρειαστεί να περιμένετε 21 ημέρες για να είναι υγρή η ποσότητα
 
-To start undelegation process user have to:
+Για να αναιρέσετε τα νομίσματα από τους επικυρωτές πρέπει να είστε:
 
 
 
-1. Go to “Stacking” page and select the validator from which you will undelegate tokens;
+1. Συνδεθείτε με το Keplr
+2. Ο επικυρωτής πρέπει να έχει εκχωρήσει ποσό (χρήστης ανάθεσης διακριτικών σε αυτό το εργαλείο επικύρωσης στο παρελθόν)
+
+Για να ξεκινήσει η διαδικασία κατάργησης ανάθεσης ο χρήστης πρέπει:
+
+
+
+1. Μεταβείτε στη σελίδα "Στοίβαξη" και επιλέξτε τον επικυρωτή από τον οποίο θα αναιρέσετε τα διακριτικά.
 
 
 ![alt_text](./images/delegate/1.png "image_tooltip")
 
-2. Click “Manage” on button;
-3. In the action selection choose “Undelegate”
+2. Κάντε κλικ στο κουμπί "Διαχείριση" στο κουμπί.
+3. Στην επιλογή δράσης, επιλέξτε "Αναίρεση ανάθεσης"
 ![alt_text](./images/undelegate/2.png "image_tooltip")
-4. Input amount that is less than “Delegated”
-5. In opened Keplr window press Approve
+4. Ποσό εισόδου που είναι μικρότερο από "Ανατεθέντα"
+5. Στο παράθυρο του Keplr που ανοίγει, πατήστε Έγκριση
 
 ![alt_text](./images/undelegate/3.png "image_tooltip")
 
 
-    **!Note if you are using Ledger way of login you have to approve the action by Ledger**
+     **!Σημείωση εάν χρησιμοποιείτε τον τρόπο σύνδεσης στο Ledger, πρέπει να εγκρίνετε την ενέργεια από το Ledger**
 
 ![alt_text](./images/delegate/6.png "image_tooltip")
 
-6. Undelegation started;
+6. Ξεκίνησε η αποδιοργάνωση.
 
 
-## Next {hide}
+## Επόμενο {απόκρυψη}
