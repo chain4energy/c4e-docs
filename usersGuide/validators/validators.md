@@ -1,17 +1,17 @@
 <!--
-order: true
-parent:
-  order: 1
+σειρά: αλήθεια
+μητρική εταιρεία:
+   παραγγελία: 1
 -->
 
-# Validators
+# Επικυρωτές
 
-In wallet there is 3 actions for working with validators:
+Στο πορτοφόλι υπάρχουν 3 ενέργειες για εργασία με επικυρωτές:
 
 
 
-1. [Delegate](./delegate.md)
-2. [Undelegate](./undelegate.md)
+1. [Εκπρόσωπος](./delegate.md)
+2. [Αναίρεση εκπροσώπησης](./undelegate.md)
 3. [Redelegate](./redelegate.md)
 
-## Next {hide}
+## Επόμενο {απόκρυψη}
