@@ -1,72 +1,72 @@
 <!--
-  order: 3
+   παραγγελία: 3
 -->
 
-# Layer 1 - Security and decentralization
+# Επίπεδο 1 - Ασφάλεια και αποκέντρωση
 
-The Blockchain network is a solid foundation on which the Chain4Energy ecosystem is based. It is already widely used and has influenced many business sectors around the world; finance, healthcare, insurance and shopping. The energy sector is inevitably another sector since the market is undergoing a thorough transformation from centralized to decentralized solutions. Blockchain is an ideal technology that allows you to effectively manage, balance, trade and track various aspects of energy.
+Το δίκτυο Blockchain είναι μια σταθερή βάση πάνω στην οποία βασίζεται το οικοσύστημα Chain4Energy. Χρησιμοποιείται ήδη ευρέως και έχει επηρεάσει πολλούς επιχειρηματικούς τομείς σε όλο τον κόσμο. οικονομικά, υγειονομική περίθαλψη, ασφάλιση και αγορές. Ο ενεργειακός τομέας είναι αναπόφευκτα ένας άλλος τομέας, καθώς η αγορά υφίσταται μια ενδελεχή μετατροπή από κεντρικές σε αποκεντρωμένες λύσεις. Το Blockchain είναι μια ιδανική τεχνολογία που σας επιτρέπει να διαχειρίζεστε αποτελεσματικά, να εξισορροπείτε, να εμπορεύεστε και να παρακολουθείτε διάφορες πτυχές της ενέργειας.
 
 ![alt_text](./images/intro3.png "image_tooltip")
 
 
 
-CØSMOS ecosystem</p>
+Οικοσύστημα CØSMOS</p>
 
 
-After solid analysis, we decided to build a sovereign app specific blockchain. This gives us the greatest flexibility and a guarantee that we will be able to provide a solution tailored to the requirements and expectations of such a critical sector as the power industry. However, this cannot be an island, detached from a world where everything has to be built from scratch. It has to be a blockchain that is easily able to integrate with other projects / networks so that you can easily use the values provided by partners.
+Μετά από σταθερή ανάλυση, αποφασίσαμε να δημιουργήσουμε ένα κυρίαρχο blockchain για συγκεκριμένες εφαρμογές. Αυτό μας δίνει τη μεγαλύτερη ευελιξία και μια εγγύηση ότι θα είμαστε σε θέση να προσφέρουμε μια λύση προσαρμοσμένη στις απαιτήσεις και τις προσδοκίες ενός τόσο κρίσιμου τομέα όπως η βιομηχανία ηλεκτρικής ενέργειας. Ωστόσο, αυτό δεν μπορεί να είναι ένα νησί, αποκομμένο από έναν κόσμο όπου τα πάντα πρέπει να χτιστούν από την αρχή. Πρέπει να είναι ένα blockchain που να μπορεί εύκολα να ενσωματωθεί με άλλα έργα / δίκτυα, ώστε να μπορείτε να χρησιμοποιείτε εύκολα τις αξίες που παρέχονται από τους συνεργάτες.
 
-Chain4Energy is an app specific blockchain for green energy use cases. We decided to build our project based on the Cosmos SDK as a one of Cosmos HUB chain supporting IBC (Inter Blockchain Communication) being one of the planets among ATOM, OSMO, JUNO, EVMOS etc.
+Το Chain4Energy είναι μια συγκεκριμένη εφαρμογή blockchain για περιπτώσεις χρήσης πράσινης ενέργειας. Αποφασίσαμε να δημιουργήσουμε το έργο μας με βάση το Cosmos SDK ως μια από τις αλυσίδες Cosmos HUB που υποστηρίζει την IBC (Inter Blockchain Communication) που είναι ένας από τους πλανήτες μεταξύ των ATOM, OSMO, JUNO, EVMOS κ.λπ.
 
-The Cosmos-SDK is an open-source framework for building multi-asset public Proof-of-Stake (PoS) blockchains like the Cosmos Hub, as well as permissioned Proof-Of-Authority (PoA) blockchains. The COSMOS ecosystem is an open space that enables the development of a vast number of other projects which could cooperate together by Inter Blockchain Communication (IBC), generating further values and creating additional opportunities.
+Το Cosmos-SDK είναι ένα πλαίσιο ανοιχτού κώδικα για τη δημιουργία μπλοκ αλυσίδων μπλοκ Proof-of-Stake (PoS) πολλών περιουσιακών στοιχείων, όπως το Cosmos Hub, καθώς και επιτρεπόμενες αλυσίδες μπλοκ Proof-Of-Authority (PoA). Το οικοσύστημα COSMOS είναι ένας ανοιχτός χώρος που επιτρέπει την ανάπτυξη ενός τεράστιου αριθμού άλλων έργων που θα μπορούσαν να συνεργαστούν από κοινού από την Inter Blockchain Communication (IBC), δημιουργώντας περαιτέρω αξίες και δημιουργώντας πρόσθετες ευκαιρίες.
 
-[comment]: <> (![alt_text]&#40;./images/map.png "image_tooltip"&#41;)
-
-
-Security and decentralization</p>
+[σχόλιο]: <> (![alt_text]&#40;./images/map.png "image_tooltip"&#41;)
 
 
-Proof-of-Stake (PoS) consensus algorithms increase blockchain network performance by eliminating the energy-intensive computational mining process inherent in Proof-of-Work protocols. PoS algorithms encourage users to validate networka data and ensure security through the staking process. [Delegated Proof of Stake (DPoS)](https://101blockchains.com/delegated-proof-of-stake-dpos/) works similarly, but includes a voting and delegation mechanism that makes the process more democratic.
+Ασφάλεια και αποκέντρωση</p>
 
-Our blockchain uses DPoS, thus giving everyone a chance to secure and influence the development of the ecosystem through DAO (Decentralized Autonomous Organization).
+
+Οι αλγόριθμοι συναίνεσης Proof-of-Stake (PoS) αυξάνουν την απόδοση του δικτύου blockchain εξαλείφοντας την ενεργοβόρα διαδικασία υπολογιστικής εξόρυξης που είναι εγγενής στα πρωτόκολλα Proof-of-Work. Οι αλγόριθμοι PoS ενθαρρύνουν τους χρήστες να επικυρώνουν δεδομένα δικτύου και να διασφαλίζουν την ασφάλεια μέσω της διαδικασίας πονταρίσματος. Το [Delegated Proof of Stake (DPoS)](https://101blockchains.com/delegated-proof-of-stake-dpos/) λειτουργεί παρόμοια, αλλά περιλαμβάνει μηχανισμό ψηφοφορίας και ανάθεσης που κάνει τη διαδικασία πιο δημοκρατική.
+
+Το blockchain μας χρησιμοποιεί DPoS, δίνοντας έτσι σε όλους την ευκαιρία να εξασφαλίσουν και να επηρεάσουν την ανάπτυξη του οικοσυστήματος μέσω του DAO (Αποκεντρωμένος Αυτόνομος Οργανισμός).
 
 ![alt_text](./images/intro4.png "image_tooltip")
 
 
-Chain4Energy cooperates with two types of validators:
+Το Chain4Energy συνεργάζεται με δύο τύπους επικυρωτών:
 
 
 
-1. Professional web3 validators who have experience and have a thorough understanding of the market economy and the value of the staking business;
-2. B2B (e.g. Energy Trading Companies) that are users of the product. As a validator, they can lower the cost of the product and at the same time have an impact on the roadmap based on the voting power they have in the DAO
+1. Επαγγελματίες επικυρωτές web3 που έχουν εμπειρία και έχουν πλήρη κατανόηση της οικονομίας της αγοράς και της αξίας της επιχείρησης που στοιχηματίζει.
+2. B2B (π.χ. Εταιρείες Εμπορίας Ενέργειας) που είναι χρήστες του προϊόντος. Ως επικυρωτές, μπορούν να μειώσουν το κόστος του προϊόντος και ταυτόχρονα να έχουν αντίκτυπο στον οδικό χάρτη με βάση τη δύναμη ψήφου που έχουν στο DAO
 
-Applications</p>
+Εφαρμογές</p>
 
 
-This layer consists of Applications supporting blockchain like wallet, explorer and decentralized application dApps. Decentralized applications run directly in the blockchain, implemented as modules included in the validator node or Smart Contracts using [CosmWasm](https://cosmwasm.com/). Applications can be implemented by anyone (we are inviting builders to take advantage of our ecosystem). However, in order for them to work, they must be approved by the DAO on the basis of a vote.
+Αυτό το επίπεδο αποτελείται από Εφαρμογές που υποστηρίζουν blockchain όπως πορτοφόλι, εξερευνητής και αποκεντρωμένες εφαρμογές dApps. Οι αποκεντρωμένες εφαρμογές εκτελούνται απευθείας στην αλυσίδα μπλοκ, που υλοποιούνται ως λειτουργικές μονάδες που περιλαμβάνονται στον κόμβο επικύρωσης ή ως Έξυπνα συμβόλαια χρησιμοποιώντας το [CosmWasm](https://cosmwasm.com/). Οι εφαρμογές μπορούν να εφαρμοστούν από οποιονδήποτε (προσκαλούμε τους κατασκευαστές να επωφεληθούν από το οικοσύστημά μας). Για να λειτουργήσουν όμως θα πρέπει να εγκριθούν από την ΔΑΟ με ψηφοφορία.
 
-Thanks to this approach to building a solution, we can develop a community-based ecosystem while maintaining the highest quality required by the energy sector. The community (token owners) will have a huge influence in driving the development of the project.
+Χάρη σε αυτήν την προσέγγιση για την οικοδόμηση μιας λύσης, μπορούμε να αναπτύξουμε ένα οικοσύστημα που βασίζεται στην κοινότητα, διατηρώντας παράλληλα την υψηλότερη ποιότητα που απαιτείται από τον ενεργειακό τομέα. Η κοινότητα (ιδιοκτήτες διακριτικών) θα έχει τεράστια επιρροή στην ανάπτυξη του έργου.
 
-As part of our project, we need to build a number of applications and dApps that are necessary for the operation of the second and third layer of our stack.
+Ως μέρος του έργου μας, πρέπει να δημιουργήσουμε έναν αριθμό εφαρμογών και dApps που είναι απαραίτητα για τη λειτουργία του δεύτερου και του τρίτου στρώματος της στοίβας μας.
 
 ![alt_text](./images/intro5.png "image_tooltip")
 
 
 
 
-* Fingerprint - the fingerprint of document (contract, agreement, offer etc.) exchanged between users of the system. The fingerprint is a proof.
-* Energy Token - dApp enabling minting, distributing, burning tokens which represents physical energy or voucher. This module enables tokenization of energy.
-* Energy DEX - Decentralized Exchange which enables trading of energy tokens, crypto and stablecoins for the energy market participants.
-* Wallet - a wallet tailored to non crypto users which fills the gaps between crypto and energy market.
-* Explorer - Explorer allowing to track all transactions and verify the state of the blockchain.
-* REC - Renewable Energy Certificates with proof of green energy production. Minting based on Proof of Green Energy, distribution and burning mechanism secured by blockchain immutability.
-* Staking - staking module for delegators.
-* Farming - incentive for liquidity providers in DEX Liquidity Pools.
-* DAO - Governance module
-* Decentralized storage - For the project to be truly decentralized, the solution also needs to provide a method of secure data storage, incl. contracts, offers in a decentralized manner, but compliant with the GDPR.
-* eIDAS - Digital signature
-* DID - Decentralized identities which are WEB3 standard compliant
-* Smart Metering - implementation that allows you to connect smart meters to the blockchain ensuring non-repudiation and data security. These can be dedicated devices or inverters of PV devices.
-* And many many more …
+* Δακτυλικό αποτύπωμα - το δακτυλικό αποτύπωμα του εγγράφου (σύμβαση, συμφωνία, προσφορά κ.λπ.) που ανταλλάσσονται μεταξύ των χρηστών του συστήματος. Το δακτυλικό αποτύπωμα είναι απόδειξη.
+* Energy Token - dApp που επιτρέπει την κοπή, διανομή, καύση κουπονιών που αντιπροσωπεύουν φυσική ενέργεια ή κουπόνι. Αυτή η ενότητα επιτρέπει τη συμβολή της ενέργειας.
+* Energy DEX - Αποκεντρωμένο Χρηματιστήριο που επιτρέπει τη διαπραγμάτευση ενεργειακών μαρκών, κρυπτονομισμάτων και stablecoin για τους συμμετέχοντες στην αγορά ενέργειας.
+* Πορτοφόλι - ένα πορτοφόλι προσαρμοσμένο σε χρήστες μη κρυπτογράφησης που καλύπτει τα κενά μεταξύ της αγοράς κρυπτογράφησης και ενέργειας.
+* Explorer - Explorer που επιτρέπει την παρακολούθηση όλων των συναλλαγών και την επαλήθευση της κατάστασης του blockchain.
+* REC - Πιστοποιητικά Ανανεώσιμων Πηγών Ενέργειας με απόδειξη παραγωγής πράσινης ενέργειας. Η κοπή βασίζεται στην Απόδειξη Πράσινης Ενέργειας, στον μηχανισμό διανομής και καύσης που εξασφαλίζεται από την αμετάβλητη αλυσίδα μπλοκ.
+* Μονάδα πονταρίσματος - πονταρίσματος για αντιπροσώπους.
+* Γεωργία - κίνητρο για παρόχους ρευστότητας στο DEX Liquidity Pools.
+* DAO - Ενότητα διακυβέρνησης
+* Αποκεντρωμένη αποθήκευση - Για να είναι το έργο πραγματικά αποκεντρωμένο, η λύση πρέπει επίσης να παρέχει μια μέθοδο ασφαλούς αποθήκευσης δεδομένων, συμπεριλαμβανομένης. συμβάσεις, προσφορές με αποκεντρωμένο τρόπο, αλλά σύμφωνα με τον GDPR.
+* eIDAS - Ψηφιακή υπογραφή
+* DID - Αποκεντρωμένες ταυτότητες που είναι συμβατές με το πρότυπο WEB3
+* Έξυπνη μέτρηση - εφαρμογή που σας επιτρέπει να συνδέετε έξυπνους μετρητές στο blockchain διασφαλίζοντας τη μη απόρριψη και την ασφάλεια των δεδομένων. Αυτές μπορεί να είναι αποκλειστικές συσκευές ή μετατροπείς φωτοβολταϊκών συσκευών.
+* Και πολλά πολλά άλλα…
 
 
-## Next {hide}
+## Επόμενο {απόκρυψη}
