@@ -1,38 +1,38 @@
 <!--
-    order: 7
+     παραγγελία: 7
 -->
-# Installing Keplr extention
+# Εγκατάσταση επέκτασης Keplr
 
-To be able to use the system you have to register an account;
+Για να μπορέσετε να χρησιμοποιήσετε το σύστημα πρέπει να καταχωρήσετε έναν λογαριασμό.
 
-Installing Keplr wallet extension to your Browser:
+Εγκατάσταση επέκτασης πορτοφολιού Keplr στο πρόγραμμα περιήγησής σας:
 
 
 
-* Go to [Official Kepl extension page](https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap?hl=en)
-* Press Add to chrome
+* Μεταβείτε στην [Επίσημη σελίδα επέκτασης Kepl](https://chrome.google.com/webstore/detail/keplr/dmkamcknogkgcdfhhbddcghachkejeap?hl=el)
+* Πατήστε Προσθήκη στο chrome
 
 ![alt_text](../images/inst_keplr/1.png "image_tooltip")
 
-* Confirm installing extension
+* Επιβεβαιώστε την εγκατάσταση της επέκτασης
 
 ![alt_text](../images/inst_keplr/2.png "image_tooltip")
 
 
-Login or SignIn to your Keplr wallet:
+Είσοδος ή Είσοδος στο πορτοφόλι Keplr:
 
 
 
-* Open extensions list by pressing button on top-right corner
+* Ανοίξτε τη λίστα επεκτάσεων πατώντας το κουμπί στην επάνω δεξιά γωνία
 
 ![alt_text](../images/inst_keplr/3.png "image_tooltip")
 
-* If you already have a Keplr account and have mnemonic to it simply login to Keplr wallet by pressing login button:
+* Εάν έχετε ήδη λογαριασμό Keplr και έχετε μνημονικό σε αυτόν, απλώς συνδεθείτε στο πορτοφόλι Keplr πατώντας το κουμπί σύνδεσης:
 
 ![alt_text](../images/inst_keplr/4.png "image_tooltip")
 
-* If you don’t have an account, there is two options of registration:
-1. [Via Email](email.md);
-2. Account creation;
+* Εάν δεν έχετε λογαριασμό, υπάρχουν δύο επιλογές εγγραφής:
+1. [Μέσω email](email.md);
+2. Δημιουργία λογαριασμού.
 
-## Next {hide}
+## Επόμενο {απόκρυψη}
