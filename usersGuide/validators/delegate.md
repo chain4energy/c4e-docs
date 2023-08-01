@@ -1,43 +1,43 @@
 <!--
-  order: 2
+   παραγγελία: 2
 -->
 
-# Delegate
+# Αντιπρόσωπος
 
-Delegating tokens to validator allows you to vote in the system (See Voting for more info) also it allows you to get rewards from validator;
+Η ανάθεση διακριτικών στον επικυρωτή σάς επιτρέπει να ψηφίζετε στο σύστημα (Δείτε Ψηφοφορία για περισσότερες πληροφορίες) επίσης σας επιτρέπει να λαμβάνετε ανταμοιβές από τον επικυρωτή.
 
-To delegate coins to validators you have to be Loged in with Keplr and should do the following steps:
+Για να εκχωρήσετε νομίσματα σε επικυρωτές πρέπει να είστε συνδεδεμένοι με το Keplr και να κάνετε τα ακόλουθα βήματα:
 
 
 
-1. Go to “Stacking” page and select the validator to stake
+1. Μεταβείτε στη σελίδα "Ποντάρισμα" και επιλέξτε το εργαλείο επικύρωσης για ποντάρισμα
 
 ![alt_text](./images/delegate/1.png "image_tooltip")
 
-2. Click “Manage” on button;
-3. In the action selection choose delegate:
+2. Κάντε κλικ στο κουμπί "Διαχείριση" στο κουμπί.
+3. Στην επιλογή δράσης επιλέξτε αντιπρόσωπος:
 
 ![alt_text](./images/delegate/2.png "image_tooltip")
 
-4. In amount ut the amount of C4E tokens that should be delegated
+4. Σε ποσό ut το ποσό των διακριτικών C4E που πρέπει να εκχωρηθούν
 
 ![alt_text](./images/delegate/3.png "image_tooltip")
 
-5. Press “Delegate”
+5. Πατήστε «Εκπρόσωπος»
 
 ![alt_text](./images/delegate/4.png "image_tooltip")
 
-6. In opened Keplr window press Approve
+6. Στο παράθυρο του Keplr που ανοίγει, πατήστε Έγκριση
 
 ![alt_text](./images/delegate/5.png "image_tooltip")
 
 
-    !Note if you are using Ledger way of login you have to approve the action by Ledger
+     !Σημείωση εάν χρησιμοποιείτε τον τρόπο σύνδεσης στο Ledger, πρέπει να εγκρίνετε την ενέργεια από το Ledger
 
 
 ![alt_text](./images/delegate/6.png "image_tooltip")
 
 
-7. Delegation done;
+7. Η ανάθεση ολοκληρώθηκε.
 
-## Next {hide}
+## Επόμενο {απόκρυψη}
