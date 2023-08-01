@@ -1,31 +1,31 @@
 <!--
-  order: 4
+   παραγγελία: 4
 -->
-# LAYER 2 - Energy Acquisition & Billing Automation
+# LAYER 2 - Απόκτηση Ενέργειας & Αυτοματισμός Τιμολόγησης
 
 
-To ensure the handling of the above-mentioned use cases, it is necessary to properly manage all types of green market participants, their acquisition, settlement and ongoing support for the produced and consumed energy. We have created a comprehensive and technologically unique solution containing the mechanisms of flexible CRM, billing automation with invoicing related to automation and data analysis, integrated with global energy exchanges, automatic data collection from energy distributors and smart meters.
+Για τη διασφάλιση του χειρισμού των προαναφερόμενων περιπτώσεων χρήσης, είναι απαραίτητη η σωστή διαχείριση όλων των τύπων συμμετεχόντων στην πράσινη αγορά, η απόκτηση, τακτοποίηση και η διαρκής υποστήριξη της παραγόμενης και καταναλισκόμενης ενέργειας. Δημιουργήσαμε μια ολοκληρωμένη και τεχνολογικά μοναδική λύση που περιέχει μηχανισμούς ευέλικτου CRM, αυτοματοποίηση τιμολόγησης με τιμολόγηση που σχετίζεται με αυτοματισμό και ανάλυση δεδομένων, ενσωματωμένη με παγκόσμιες ανταλλαγές ενέργειας, αυτόματη συλλογή δεδομένων από διανομείς ενέργειας και έξυπνους μετρητές.
 
-Thanks to the "Energy acquisition & billing automation" energy trading companies can generate leads, attract and provide comprehensive services to customers in terms of sales and purchase of energy, thus obtaining energy for its further trading. A specially designed web and mobile application for both the company and the user with 24/7 access will ensure maximum customer & energy management.
+Χάρη στην «Energy Acquisition & Billing automation» οι εταιρείες εμπορίας ενέργειας μπορούν να δημιουργήσουν δυνητικούς πελάτες, να προσελκύσουν και να παρέχουν ολοκληρωμένες υπηρεσίες σε πελάτες όσον αφορά τις πωλήσεις και την αγορά ενέργειας, λαμβάνοντας έτσι ενέργεια για την περαιτέρω εμπορία της. Μια ειδικά σχεδιασμένη εφαρμογή web και mobile τόσο για την εταιρεία όσο και για τον χρήστη με 24/7 πρόσβαση θα εξασφαλίσει τη μέγιστη διαχείριση πελατών και ενέργειας.
 
 
 ![alt_text](./images/billing1.jpg "image_tooltip")
 
 
-Main features supported by the application:
+Κύρια χαρακτηριστικά που υποστηρίζονται από την εφαρμογή:
 
 
 
-* Web and mobile application with a personal C4E wallet for managing energy tokens.
-* Lead generation and energy acquisition processes also with digital agreements (eIDAS) and support for the (TPA) processes of switching the energy supplier. Full support for customers (retail & B2B)
-* Real time monitoring of energy production and consumption
-* An extensive and flexible product catalog fully managed by energy trading companies
-* Settlement of energy purchase and sale with full automation of billing processes, collection of data from smart meters and data from local energy distributors.
-* A full range of analytical, forecasting and reporting possibilities
+* Εφαρμογή Web και φορητών συσκευών με προσωπικό πορτοφόλι C4E για διαχείριση ενεργειακών κουπονιών.
+* Διεργασίες παραγωγής μολύβδου και απόκτησης ενέργειας επίσης με ψηφιακές συμφωνίες (eIDAS) και υποστήριξη για τις διαδικασίες (TPA) αλλαγής προμηθευτή ενέργειας. Πλήρης υποστήριξη για πελάτες (λιανική & B2B)
+* Παρακολούθηση σε πραγματικό χρόνο παραγωγής και κατανάλωσης ενέργειας
+* Ένας εκτενής και ευέλικτος κατάλογος προϊόντων που διαχειρίζονται πλήρως εταιρείες εμπορίας ενέργειας
+* Διακανονισμός αγοραπωλησίας ενέργειας με πλήρη αυτοματοποίηση των διαδικασιών τιμολόγησης, συλλογή δεδομένων από έξυπνους μετρητές και δεδομένων από τοπικούς διανομείς ενέργειας.
+* Πλήρες φάσμα αναλυτικών, προβλέψεων και δυνατοτήτων αναφοράς
 
-This module is also responsible for rewarding active participants of the green energy market. Based on the amount of produced energy the producer receives a C4E Token as a reward as well as dedicated benefits from trading suppliers (e.g. a discount on the purchase of photovoltaic panels)
+Αυτή η ενότητα είναι επίσης υπεύθυνη για την επιβράβευση των ενεργών συμμετεχόντων στην αγορά πράσινης ενέργειας. Με βάση την ποσότητα της παραγόμενης ενέργειας, ο παραγωγός λαμβάνει ως ανταμοιβή ένα Token C4E, καθώς και ειδικά προνόμια από προμηθευτές συναλλαγών (π.χ. έκπτωση στην αγορά φωτοβολταϊκών πάνελ)
 
 ![alt_text](./images/billing2.png "image_tooltip")
 
 
-The customer & energy acquisition module as the heart of the solution where all automatic operations and processes take place, provides the necessary customer and energy data to the next smart grid components.
+Η μονάδα απόκτησης πελατών και ενέργειας ως η καρδιά της λύσης όπου πραγματοποιούνται όλες οι αυτόματες λειτουργίες και διαδικασίες, παρέχει τα απαραίτητα δεδομένα πελατών και ενέργειας στα επόμενα εξαρτήματα έξυπνου δικτύου.
