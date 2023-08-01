@@ -1,40 +1,40 @@
 # ADR {XXX}: {TITLE}
 
-## Changelog
+## Καταγραφή αλλαγών
 
-- {date}: {changelog}
+- {ημερομηνία}: {changelog}
 
-## Status
+## Κατάσταση
 
-> A decision may be "proposed" if the project stakeholders haven't agreed with it yet, or "accepted" once it is agreed. If a later ADR changes or reverses a decision, it may be marked as "deprecated" or "superseded" with a reference to its replacement.
-> {Deprecated|Proposed|Accepted} {Implemented|Not Implemented}
+> Μπορεί να «προταθεί» μια απόφαση εάν οι ενδιαφερόμενοι φορείς του έργου δεν έχουν συμφωνήσει ακόμη με αυτήν ή να «αποδεχτεί» αφού συμφωνηθεί. Εάν μια μεταγενέστερη ΕΕΔ αλλάξει ή ανακαλέσει μια απόφαση, μπορεί να επισημανθεί ως "καταργήθηκε" ή "αντικαταστάθηκε" με αναφορά στην αντικατάστασή της.
+> {Καταργήθηκε|Προτάθηκε|Αποδεκτό} {Εφαρμόστηκε|Δεν εφαρμόστηκε}
 
-## Context
+## Συμφραζόμενα
 
-> This section describes the forces at play, including technological, political, social, and project local. These forces are probably in tension, and should be called out as such. The language in this section is value-neutral. It is simply describing facts.
+> Αυτή η ενότητα περιγράφει τις δυνάμεις που παίζουν, συμπεριλαμβανομένων των τεχνολογικών, πολιτικών, κοινωνικών και τοπικών έργων. Αυτές οι δυνάμεις είναι πιθανώς σε ένταση, και θα πρέπει να χαρακτηριστούν ως τέτοιες. Η γλώσσα σε αυτήν την ενότητα είναι ουδέτερη ως προς την αξία. Απλώς περιγράφει γεγονότα.
 > {context body}
 
-## Decision
+## Απόφαση
 
-> This section describes our response to these forces. It is stated in full sentences, with active voice. "We will ..."
-> {decision body}
+> Αυτή η ενότητα περιγράφει την απάντησή μας σε αυτές τις δυνάμεις. Δηλώνεται με πλήρεις προτάσεις, με ενεργητική φωνή. "Εμείς θα ..."
+> {σώμα απόφασης}
 
-## Consequences
+## Συνέπειες
 
-> This section describes the resulting context, after applying the decision. All consequences should be listed here, not just the "positive" ones. A particular decision may have positive, negative, and neutral consequences, but all of them affect the team and project in the future.
+> Αυτή η ενότητα περιγράφει το πλαίσιο που προκύπτει, μετά την εφαρμογή της απόφασης. Εδώ πρέπει να απαριθμούνται όλες οι συνέπειες, όχι μόνο οι «θετικές». Μια συγκεκριμένη απόφαση μπορεί να έχει θετικές, αρνητικές και ουδέτερες συνέπειες, αλλά όλες επηρεάζουν την ομάδα και το έργο στο μέλλον.
 
-### Positive
+### Θετικός
 
-{positive consequences}
+{θετικές συνέπειες}
 
-### Negative
+### Αρνητικό
 
-{negative consequences}
+{αρνητικές επιπτώσεις}
 
-### Neutral
+### Ουδέτερο
 
-{neutral consequences}
+{ουδέτερες συνέπειες}
 
-## References
+## Βιβλιογραφικές αναφορές
 
-- {reference link}
+- {σύνδεσμος αναφοράς}
