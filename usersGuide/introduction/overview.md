@@ -1,37 +1,35 @@
 <!--
-  order: 1
+   παραγγελία: 1
 -->
 
-# Learn
+# Μαθαίνω
 
 
-## Introduction
+## Εισαγωγή
 
-Chain4Energy (C4E) is a sovereign global decentralized blockchain ecosystem. The Energy Marketplace which enables institutions and individuals to seamlessly participate in the renewable energy market accessing and offering a wide range of renewable energy solutions and services.
+Το Chain4Energy (C4E) είναι ένα κυρίαρχο παγκόσμιο αποκεντρωμένο οικοσύστημα blockchain. Το Energy Marketplace που δίνει τη δυνατότητα σε ιδρύματα και ιδιώτες να συμμετέχουν απρόσκοπτα στην αγορά ανανεώσιμων πηγών ενέργειας αποκτώντας πρόσβαση και προσφέροντας ένα ευρύ φάσμα λύσεων και υπηρεσιών ανανεώσιμων πηγών ενέργειας.
 
-Chain4Energy brings the energy industry to Web 3 by responding to the requirements and needs of all participants and enabling the effective creation and distribution of value. Blockchain removes delays, gets the right information to the right place, and eliminates the possibility of fraud and manipulation. It also enables P2P energy trading (without intermediaries), and thus effectively, between energy market participants.
+Το Chain4Energy φέρνει την ενεργειακή βιομηχανία στο Web 3 ανταποκρινόμενη στις απαιτήσεις και τις ανάγκες όλων των συμμετεχόντων και επιτρέποντας την αποτελεσματική δημιουργία και διανομή αξίας. Το Blockchain αφαιρεί τις καθυστερήσεις, λαμβάνει τις σωστές πληροφορίες στο σωστό μέρος και εξαλείφει την πιθανότητα απάτης και χειραγώγησης. Επιτρέπει επίσης τη διαπραγμάτευση ενέργειας P2P (χωρίς μεσάζοντες), και επομένως αποτελεσματικά, μεταξύ συμμετεχόντων στην αγορά ενέργειας.
 
-Mission
+Αποστολή
 
-C4E’s mission is to build a solution for the energy sector to accelerate the transition towards NET ZERO emission through the use of blockchain and distributed ledger technologies
+Η αποστολή του C4E είναι να οικοδομήσει μια λύση για τον ενεργειακό τομέα για να επιταχύνει τη μετάβαση προς την ΚΑΘΑΡΗ ΜΗΔΕΝΙΚΗ εκπομπή μέσω της χρήσης blockchain και τεχνολογιών κατανεμημένου καθολικού
 
 ![alt_text](./images/intro.jpg "image_tooltip")
 
 
-Built with focus on
+Χτισμένο με έμφαση στο
 
 
 
-* Energy Marketplace to enable new business models tailored to renewable energy sources
-* Support the “smart” transformation of energy networks
-* Support the transition towards NET ZERO economy
-* Provide a business solution to solve following challenges:
-    * Network inefficiencies
-    * Distributed and localized production
-    * Growing energy demand
-    * Energy poverty
-    * Grid stability
+* Energy Marketplace για την ενεργοποίηση νέων επιχειρηματικών μοντέλων προσαρμοσμένων στις ανανεώσιμες πηγές ενέργειας
+* Υποστήριξη του «έξυπνου» μετασχηματισμού των ενεργειακών δικτύων
+* Υποστήριξη της μετάβασης προς την NET ZERO οικονομία
+* Παρέχετε μια επιχειρηματική λύση για την επίλυση των ακόλουθων προκλήσεων:
+     * Αναποτελεσματικότητα δικτύου
+     * Κατανεμημένη και τοπική παραγωγή
+     * Αυξανόμενη ζήτηση ενέργειας
+     * Ενεργειακή φτώχεια
+     * Σταθερότητα πλέγματος
 
-## Next {hide}
-    
-
+## Επόμενο {απόκρυψη}
