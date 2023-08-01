@@ -1,54 +1,54 @@
 <!--
-order: 3
+παραγγελία: 3
 -->
 
-# Redelegate
+# Επαναποστολή
 
-Redelegation is a process that Undelegate tokens from one validator and delegates it to a selected one. Due to this it have the same restrictions as Undelegation process;
-
-
-### Redelegation restrictions
-
-Redelegation amount can’t be more than previously delegated tokens
-
-Complete reundelegation is passing 21 day, so after undelegation started  user:
+Η εκ νέου ανάθεση είναι μια διαδικασία κατά την οποία καταργεί διακριτικά από έναν επικυρωτή και τον αναθέτει σε έναν επιλεγμένο. Λόγω αυτού, έχει τους ίδιους περιορισμούς με τη διαδικασία κατάργησης εκπροσώπων.
 
 
+### Περιορισμοί επανακαθορισμού
 
-1. Will stop receiving staking rewards
-2. Will not be able to cancel the unbonding
-3. Will need to wait 21 day for the amount to be liquid;
+Το ποσό εκ νέου ανάθεσης δεν μπορεί να είναι μεγαλύτερο από τα διακριτικά που είχαν ανατεθεί στο παρελθόν
 
-### To start the process of redelegation user need to do following steps:
+Η πλήρης επανασυμπλήρωση έχει περάσει 21 ημέρες, οπότε μετά την κατάργηση των αναθέσεων ο χρήστης ξεκίνησε:
 
-1. Go to “Stacking” page and select the validator from which you will redelegate tokens;
+
+
+1. Θα σταματήσει να λαμβάνει ανταμοιβές πονταρίσματος
+2. Δεν θα είναι δυνατή η ακύρωση της αποδέσμευσης
+3. Θα χρειαστεί να περιμένουμε 21 ημέρες για να είναι ρευστή η ποσότητα.
+
+### Για να ξεκινήσετε τη διαδικασία επαναπροσαρμογής, ο χρήστης πρέπει να κάνει τα ακόλουθα βήματα:
+
+1. Μεταβείτε στη σελίδα "Στοίβαξη" και επιλέξτε το εργαλείο επικύρωσης από το οποίο θα εκχωρήσετε ξανά διακριτικά.
 
 ![alt_text](./images/delegate/1.png "image_tooltip")
 
-2. Select action to “Redelegate”
+2. Επιλέξτε ενέργεια για "Επανανομία"
 
 ![alt_text](./images/redelegate/1.png "image_tooltip")
 
-3. Choose in the list the validator that will receive tokens
+3. Επιλέξτε στη λίστα τον επικυρωτή που θα λάβει διακριτικά
 
 ![alt_text](./images/redelegate/2.png "image_tooltip")
 
-4. Change amount to preferred but les than already delegated amount
+4. Αλλαγή του ποσού σε προτιμώμενο αλλά μικρότερο από το ήδη εκχωρημένο ποσό
 
 ![alt_text](./images/redelegate/3.png "image_tooltip")
 
-5. Click Redelegate
-6. In opened Keplr window press approve
+5. Κάντε κλικ στο Redelegate
+6. Στο ανοιχτό παράθυρο Keplr πατήστε έγκριση
 
 ![alt_text](./images/redelegate/4.png "image_tooltip")
 
 
-    !**Note if you are using Ledger way of login you have to approve the action by Ledger**
+     !**Σημείωση εάν χρησιμοποιείτε τον τρόπο σύνδεσης στο Ledger, πρέπει να εγκρίνετε την ενέργεια από το Ledger**
 
 ![alt_text](./images/delegate/6.png "image_tooltip")
 
 
-7. Redelegation successfully started
+7. Ξεκίνησε επιτυχώς η αναδιάταξη
 
 
-## Next {hide}
+## Επόμενο {απόκρυψη}
