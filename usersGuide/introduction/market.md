@@ -1,20 +1,20 @@
 <!--
-  order: 2
+   παραγγελία: 2
 -->
-# Energy Marketplace
+# Ενεργειακή Αγορά
 
-The C4E platform is built on the basis of 3 layers constituting the foundation thanks to which it is possible to manage customers, energy and implement modern business models for the entire renewable energy market:
+Η πλατφόρμα C4E είναι χτισμένη με βάση 3 επίπεδα που αποτελούν τη βάση χάρη στα οποία είναι δυνατή η διαχείριση πελατών, η ενέργεια και η εφαρμογή σύγχρονων επιχειρηματικών μοντέλων για ολόκληρη την αγορά ανανεώσιμων πηγών ενέργειας:
 
 
 
-* Layer 1 - [SECURITY & DECENTRALIZATION](sec.md)
-* Layer 2 - CUSTOMER & ENERGY ACQUISITION,
-* Layer 3 - SMART GRID COMPONENTS.
+* Επίπεδο 1 - [ΑΣΦΑΛΕΙΑ & ΑΠΟΚΕΝΤΡΩΣΗ](sec.md)
+* Επίπεδο 2 - ΑΠΟΚΤΗΣΗ ΠΕΛΑΤΩΝ & ΕΝΕΡΓΕΙΑΣ,
+* Επίπεδο 3 - ΣΤΟΙΧΕΙΑ ΕΞΥΠΝΟΥ ΔΙΚΤΥΟΥ.
 
 ![alt_text](./images/intro2.png "image_tooltip")
 
 
-Individual investors and users of the Chain4Energy platform will be able to gain, apart from endless product possibilities, also access to a friendly mobile application, which will be the management center for the energy they generate and consume. By combining a mobile application, energy and C4E tokens, each producer and consumer receives both an energy management panel and a modern energy wallet with unique functionalities from both the business world and blockchain.
+Μεμονωμένοι επενδυτές και χρήστες της πλατφόρμας Chain4Energy θα μπορούν να αποκτήσουν, εκτός από ατελείωτες δυνατότητες προϊόντων, και πρόσβαση σε μια φιλική εφαρμογή για κινητά, η οποία θα είναι το κέντρο διαχείρισης της ενέργειας που παράγουν και καταναλώνουν. Συνδυάζοντας μια εφαρμογή για κινητά, ενέργεια και μάρκες C4E, κάθε παραγωγός και καταναλωτής λαμβάνει τόσο ένα πάνελ διαχείρισης ενέργειας όσο και ένα σύγχρονο ενεργειακό πορτοφόλι με μοναδικές λειτουργίες τόσο από τον επιχειρηματικό κόσμο όσο και από το blockchain.
 
 
-## Next {hide}
+## Επόμενο {απόκρυψη}
