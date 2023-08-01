@@ -1,19 +1,19 @@
 <!--
-order: true
-parent:
-  order: 6
+σειρά: αλήθεια
+μητρική εταιρεία:
+   παραγγελία: 6
 -->
 
-# Web Wallet Basics
+# Βασικά Πορτοφόλι Ιστού
 
-To start using Wallet, users have to [install Keplr](./registration/keplrInstall.md).
+Για να ξεκινήσουν να χρησιμοποιούν το Πορτοφόλι, οι χρήστες πρέπει να [εγκαταστήσουν το Keplr](./registration/keplrInstall.md).
 
-Keplr restrictions:
+Περιορισμοί Keplr:
 
-*! Keplr now available only with Google Chrome web browser. If you are using different browsers or mobile phones but you already have an account, please follow the “Login via Email”.*
+*! Το Keplr είναι πλέον διαθέσιμο μόνο με το πρόγραμμα περιήγησης Google Chrome. Εάν χρησιμοποιείτε διαφορετικά προγράμματα περιήγησης ή κινητά τηλέφωνα, αλλά έχετε ήδη λογαριασμό, ακολουθήστε την "Σύνδεση μέσω email".*
 
-If you don’t have an account please use PC with chrome to create one.
+Εάν δεν έχετε λογαριασμό, χρησιμοποιήστε υπολογιστή με chrome για να δημιουργήσετε έναν.
 
-If you have an account, please use the [authentication](./auth.md) section instructions to logIn;
+Εάν έχετε λογαριασμό, χρησιμοποιήστε τις οδηγίες της ενότητας [authentication](./auth.md) για να συνδεθείτε.
 
-## Next {hide}
+## Επόμενο {απόκρυψη}
