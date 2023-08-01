@@ -1,46 +1,46 @@
 <!--
-    order: 6
+     παραγγελία: 6
 -->
 
 # C4E Token
 
-The Chain4Energy ecosystem uses the blockchain technology to tokenize transfers and relations. The C4E token is a basic element of the whole ecosystem and is used to settle payments, commissions and bonuses for generating green energy.
+Το οικοσύστημα Chain4Energy χρησιμοποιεί την τεχνολογία blockchain για να διαμορφώσει τις μεταφορές και τις σχέσεις. Το διακριτικό C4E είναι βασικό στοιχείο ολόκληρου του οικοσυστήματος και χρησιμοποιείται για τον διακανονισμό πληρωμών, προμηθειών και μπόνους για την παραγωγή πράσινης ενέργειας.
 
-The C4E token is the fuel necessary for the Chain4Energy ecosystem to function, helping to coordinate and align the incentives of all parties involved. The tokenomy summarized here defines how C4E will be used in our blockchain as well as how it will be distributed.
+Το διακριτικό C4E είναι το απαραίτητο καύσιμο για τη λειτουργία του οικοσυστήματος Chain4Energy, συμβάλλοντας στον συντονισμό και την ευθυγράμμιση των κινήτρων όλων των εμπλεκομένων μερών. Η χαρακτηριστική που συνοψίζεται εδώ καθορίζει πώς θα χρησιμοποιηθεί το C4E στο blockchain μας καθώς και πώς θα διανεμηθεί.
 
-Following utility is designed within our token:
-
-
-
-* Native token of Chain4Energy.
-* Transaction fee - C4E token is required to perform transactions in our blockchain.
-* Staking - provides security of the Chain4Energy network
-* LP Farming - incentive for liquidity provided at selected DEXes.
-* Reward - for production, storage and usage of renewable energy. The reward mechanism will depend on the stage of the project. At the initial stage where the main goal is expansion we will be encouraged to invite new users/members.
-* **Access to services **- giving access to services** **that would not be available to entities without a token, offered by chain4energy labs and other partners launching their solutions on the Chain4Energy platform
-
-Transaction fees</p>
+Το ακόλουθο βοηθητικό πρόγραμμα έχει σχεδιαστεί στο διακριτικό μας:
 
 
-All transaction fees are paid in C4E tokens. So far, as the other Cosmos SDK based chains we are using gas mechanizm to calculate transaction fee.
 
-In the future we will switch over to the mechanism which is tailored to the business as usual approach, where the transaction fee is predictable and not dependent on the price of the underlying token.
+* Εγγενές διακριτικό του Chain4Energy.
+* Χρέωση συναλλαγής - Απαιτείται διακριτικό C4E για την εκτέλεση συναλλαγών στο blockchain μας.
+* Staking - παρέχει ασφάλεια του δικτύου Chain4Energy
+* LP Farming - κίνητρο για ρευστότητα που παρέχεται σε επιλεγμένα DEX.
+* Επιβράβευση - για παραγωγή, αποθήκευση και χρήση ανανεώσιμων πηγών ενέργειας. Ο μηχανισμός ανταμοιβής θα εξαρτηθεί από το στάδιο του έργου. Στο αρχικό στάδιο όπου ο κύριος στόχος είναι η επέκταση θα ενθαρρυνθούμε να προσκαλέσουμε νέους χρήστες/μέλη.
+* **Πρόσβαση σε υπηρεσίες **- παροχή πρόσβασης σε υπηρεσίες** **που δεν θα ήταν διαθέσιμες σε οντότητες χωρίς διακριτικό, που προσφέρονται από τα εργαστήρια chain4energy και άλλους συνεργάτες που λανσάρουν τις λύσεις τους στην πλατφόρμα Chain4Energy
+
+Χρεώσεις συναλλαγών</p>
+
+
+Όλες οι χρεώσεις συναλλαγής καταβάλλονται σε μάρκες C4E. Μέχρι στιγμής, όπως και οι άλλες αλυσίδες που βασίζονται στο Cosmos SDK, χρησιμοποιούμε μηχανισμό αερίου για τον υπολογισμό της χρέωσης συναλλαγής.
+
+Στο μέλλον θα μεταβούμε στον μηχανισμό που είναι προσαρμοσμένος στην προσέγγιση business as usual, όπου η χρέωση συναλλαγής είναι προβλέψιμη και δεν εξαρτάται από την τιμή του υποκείμενου διακριτικού.
 
 
 ![alt_text](./images/tokenSchema.png "image_tooltip")
 
 
 
-Fee distribution mechanism</p>
+Μηχανισμός διανομής τελών</p>
 
 
-The fee is divided into following parts:
+Η αμοιβή χωρίζεται στα ακόλουθα μέρη:
 
 
 
-* 100-90% - Distributed via the same module as new blocks (inflation)
-* 0%-10% - Burn mechanism module to make the token deflationary.
+* 100-90% - Διανέμεται μέσω της ίδιας ενότητας με τα νέα μπλοκ (πληθωρισμός)
+* 0%-10% - Κάψτε τη μονάδα μηχανισμού για να κάνετε το διακριτικό αποπληθωριστικό.
 
-Above share is the initial proposal before TGE. It is subject to adjustment by the DAO governance. The burn share is set to 0% to concentrate on the growth of the network.
+Η παραπάνω μετοχή είναι η αρχική πρόταση πριν από την TGE. Υπόκειται σε προσαρμογή από τη διακυβέρνηση του DAO. Το μερίδιο καύσης έχει οριστεί στο 0% για να επικεντρωθεί στην ανάπτυξη του δικτύου.
 
-## Next {hide}
+## Επόμενο {απόκρυψη}
