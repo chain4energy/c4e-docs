@@ -3,7 +3,7 @@ module.exports = {
    τίτλος: 'C4E Documentation',
    τοπικές ρυθμίσεις: {
      '/': {
-       γλώσσα: "en-US"
+       γλώσσα: "el-gr"
      },
    },
    βάση: διεργασία.env.VUEPRESS_BASE || '/',
