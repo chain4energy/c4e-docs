@@ -1,24 +1,24 @@
 <!--
-order: 9
+παραγγελία: 9
 -->
 
-# Registration via Email
+# Εγγραφή μέσω email
 
-To registrate account via Email:
+Για εγγραφή λογαριασμού μέσω email:
 
 
 
-1. Go to Keplr extension;
-2. Select “Sign in with Google”
+1. Μεταβείτε στην επέκταση Keplr.
+2. Επιλέξτε "Σύνδεση με Google"
 ![alt_text](./images/email/1.png "image_tooltip")
 
 
 
 
-3. In modal window that will appear login in your email;
-4. Fill the login and password fields for keplr extension and press next;
+3. Στο παράθυρο modal που θα εμφανιστεί, συνδεθείτε στο email σας.
+4. Συμπληρώστε τα πεδία σύνδεσης και κωδικού πρόσβασης για την επέκταση keplr και πατήστε επόμενο.
 
 ![alt_text](./images/email/2.png "image_tooltip")
 
-5. Success window will infor you that your Keplr extension is ready to use;
-## Next {hide}
+5. Το παράθυρο επιτυχίας θα σας ενημερώσει ότι η επέκταση Keplr είναι έτοιμη για χρήση.
+## Επόμενο {απόκρυψη}
