@@ -5,29 +5,29 @@
         .search__icon
           icon-search
         .search__text Search
-    .h1 {{$frontmatter.title}}
-    .intro
-      .p {{$frontmatter.description}}
-    .h2 Getting Started
-    .p__alt Read all about chain4energy or dive straight into the code with guides.
-    .features
-      router-link(to="/usersGuide/walletBasics").features__item.features__item__light
-        .features__item__image
-          icon-rocket.features__item__image__img
-        .features__item__text
-          .features__item__text__h1 User?
-          .features__item__text__h2 Learn more with our
-          .features__item__text__p Step by step guide for users.
-      router-link(to="/validatorsGuide/mainnet/").features__item.features__item__dark
-        .features__item__image
-          icon-code.features__item__image__img
-        .features__item__text
-          .features__item__text__h1 Want to become Validator?
-          .features__item__text__h2 See our tutorial for
-          .features__item__text__p becoming Validator on C4E platform
-    .sections__wrapper
-      .h2 Explore Chain 4 energy
-      .p__alt Get familiar with C4E and explore its main concepts.
+.h1 {{$frontmatter.title}}
+     .εισαγωγή
+       .p {{$frontmatter.description}}
+     .h2 Ξεκινώντας
+     .p__alt Διαβάστε τα πάντα για το chain4energy ή βουτήξτε κατευθείαν στον κώδικα με οδηγούς.
+     .χαρακτηριστικά
+       router-link(to="/usersGuide/walletBasics").features__item.features__item__light
+         .features__item__image
+           icon-rocket.features__item__image__img
+         .features__item__text
+           .features__item__text__h1 Χρήστης;
+           .features__item__text__h2 Μάθετε περισσότερα με το δικό μας
+           .features__item__text__p Οδηγός βήμα προς βήμα για τους χρήστες.
+       router-link(to="/validatorsGuide/mainnet/").features__item.features__item__dark
+         .features__item__image
+           icon-code.features__item__image__img
+         .features__item__text
+           .features__item__text__h1 Θέλετε να γίνετε Επικυρωτής;
+           .features__item__text__h2 Δείτε το σεμινάριο μας για
+           Το .features__item__text__p γίνεται Validator στην πλατφόρμα C4E
+     .sections__wrapper
+       .h2 Εξερευνήστε την ενέργεια της αλυσίδας 4
+       .p__alt Εξοικειωθείτε με το C4E και εξερευνήστε τις κύριες έννοιές του.
     .stack
       a.stack__item(:href="item.url" v-for="item in $frontmatter.stack" :style="{'--accent': item.color, '--opacity': '5%'}")
         .stack__item__wrapper
