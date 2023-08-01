@@ -1,199 +1,198 @@
 module.exports = {
-  theme: 'cosmos',
-  title: 'C4E Documentation',
-  locales: {
-    '/': {
-      lang: 'en-US'
-    },
-  },
-  base: process.env.VUEPRESS_BASE || '/',
-  themeConfig: {
-    repo: 'cosmos/ethermint',
-    docsRepo: 'cosmos/ethermint',
-    docsBranch: 'development',
-    docsDir: 'docs',
-    editLinks: true,
-    custom: true,
-    logo: {
-      src: '/logo.svg',
-    },
-    algolia: {
-      id: 'BH4D9OD16A',
-      key: 'c5da4dd3636828292e3c908a0db39688',
-      index: 'ethermint'
-    },
-    topbar: {
-      banner: true
-    },
-    sidebar: {
-      auto: false,
-      nav: [
-          {
-            title: 'User guide',
-            children: [
-              {
-                title: 'Introduction',
-                directory: true,
-                path: '/usersGuide/introduction',
-              },
-              {
-                title: 'Wallet Basics',
-                directory: false,
-                path: '/usersGuide/walletBasics',
-              },
-              {
-                title: 'Registration',
-                directory: true,
-                path: '/usersGuide/registration',
-              },
-              {
-                title: 'Authorisation',
-                directory: false,
-                path: '/usersGuide/auth',
-              },
-              {
-                title: 'Validators',
-                directory: true,
-                path: '/usersGuide/validators',
-              },
-              {
-                title: 'Governance',
-                directory: false,
-                path: '/usersGuide/governance',
-              },
+   Θέμα: «Κόσμος»,
+   τίτλος: 'C4E Documentation',
+   τοπικές ρυθμίσεις: {
+     '/': {
+       γλώσσα: "en-US"
+     },
+   },
+   βάση: διεργασία.env.VUEPRESS_BASE || '/',
+   themeConfig: {
+     repo: 'cosmos/ethermint',
+     docsRepo: 'cosmos/ethermint',
+     docsBranch: 'ανάπτυξη',
+     docsDir: 'έγγραφα',
+     edit Links: true,
+     έθιμο: αληθινό,
+     λογότυπο: {
+       src: '/logo.svg',
+     },
+     αλγολια: {
+       id: 'BH4D9OD16A',
+       κλειδί: 'c5da4dd3636828292e3c908a0db39688',
+       ευρετήριο: 'ethermint'
+     },
+     επάνω μπάρα: {
+       πανό: αληθινό
+     },
+     πλαϊνή γραμμή: {
+       αυτόματη: ψευδής,
+       πλοήγηση: [
+           {
+             τίτλος: 'Οδηγός χρήστη',
+             παιδιά: [
+               {
+                 τίτλος: 'Εισαγωγή',
+                 κατάλογος: true,
+                 διαδρομή: '/usersGuide/introduction',
+               },
+               {
+                 τίτλος: 'Βασικά στοιχεία του πορτοφολιού',
+                 κατάλογος: ψευδής,
+                 διαδρομή: '/usersGuide/walletBasics',
+               },
+               {
+                 τίτλος: 'Εγγραφή',
+                 κατάλογος: true,
+                 διαδρομή: '/usersGuide/registration',
+               },
+               {
+                 τίτλος: 'Εξουσιοδότηση',
+                 κατάλογος: ψευδής,
+                 διαδρομή: '/usersGuide/auth',
+               },
+               {
+                 τίτλος: 'Validators',
+                 κατάλογος: true,
+                 διαδρομή: '/usersGuide/validators',
+               },
+               {
+                 τίτλος: «Διακυβέρνηση»,
+                 κατάλογος: ψευδής,
+                 διαδρομή: '/usersGuide/governance',
+               },
 
-            ]
-          },
-        {
-          title: 'Validators Guide',
-          children: [
-            {
-              title: 'strategic reserve delegation program',
-              directory: true,
-              path: '/validatorsGuide/strategReserveDelegationProgram',
-            },
-            {
-              title: 'Start testnet',
-              directory: true,
-              path: '/validatorsGuide/Starttestnet',
-            },
-            {
-              title: 'Genesis Fields',
-              directory: true,
-              path: '/validatorsGuide/genesisFields',
-            },
-            {
-              title: 'Start mainnet',
-              directory: true,
-              path: '/validatorsGuide/mainnet',
-            },
-            {
-              title: 'Modules',
-              directory: true,
-              path: '/validatorsGuide/modules',
-            },
-          ]
-        },
-        {
-          title: 'Our products',
-          children: [
-            {
-              title: 'Billing system',
-              path: 'https://platformadlaenergii.pl'
-            },
-            {
-              title: 'Wallet',
-              path: 'https://wallet.c4e.io'
-            },
-            {
-              title: 'explorer',
-              path: 'https://explorer.c4e.io'
-            }
-          ]
-        },
-      ]
-    },
-    gutter: {
-      title: 'Help & Support',
-      chat: {
-        title: 'Developer Chat',
-        text: 'Chat with C4E teams on telegram.',
-        url: 'https://t.me/+60rmPWzlo3c2YWY8',
-        bg: 'linear-gradient(103.75deg, #1B1E36 0%, #22253F 100%)',
-      },
-      telegram: {
-        title: 'Telegram Chat',
-        text: 'Chat with C4E teams on telegram.',
-        url: 'https://t.me/Chain4Energy_Official',
-        bg: 'linear-gradient(103.75deg, #1B1E36 0%, #22253F 100%)',
-        logo: '/logo.svg',
-      },
-      forum: {
-        title: 'Cosmos Developer Forum',
-        text: 'Cosmos Developer Forum to learn more.',
-        url: 'https://forum.cosmos.network/',
-        bg: 'linear-gradient(221.79deg, #3D6B99 -1.08%, #336699 95.88%)',
-        logo: 'ethereum-white'
-      },
-      github: {
-        title: 'Found an Issue?',
-        text: 'Help us improve this page by suggesting edits on GitHub.',
-        bg: '#F8F9FC'
-      }
-    },
-    footer: {
-      logo: '/logo.svg',
-      textLink: {
-        url: 'https://chain4.energy/'
-      },
-      services: [{
-          service: 'github',
-          url: 'https://github.com/chain4energy'
-        },
-        {
-          service: 'twitter',
-          url: 'https://twitter.com/chain4energy'
-        },
-        {
-          service: 'linkedin',
-          url: 'https://www.linkedin.com/company/chain4energy/'
-        },
-      ],
-      smallprint: 'This website is maintained by C4E team',
-      links: [{
-          title: 'Documentation',
-          children: [{
-              title: 'Cosmos SDK Docs',
-              url: 'https://docs.cosmos.network'
-            },
-            {
-              title: 'Tendermint Core Docs',
-              url: 'https://docs.tendermint.com'
-            }
-          ]
-        },
-        {
-          title: 'Community',
-          children: [{
-              title: 'Cosmos Community',
-              url: 'https://discord.gg/W8trcGV'
-            }
-          ]
-        },
-        {
-          title: 'Contributing',
-          children: [{
-              title: 'Contributing to the docs',
-              url: 'https://github.com/chain4energy/c4e-docs'
-            },
+             ]
+           },
+         {
+           τίτλος: 'Οδηγός επικυρωτών',
+           παιδιά: [
+             {
+               τίτλος: «στρατηγικό εφεδρικό πρόγραμμα αντιπροσωπείας»,
+               κατάλογος: true,
+               διαδρομή: '/validatorsGuide/strategReserveDelegationProgram',
+             },
+             {
+               τίτλος: 'Start testnet',
+               κατάλογος: true,
+               διαδρομή: '/validatorsGuide/Starttestnet',
+             },
+             {
+               τίτλος: 'Genesis Fields',
+               κατάλογος: true,
+               διαδρομή: '/validatorsGuide/genesisFields',
+             },
+             {
+               τίτλος: 'Έναρξη mainnet',
+               κατάλογος: true,
+               διαδρομή: '/validatorsGuide/mainnet',
+             },
+             {
+               τίτλος: 'Ενότητες',
+               κατάλογος: true,
+               διαδρομή: '/validatorsGuide/modules',
+             },
+           ]
+         },
+         {
+           τίτλος: 'Τα προϊόντα μας',
+           παιδιά: [
+             {
+               τίτλος: 'Σύστημα χρέωσης',
+               διαδρομή: 'https://platformadlaenergii.pl'
+             },
+             {
+               τίτλος: 'Πορτοφόλι',
+               διαδρομή: 'https://wallet.c4e.io'
+             },
+             {
+               τίτλος: 'εξερευνητής',
+               διαδρομή: 'https://explorer.c4e.io'
+             }
+           ]
+         },
+       ]
+     },
+     υδρορροή: {
+       τίτλος: 'Βοήθεια & Υποστήριξη',
+       κουβέντα: {
+         τίτλος: 'Συζήτηση προγραμματιστή',
+         text: 'Συζήτηση με ομάδες C4E στο τηλεγράφημα.',
+         url: 'https://t.me/+60rmPWzlo3c2YWY8',
+         bg: 'γραμμική κλίση(103,75 μοίρες, #1B1E36 0%, #22253F 100%)',
+       },
+       τηλεγράφημα: {
+         τίτλος: 'Telegram Chat',
+         text: 'Συζήτηση με ομάδες C4E στο τηλεγράφημα.',
+         url: 'https://t.me/Chain4Energy_Official',
+         bg: 'γραμμική κλίση(103,75 μοίρες, #1B1E36 0%, #22253F 100%)',
+         λογότυπο: '/logo.svg',
+       },
+       φόρουμ: {
+         τίτλος: 'Cosmos Developer Forum',
+         text: 'Φόρουμ προγραμματιστών Cosmos για να μάθετε περισσότερα.',
+         url: 'https://forum.cosmos.network/',
+         bg: 'γραμμική κλίση (221,79 μοίρες, #3D6B99 -1,08%, #336699 95,88%)',
+         λογότυπο: 'ethereum-white'
+       },
+       github: {
+         τίτλος: 'Βρέθηκε ένα πρόβλημα;',
+         text: 'Βοηθήστε μας να βελτιώσουμε αυτήν τη σελίδα προτείνοντας αλλαγές στο GitHub.',
+         bg: '#F8F9FC'
+       }
+     },
+     υποσέλιδο: {
+       λογότυπο: '/logo.svg',
+       Σύνδεσμος κειμένου: {
+         url: 'https://chain4.energy/'
+       },
+       Υπηρεσίες: [{
+           υπηρεσία: 'github',
+           url: 'https://github.com/chain4energy'
+         },
+         {
+           υπηρεσία: «twitter»,
+           url: "https://twitter.com/chain4energy"
+         },
+         {
+           υπηρεσία: 'linkedin',
+           url: 'https://www.linkedin.com/company/chain4energy/'
+         },
+       ],
+       smallprint: "Αυτός ο ιστότοπος διατηρείται από την ομάδα C4E",
+       συνδέσεις: [{
+           τίτλος: 'Τεκμηρίωση',
+           παιδιά: [{
+               τίτλος: 'Cosmos SDK Docs',
+               url: "https://docs.cosmos.network"
+             },
+             {
+               τίτλος: 'Tendermint Core Docs',
+               url: "https://docs.tendermint.com"
+             }
+           ]
+         },
+         {
+           τίτλος: 'Κοινότητα',
+           παιδιά: [{
+               τίτλος: 'Cosmos Community',
+               url: 'https://discord.gg/W8trcGV'
+             }
+           ]
+         },
+         {
+           τίτλος: 'Συμβολή',
+           παιδιά: [{
+               τίτλος: «Συμβολή στα έγγραφα»,url: 'https://github.com/chain4energy/c4e-docs'
+             },
 
-            {
-              title: 'Source code on GitHub',
-              url: 'https://github.com/chain4energy/c4e-chain'
-            }
-          ]
-        }
-      ]
-    }
-  },
+             {
+               τίτλος: 'Πηγαίος κώδικας στο GitHub',
+               url: 'https://github.com/chain4energy/c4e-chain'
+             }
+           ]
+         }
+       ]
+     }
+   },
 };
