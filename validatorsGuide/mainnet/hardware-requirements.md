@@ -32,4 +32,4 @@
 
 ## Επόμενο {απόκρυψη}
 
-Μάθετε πώς να [System Preparation](system-preparation.md) {hide}
+Μάθετε πώς να [System preparation](system-preparation.md) {hide}
