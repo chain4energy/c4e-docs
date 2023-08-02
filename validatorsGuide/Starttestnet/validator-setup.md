@@ -2,59 +2,58 @@
 order: 9
 -->
 
-# Run a Validator
+# Εκτελέστε ένα Validator
 
-# Becoming a validator
-Once you've properly set up a [full node](run_node.md), if you wish you can become a validator node and
-start in earning by  validating  the chain transactions. 
+# Να γίνεις επικυρωτής
+Αφού ρυθμίσετε σωστά έναν [full node](run_node.md), αν θέλετε μπορείτε να γίνετε κόμβος επικύρωσης και
+ξεκινήστε να κερδίζετε επικυρώνοντας τις συναλλαγές αλυσίδας.
 
 
-## Requirements
-If you want to become a C4E validator you need to:
+## Απαιτήσεις
+Εάν θέλετε να γίνετε επικυρωτής C4E, πρέπει:
 
-1. Be a full node and cosmovisor up 
-   If you are not, please follow the [full node configuration guide](run_node.md) and [Cosmovisor setup](cosmovisor-setup.md)
+1. Γίνε πλήρης κόμβος και cosmovisor up
+    Εάν δεν είστε, ακολουθήστε τον [οδηγό διαμόρφωσης πλήρους κόμβου](run_node.md) και [Ρύθμιση Cosmovisor](cosmovisor-setup.md)
    
-2. Node must be synchronized
+2. Ο κόμβος πρέπει να είναι συγχρονισμένος
 
 ```bash
 c4ed status | jq .SyncInfo.catching_up
 ```
-Command above should return
+Η παραπάνω εντολή θα πρέπει να επιστρέψει
 ```bash
 false
 ```
 
    
-3. Own enough tokens.  
-   To become a validator you need at least 2[c4e] token to create the validator, and for transaction fee
+3. Κατέχετε αρκετά μάρκες.
+    Για να γίνετε επικυρωτής χρειάζεστε τουλάχιστον 2[c4e] διακριτικό για να δημιουργήσετε τον επικυρωτή και για χρέωση συναλλαγής
 
-## 1. Add wallet key
-Inside the testnet you can use the **Ledger**, but you can also use the wallet software with the `c4ed`.     
-However, if you wish to use **Ledger**, please add the `--ledger` flat to any command.
+## 1. Προσθήκη κλειδιού πορτοφολιού
+Μέσα στο δοκιμαστικό δίκτυο μπορείτε να χρησιμοποιήσετε το **Ledger**, αλλά μπορείτε επίσης να χρησιμοποιήσετε το λογισμικό πορτοφολιού με το `c4ed`.
+Ωστόσο, εάν θέλετε να χρησιμοποιήσετε το **Ledger**, προσθέστε το επίπεδο `--ledger` σε οποιαδήποτε εντολή.
 
-:::warning  
-Please remember to copy the 12 words seed phrase in a secure place.  
-They are your mnemonic and if you loose them you lose all your tokens and the whole access to your validator.  
+:::προειδοποίηση
+Θυμηθείτε να αντιγράψετε τη φράση 12 λέξεων σε ασφαλές μέρος.
+Είναι τα μνημονικά σας και αν τα χάσετε, χάνετε όλα τα διακριτικά σας και ολόκληρη την πρόσβαση στον επικυρωτή σας.
 
-Create the first wallet with the following command
+Δημιουργήστε το πρώτο πορτοφόλι με την ακόλουθη εντολή
 ```bash
 c4ed keys add <KEY_NAME>
 # Enter a password that you can remember
 ```
-The output of the command will provide the 24 words that are the mnemonic.
+Η έξοδος της εντολής θα δώσει τις 24 λέξεις που είναι οι μνημονικές.
 
-Create two wallet one for validator and second for vesting account:
-example
+Δημιουργήστε δύο πορτοφόλια, ένα για επικύρωση και δεύτερο για λογαριασμό κατοχύρωσης:
+παράδειγμα
       
 
-If you are using the **Ledger** device you must first connect it to your computer, start the commercionetworkd application and run the command
+Εάν χρησιμοποιείτε τη συσκευή **Ledger**, πρέπει πρώτα να τη συνδέσετε στον υπολογιστή σας, να ξεκινήσετε την εφαρμογή commercionetworkd και να εκτελέσετε την εντολή
 ```bash
 c4ed keys add <KEY_NAME> --ledger
 # Enter a password that you can remember
 ```
-In this case the 12 words are not provided because they have already been configured in the **Ledger** initialization
-
+Σε αυτήν την περίπτωση οι 12 λέξεις δεν παρέχονται επειδή έχουν ήδη διαμορφωθεί στην προετοιμασία **Ledger**
 ```bash
 c4e@c4e-fn1:~$ c4ed keys add validator
 Enter keyring passphrase:
@@ -71,30 +70,27 @@ Enter keyring passphrase:
 
 ```
 
-If you dont have token faucet for testnet available on:
-
+Εάν δεν διαθέτετε στρόφιγγα για δοκιμαστικό δίκτυο, διαθέσιμη στο:
 ```bash
 https://faucet-testnet.c4e.io/
 ```
 
-## What is a Validator?
+## Τι είναι το Validator;
 
-[Validators](https://hub.cosmos.network/master/validators/overview.html) are responsible for committing new blocks to the blockchain through voting. A validator's stake is slashed if they become unavailable or sign blocks at the same height. Please read about [Sentry Node Architecture](https://hub.cosmos.network/master/validators/validator-faq.html#how-can-validators-protect-themselves-from-denial-of-service-attacks) to protect your node from DDOS attacks and to ensure high-availability.
+Οι [Validators](https://hub.cosmos.network/master/validators/overview.html) είναι υπεύθυνοι για τη δέσμευση νέων μπλοκ στο blockchain μέσω ψηφοφορίας. Το ποντάρισμα ενός επικυρωτή μειώνεται εάν δεν είναι διαθέσιμοι ή υπογράψουν μπλοκ στο ίδιο ύψος. Διαβάστε σχετικά με το [Sentry Node Architecture](https://hub.cosmos.network/master/validators/validator-faq.html#how-can-validators-protect-themselves-from-denial-of-service-attacks) στο προστατέψτε τον κόμβο σας από επιθέσεις DDOS και για να εξασφαλίσετε υψηλή διαθεσιμότητα.
 
-::: danger Warning
-If you want to become a validator for `mainnet`, you should [research security](https://hub.cosmos.network/master/validators/security.html).
+::: κίνδυνος Προειδοποίηση
+Εάν θέλετε να γίνετε επικυρωτής για το "mainnet", θα πρέπει να [ασφάλεια έρευνας](https://hub.cosmos.network/master/validators/security.html).
 :::
 
+## Δημιουργήστε το πρόγραμμα επικύρωσής σας
 
-## Create Your Validator
-
-Your `c4evalconspub` consensus public key fron tendermint can be used to create a new validator by staking tokens. You can find your validator pubkey by running:
-
+Το συναινετικό δημόσιο κλειδί "c4evalconspub" μπορεί να χρησιμοποιηθεί για τη δημιουργία ενός νέου εργαλείου επικύρωσης ποντάροντας διακριτικά. Μπορείτε να βρείτε το pubkey επικύρωσης εκτελώντας:
 ```bash
 c4ed tendermint show-validator
 ```
 
-To create your validator, just use the following command:
+Για να δημιουργήσετε τον επικυρωτή σας, απλώς χρησιμοποιήστε την ακόλουθη εντολή:
 
 ```bash
 c4ed tx staking create-validator \
@@ -110,20 +106,20 @@ c4ed tx staking create-validator \
   --from=<KEY_NAME>
 ```
 
-::: tip
-When specifying commission parameters, the `commission-max-change-rate` is used to measure % _point_ change over the `commission-rate`. E.g. 1% to 2% is a 100% rate increase, but only 1 percentage point.
+::: υπόδειξη
+Κατά τον καθορισμό των παραμέτρων προμήθειας, το «commission-max-change-rate» χρησιμοποιείται για τη μέτρηση της αλλαγής % _point_ έναντι του «commission-rate». Π.χ. 1% έως 2% είναι 100% αύξηση ποσοστού, αλλά μόνο 1 ποσοστιαία μονάδα.
 :::
 
-::: tip
-`Min-self-delegation` is a stritly positive integer that represents the minimum amount of self-delegated voting power your validator must always have. A `min-self-delegation` of 1 means your validator will never have a self-delegation lower than `1000000uc4e`
+::: υπόδειξη
+Η "ελάχιστη ανάθεση από τον εαυτό σας" είναι ένας αυστηρά θετικός ακέραιος αριθμός που αντιπροσωπεύει την ελάχιστη δυνατή ψηφοφορία που εκχωρεί μόνος σας ο επικυρωτής σας. Μια 'ελάχιστη ανάθεση από τον εαυτό σας' 1 σημαίνει ότι ο επικυρωτής σας δεν θα έχει ποτέ αυτο-ανάθεση μικρότερη από '1000000uc4e'
 :::
 
-You can confirm that you are in the validator set by using a explorer.
+Μπορείτε να επιβεβαιώσετε ότι βρίσκεστε στο σετ επικύρωσης χρησιμοποιώντας έναν εξερευνητή.
 
 
-### Troubleshooting
+### Αντιμετώπιση προβλημάτων
 
-If you inspect your `create-validator` transaction in the explorer, and see the following error:
+Εάν ελέγξετε τη συναλλαγή «create-validator» στον εξερευνητή και δείτε το ακόλουθο σφάλμα:
 ```
 out of gas in location: WritePerByte; gasWanted: 177140, gasUsed: 177979: out of gas
 ```
@@ -141,19 +137,19 @@ with
 ```
 
 
-## Confirm Your Validator is Running
+## Επιβεβαιώστε ότι το Validator σας εκτελείται
 
-Your validator is active if the following command returns anything:
+Το πρόγραμμα επικύρωσής σας είναι ενεργό εάν η ακόλουθη εντολή επιστρέψει οτιδήποτε:
 
 ```bash
 c4ed query tendermint-validator-set | grep "$(c4ed tendermint show-validator | jq .key  | tr -d \")"
 ```
 
-You should now see your validator in one of the block explorers. You are looking for the `bech32`
-encoded `address` in the `~/.c4e-chain/config/priv_validator_key.json` file.
+Θα πρέπει τώρα να δείτε το εργαλείο επικύρωσής σας σε έναν από τους εξερευνητές μπλοκ. Ψάχνετε για το `bech32`
+κωδικοποιημένη «διεύθυνση» στο αρχείο «~/.c4e-chain/config/priv_validator_key.json».
 
-::: tip
-To be in the validator set, you need to have more total voting power than the 50th validator.
+::: υπόδειξη
+Για να είστε στο σετ επικυρωτή, πρέπει να έχετε μεγαλύτερη συνολική ισχύ ψήφου από το 50ο εργαλείο επικύρωσης.
 :::
 
 
