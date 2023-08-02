@@ -1,551 +1,430 @@
 <!--
-order: 4
+παραγγελία: 4
 -->
 
 
-# Cfevesting
+#Cfevesting
 
-## Abstract
+## Αφηρημένη
 
-Chain4Energy vesting module allows to create and manage vesting pools.
-One can create a vesting pool in order to lock a certain amount of tokens for a period of time. During this locking period the locked tokens can only be used for continuous vesting accounts creation.
-The vesting account parameters are calculated from the vesting pool configuration.
+Η μονάδα κατοχύρωσης Chain4Energy επιτρέπει τη δημιουργία και τη διαχείριση δεξαμενών κατοχύρωσης.
+Κάποιος μπορεί να δημιουργήσει μια πισίνα για να κλειδώσει μια συγκεκριμένη ποσότητα μάρκες για ένα χρονικό διάστημα. Κατά τη διάρκεια αυτής της περιόδου κλειδώματος τα κλειδωμένα διακριτικά μπορούν να χρησιμοποιηθούν μόνο για συνεχή δημιουργία λογαριασμών κατοχύρωσης.
+Οι παράμετροι του λογαριασμού κατοχύρωσης υπολογίζονται από τη διαμόρφωση της ομάδας κατοχύρωσης.
 
-## Contents
+## Περιεχόμενα
 
-1. **[Concept](#concepts)**
+1. **[Έννοια](#έννοιες)**
 2. **[Params](#parameters)**
-3. **[State](#state)**
-3. **[Messages](#messages)**
-4. **[Events](#events)**
+3. **[Κατάσταση](#state)**
+3. **[Μηνύματα](#messages)**
+4. **[Εκδηλώσεις](#events)**
 5. **[Queries](#queries)**
-6. **[Invariants](#invariants)**
-7. **[Genesis validations](#genesis-validations)**
+6. **[Αμετάβλητα](#Invariants)**
+7. **[Επικυρώσεις Genesis](#genesis-validations)**
 
-## Concepts
+## Έννοιες
 
-The purpose of `cfevesting` module is to provide the functionality of locking tokens in a pool for specified amount of time with the ability of sending those tokens to continuous vesting accounts.
-The tokens will be still locked on the vesting accounts, and it will not be possible to sent them further until the locking period ends. This allows to create vesting target groups (e.g. validators vesting pool, investors vesting pools).
-The `cfevesting` module keeps track of all the vesting pools and vesting accounts and allows to calculate the total amount of tokens in vesting.
+Ο σκοπός της ενότητας «cfevesting» είναι να παρέχει τη λειτουργικότητα του κλειδώματος των διακριτικών σε ένα pool για καθορισμένο χρονικό διάστημα με τη δυνατότητα αποστολής αυτών των διακριτικών σε λογαριασμούς συνεχούς κατοχύρωσης.
+Τα διακριτικά θα εξακολουθούν να είναι κλειδωμένα στους λογαριασμούς κατοχύρωσης και δεν θα είναι δυνατή η περαιτέρω αποστολή τους έως ότου λήξει η περίοδος κλειδώματος. Αυτό επιτρέπει τη δημιουργία ομάδων-στόχων κατοχύρωσης (π.χ. επενδυτές που κατοχυρώνουν pool, επενδυτές που κατοχυρώνουν pool).
+Η ενότητα «cfevesting» παρακολουθεί όλες τις ομάδες κατοχύρωσης και τους λογαριασμούς κατοχύρωσης και επιτρέπει τον υπολογισμό του συνολικού ποσού των κουπονιών στην κατοχύρωση.
 
-### Vesting Pool
+### Πισίνα εξαγοράς
 
-Vesting pool locks a certain amount of tokens for configured period of time. Each vesting pool has its owner (creator account).
-A single owner can have multiple vesting pools. Each vesting pool is identified by its unique name (unique among all the pools belonging to a single owner).
+Η πισίνα εξαγοράς κλειδώνει έναν ορισμένο αριθμό κουπονιών για διαμορφωμένη χρονική περίοδο. Κάθε δεξαμενή κατοχύρωσης έχει τον ιδιοκτήτη του (λογαριασμός δημιουργού).
+Ένας μόνο ιδιοκτήτης μπορεί να έχει πολλαπλές πισίνες. Κάθε πισίνα χαρακτηρίζεται από το μοναδικό της όνομα (μοναδική μεταξύ όλων των πισινών που ανήκουν σε έναν μόνο ιδιοκτήτη).
 
-Vesting pools have the following parameters:
-* name - unique name (among owner's pools)
-* vesting type - vesting type used by vesting pool (see **[Vesting Type](#vesting-type)**)
-* lock start - time of pool creation
-* lock end - unlocking time (end of lock period)
-* initially_locked - amount of tokens locked initially in the pool
-* withdrawn - amount of tokens that were already withdrawn from the pool (currently all available (available = initially_locked - sent) tokens can be withdrawn by the owner only after lock end time)
-* sent - amount of tokens that were already sent to vesting accounts from the vesting pool
+Οι πισίνες κατοχύρωσης έχουν τις ακόλουθες παραμέτρους:
+* όνομα - μοναδικό όνομα (μεταξύ των πισινών του ιδιοκτήτη)
+* Τύπος κατοχύρωσης - τύπος κατοχύρωσης που χρησιμοποιείται από την ομάδα κατοχύρωσης (βλ. **[Τύπος κατοχύρωσης](#vesting-type)**)
+* Έναρξη κλειδαριάς - χρόνος δημιουργίας πισίνας
+* λήξη κλειδώματος - χρόνος ξεκλειδώματος (λήξη περιόδου κλειδώματος)
+* αρχικά_κλειδωμένο - ποσότητα κουπονιών που κλειδώθηκαν αρχικά στην πισίνα
+* αποσύρθηκε - ποσό κουπόνι που είχε ήδη αποσυρθεί από το pool (προς το παρόν όλα τα διαθέσιμα (διαθέσιμα = αρχικά_κλειδωμένα - αποστέλλονται) μπορούν να αποσυρθούν από τον κάτοχο μόνο μετά την ώρα λήξης του κλειδώματος)
+* αποστέλλεται - ποσό κουπονιών που έχουν ήδη αποσταλεί σε λογαριασμούς κατοχύρωσης από την ομάδα κατοχύρωσης
 
-### Vesting Type
+### Τύπος κατοχύρωσης
 
-Vesting type defines the parameters of continuous vesting accounts that will be created from a given vesting pool.
-Vesting type has the following parameters:
-* name - unique name
-* lockup period - period of time when all the tokens in the pool are locked
-* vesting period - period of time when tokens are linearly vested
-* free - the percentage of tokens that will be released at the beginning after sending to a continuous vesting account
+Ο τύπος κατοχύρωσης καθορίζει τις παραμέτρους των λογαριασμών συνεχούς κατοχύρωσης που θα δημιουργηθούν από μια δεδομένη ομάδα κατοχύρωσης.
+Ο τύπος κατοχύρωσης έχει τις ακόλουθες παραμέτρους:
+* όνομα - μοναδικό όνομα
+* Περίοδος κλειδώματος - χρονική περίοδος κατά την οποία όλα τα μάρκες στην πισίνα είναι κλειδωμένα
+* περίοδος κατοχύρωσης - χρονική περίοδος κατά την οποία οι μάρκες κατοχυρώνονται γραμμικά
+* δωρεάν - το ποσοστό των διακριτικών που θα απελευθερωθούν στην αρχή μετά την αποστολή σε έναν λογαριασμό συνεχούς κατοχύρωσης
 
-New vesting account parameters will be set accordingly:
-* continuous vesting account start time = last block time + vesting type lockup period
-* continuous vesting account end time = last block time + vesting type lockup period + vesting type vesting period
+Οι νέες παράμετροι λογαριασμού κατοχύρωσης θα οριστούν αναλόγως:
+* χρόνος έναρξης λογαριασμού συνεχούς κατοχύρωσης = χρόνος τελευταίου αποκλεισμού + περίοδος κλειδώματος τύπου κατοχύρωσης
+* χρόνος λήξης λογαριασμού συνεχούς κατοχύρωσης = χρόνος τελευταίου αποκλεισμού + περίοδος κλειδώματος τύπου κατοχύρωσης + περίοδος κατοχύρωσης τύπου κατοχύρωσης
 
-The vesting types are predefined on genesis.
+Οι τύποι ιπτάμενων είναι προκαθορισμένοι στη γένεση.
 
-## Parameters
+## Παράμετροι
 
-The Chain4Energy vesting module contains the following configurations parameters:
+Η μονάδα κατοχύρωσης Chain4Energy περιέχει τις ακόλουθες παραμέτρους διαμόρφωσης:
 
-| Key         | Type     | Description              |
-|-------------|----------|--------------------------|
-| denom       | string   | Denom of vesting token   |
+| Κλειδί | Τύπος | Περιγραφή |
+|-------------|----------|------------------------ --|
+| δόγμα | χορδή | Ονομασία μάρκας κατοχύρωσης |
 
-## State
+## Κατάσταση
 
-### Vesting pools state
+### Κατάσταση πισινών κατοχύρωσης
 
-Chain4Energy vesting module state contains vesting pools lists per owner.
+Η κατάσταση της μονάδας κατοχύρωσης του Chain4Energy περιέχει λίστες πισινών κατοχύρωσης ανά ιδιοκτήτη.
 
-#### AccountVestingPools type
+#### Τύπος AccountVestingPools
 
-| Key           | Type                      | Description                |
-|---------------|---------------------------|----------------------------|
-| owner         | string                    | Owner address              |
-| vesting_pools | List of VestingPool types | Vesting pools of the owner |
+| Κλειδί | Τύπος | Περιγραφή |
+|---------------|--------------------------|----- -----------------------|
+| ιδιοκτήτης | χορδή | Διεύθυνση ιδιοκτήτη |
+| εξαγορές_πισίνες | Λίστα τύπων VestingPool | Πισίνες κατοχύρωσης του ιδιοκτήτη |
 
-#### VestingPool type
+#### Τύπος VestingPool
 
-| Key              | Type            | Description                                                                         |
-|------------------|-----------------|-------------------------------------------------------------------------------------|
-| name             | string          | unique name per owner                                                               |
-| vesting_type     | string          | vesting type used by vesting pool (see **[Vesting Type](#vesting-type)**)           |
-| lock_start       | time.Duration   | time of pool creation                                                               |
-| lock_end         | time.Duration   | unlocking time (end of lock period)                                                 |
-| initially_locked | math.Int        | amount of tokens locked initially in the pool                                       |
-| withdrawn        | math.Int        | amount of tokens that were already withdrawn from the pool                          |
-| sent             | math.Int        | amount of tokens that were already sent to vesting accounts from the vesting pool   |
+| Κλειδί | Τύπος | Περιγραφή |
+|------------------------------------|------------ -------------------------------------------------- -----------------------|
+| όνομα | χορδή | μοναδικό όνομα ανά ιδιοκτήτη |
+| κατοχύρωση_τύπου | χορδή | τύπος κατοχύρωσης που χρησιμοποιείται από ομάδα κατοχύρωσης (βλέπε **[Τύπος κατοχύρωσης](#vesting-type)**) |
+| lock_start | χρόνος.Διάρκεια | ώρα δημιουργίας πισίνας |
+| κλείδωμα_τέλος | χρόνος.Διάρκεια | χρόνος ξεκλειδώματος (λήξη περιόδου κλειδώματος) |
+| αρχικά_κλειδωμένο | μαθηματικά.Int | ποσότητα μάρκες που κλειδώθηκαν αρχικά στην πισίνα |
+| αποσύρθηκε | μαθηματικά.Int | ποσό μάρκες που είχαν ήδη αποσυρθεί από το pool |
+| εστάλη | μαθηματικά.Int | ποσό κουπονιών που είχαν ήδη αποσταλεί σε λογαριασμούς κατοχύρωσης από την ομάδα κατοχύρωσης |
 
-### Vesting types data dictionary
+### Λεξικό δεδομένων τύπων κατοχύρωσης
 
-Vesting types data dictionary contains list of predefined vesting types:
+Το λεξικό δεδομένων τύπων κατοχύρωσης περιέχει λίστα προκαθορισμένων τύπων κατοχύρωσης:
 
-| Key            | Type            | Description                                        |
-|----------------|-----------------|----------------------------------------------------|
-| name           | string          | unique vesting type name                           |
-| lockup_period  | time.Duration   | period of time when all tokens are locked          | 
-| vesting_period | time.Duration   | period of time when tokens are are linearly vested |
+| Κλειδί | Τύπος | Περιγραφή |
+|-- --------------|------------------------------------ ------------------------------------|
+| όνομα | χορδή | μοναδικό όνομα τύπου κατοχύρωσης |
+| lockup_period | χρόνος.Διάρκεια | χρονική περίοδος κατά την οποία όλα τα διακριτικά είναι κλειδωμένα |
+| περίοδος_κατοχύρωσης | χρόνος.Διάρκεια | χρονική περίοδος κατά την οποία τα μάρκες είναι γραμμικά κατοχυρωμένα |
 
-### Vesting account list
+### Λίστα λογαριασμών κατοχύρωσης
 
-Vesting account list contains address of all vesting accounts created with cfevesting module.
+Η λίστα λογαριασμών κατοχύρωσης περιέχει τη διεύθυνση όλων των λογαριασμών κατοχύρωσης που δημιουργήθηκαν με τη μονάδα cfevesting.
 
-#### VestingAccount type
-| Key      | Type     | Description                                  |
-|----------|----------|----------------------------------------------|
-| id       | uint64   | id of an entity in the vesting accounts list |
-| address  | string   | vesting account address                      |
+#### Τύπος λογαριασμού Vesting
+| Κλειδί | Τύπος | Περιγραφή |
+|----------|----------|--------------------------- -------------------|
+| id | uint64 | id μιας οντότητας στη λίστα λογαριασμών κατοχύρωσης |
+| διεύθυνση | χορδή | διεύθυνση λογαριασμού κατοχύρωσης |
 
-## Messages
+## Μηνύματα
 
-### Create Vesting Pool
+### Δημιουργία Vesting Pool
 
-Creates new vesting pool for the creator account.
+Δημιουργεί νέο χώρο κατοχύρωσης για τον λογαριασμό δημιουργού.
 
-`MsgCreateVestingPool` can be submitted by any token holder via a
-`MsgCreateVestingPool` transaction.
+Το "MsgCreateVestingPool" μπορεί να υποβληθεί από οποιονδήποτε κάτοχο διακριτικού μέσω α
+Συναλλαγή "MsgCreateVestingPool".
 
 ``` {.go}
-type MsgCreateVestingPool struct {
-	Creator     string
-	Name        string
-	Amount      math.Int
-	Duration    time.Duration
-	VestingType string
+πληκτρολογήστε δομή MsgCreateVestingPool {
+Συμβολοσειρά δημιουργού
+Συμβολοσειρά ονόματος
+Ποσό math.Int
+Διάρκεια χρόνου.Διάρκεια
+Συμβολοσειρά VestingType
 }
 ```
 
-**Params:**
+**Παράμα:**
 
-| Param       | Description                        |
-|-------------|------------------------------------|
-| Creator     | Creator/Owner address              |
-| Name        | Vesting pool name                  |
-| Amount      | Amount to lock in the vesting pool |
-| Duration    | Lock duration                      |
-| VestingType | Vesting Type of the pool           |
+| Param | Περιγραφή |
+|-------------|----------------------------------- -|
+| Δημιουργός | Διεύθυνση δημιουργού/ιδιοκτήτη |
+| Όνομα | Όνομα πισίνας |
+| Ποσό | Ποσό για κλείδωμα στην πισίνα |
+| Διάρκεια | Διάρκεια κλειδώματος |
+| VestingType | Vesting Τύπος πισίνας |
 
-**State modifications:**
+**Τροποποιήσεις κατάστασης:**
 
-- Validate `Creator` has enough tokens
-- Generate new `VestingPool` record for creator/owner
-- Save the record in the owner account vesting pools list
-- Transfer the tokens from the `Creator` account to cfevesting `ModuleAccount`.
+- Επικύρωση Ο «Δημιουργός» έχει αρκετά διακριτικά
+- Δημιουργήστε νέο αρχείο «VestingPool» για δημιουργό/ιδιοκτήτη
+- Αποθηκεύστε την εγγραφή στη λίστα συλλογών κατοχύρωσης λογαριασμού κατόχου
+- Μεταφέρετε τα διακριτικά από τον λογαριασμό «Δημιουργός» στον λογαριασμό «ModuleAccount».
 
-### Send To Vesting Account
+### Αποστολή σε λογαριασμό κατοχύρωσης
 
-Creates a new continuous vesting account and sends tokens from vesting pool to it.
+Δημιουργεί έναν νέο λογαριασμό συνεχούς κατοχύρωσης και στέλνει διακριτικά από την ομάδα κατοχύρωσης σε αυτόν.
 
-`MsgSendToVestingAccount` can be submitted by any Vesting pool owner via a
-`MsgSendToVestingAccount` transaction.
+Το "MsgSendToVestingAccount" μπορεί να υποβληθεί από οποιονδήποτε κάτοχο πισίνας κατοχύρωσης μέσω
+Συναλλαγή "MsgSendToVestingAccount".
 
 ``` {.go}
-type MsgSendToVestingAccount struct {
-	FromAddress     string
-	ToAddress       string
-	VestingPoolName string
-	Amount          math.Int
-	RestartVesting  bool
+πληκτρολογήστε MsgSendToVestingAccount struct {
+Συμβολοσειρά FromAddress
+Συμβολοσειρά ToAddress
+Συμβολοσειρά VestingPoolName
+Ποσό math.Int
+RestartVesting bool
 }
 ```
 
-**Params:**
+**Παράμα:**
 
-| Param           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-|-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| FromAddress     | Vesting pool owner address                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| ToAddress       | New continuous vesting account address                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| VestingPoolName | Vesting pool name                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| Amount          | Amount to lock in the vesting pool                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| RestartVesting  | Defines how time parameters of new vesting account should be calculatad:<br>- true:<br>&nbsp;&nbsp;&nbsp;continuous vesting account start time = last block time + vesting type lockup period<br>&nbsp;&nbsp;&nbsp;continuous vesting account end time = last block time + vesting type lockup period + vesting type vesting period<br>- false:<br>&nbsp;&nbsp;&nbsp;continuous vesting account start time = vesting pool lock end<br>&nbsp;&nbsp;&nbsp;continuous vesting account end time = vesting pool lock end |
+| Param | Περιγραφή |
+|------------------------------------------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- -------------------------------------------------- ---------------------|
+| Από Διεύθυνση | Διεύθυνση ιδιοκτήτη πισίνας |
+| Προς Διεύθυνση | Νέα διεύθυνση λογαριασμού συνεχούς κατοχύρωσης |
+| VestingPoolName | Όνομα πισίνας |
+| Ποσό | Ποσό για κλείδωμα στην πισίνα |
+| RestartVesting | Καθορίζει τον τρόπο υπολογισμού των παραμέτρων χρόνου του νέου λογαριασμού κατοχύρωσης:<br>- true:<br>&nbsp;&nbsp;&nbsp;χρόνος έναρξης λογαριασμού συνεχούς κατοχύρωσης = χρόνος τελευταίου αποκλεισμού + περίοδος κλειδώματος τύπου κατοχύρωσης<br>&nbsp;&nbsp;&nbsp; χρόνος λήξης λογαριασμού συνεχούς κατοχύρωσης = χρόνος τελευταίας δέσμευσης + περίοδος κλειδώματος τύπου κατοχύρωσης + περίοδος κατοχύρωσης τύπου κατοχύρωσης<br>- false:<br>&nbsp;&nbsp;&nbsp;ώρα έναρξης λογαριασμού συνεχούς κατοχύρωσης = τέλος κλειδώματος πισίνας κατοχύρωσης<br>&nbsp;&nbsp ;&nbsp;χρόνος λήξης λογαριασμού συνεχούς κατοχύρωσης = λήξη κλειδώματος πισίνας κατοχύρωσης |
 
-**State modifications:**
+**Τροποποιήσεις κατάστασης:**
 
-- Validates if `FromAddress` owner's vesting pool `VestingPoolName` has enough tokens
-- Creates new continuous vesting account with `ToAddress` address and the time params calculated according to the pool vesting type
-- Sends tokens from cfevesting `ModuleAccount` to `ToAddress`
-- Updates the vesting pool state
+- Επικυρώνεται εάν η πισίνα κατοχύρωσης του κατόχου «FromAddress» «VestingPoolName» έχει αρκετά διακριτικά
+- Δημιουργεί νέο λογαριασμό συνεχούς κατοχύρωσης με τη διεύθυνση "ToAddress" και τις χρονικές παραμέτρους που υπολογίζονται σύμφωνα με τον τύπο κατοχύρωσης της ομάδας
+- Στέλνει διακριτικά από το "ModuleAccount" στο "ToAddress".
+- Ενημερώνει την κατάσταση της πισίνας κατοχύρωσης
 
-### Withdraw All Available
+### Απόσυρση όλων των διαθέσιμων
 
-Withdraws all available (unlocked) tokens from the vesting pool back to the owner account
+Αποσύρει όλα τα διαθέσιμα (ξεκλείδωτα) κουπόνια από την ομάδα κατοχύρωσης πίσω στον λογαριασμό κατόχου
 
-`MsgWithdrawAllAvailable` can be submitted by any vesting pool owner via a
-`MsgWithdrawAllAvailable` transaction.
+Το "MsgWithdrawAllAvailable" μπορεί να υποβληθεί από οποιονδήποτε ιδιοκτήτη πισίνας κατοχύρωσης μέσω
+Συναλλαγή "MsgWithdrawAllAvailable".
 
 ``` {.go}
-type MsgWithdrawAllAvailable struct {
-	Owner string
+πληκτρολογήστε δομή MsgWithdrawAllAvailable {
+Συμβολοσειρά ιδιοκτήτη
 }
 ```
 
-| Param | Description                |
+| Param | Περιγραφή |
 |-------|----------------------------|
-| Owner | Vesting pool owner address |
+| Ιδιοκτήτης | Διεύθυνση ιδιοκτήτη πισίνας |
 
-**State modifications:**
+**Τροποποιήσεις κατάστασης:**
 
-- Sends unlocked tokens from cfevesting `ModuleAccount` to `Creator` account
-- Updates the vesting pool state
+- Στέλνει ξεκλείδωτα διακριτικά από το cfevesting «ModuleAccount» στον λογαριασμό «Creator»
+- Ενημερώνει την κατάσταση της πισίνας κατοχύρωσης
 
-### Create Vesting Account
+### Δημιουργία λογαριασμού κατοχύρωσης
 
-Creates new continuous vesting account and sends token from creator account.
+Δημιουργεί νέο λογαριασμό συνεχούς κατοχύρωσης και στέλνει διακριτικό από τον λογαριασμό δημιουργού.
 
-`MsgCreateVestingAccount` can be submitted by any token holder via a
-`MsgCreateVestingAccount` transaction.
+Το "MsgCreateVestingAccount" μπορεί να υποβληθεί από οποιονδήποτε κάτοχο διακριτικού μέσω α
+Συναλλαγή "MsgCreateVestingAccount".
 
 ``` {.go}
-type MsgCreateVestingAccount struct {
-	FromAddress string
-	ToAddress   string
-	Amount      sdk.Coins
-	StartTime   int64
-	EndTime     int64
+πληκτρολογήστε MsgCreateVestingAccount struct {
+Συμβολοσειρά FromAddress
+Συμβολοσειρά ToAddress
+Ποσό sdk.Κέρματα
+Ώρα έναρξης int64
+Ώρα λήξης int64
 }
 ```
 
-**Params:**
+**Παράμα:**
 
-| Param            | Description                            |
-|------------------|----------------------------------------|
-| FromAddress      | Vesting pool owner address             |
-| ToAddress        | New continuous vesting account address |
-| Amount           | Amount to lock in vesting account      |
-| StartTime        | Vesting start time - unix              |
-| EndTime          | Vesting end time - unix                |
+| Param | Περιγραφή |
+|------------------------------------------------- ----------|
+| Από Διεύθυνση | Διεύθυνση ιδιοκτήτη πισίνας |
+| Προς Διεύθυνση | Νέα διεύθυνση λογαριασμού συνεχούς κατοχύρωσης |
+| Ποσό | Ποσό για κλείδωμα σε λογαριασμό κατοχύρωσης |
+| Ώρα έναρξης | Ώρα έναρξης κατοχύρωσης - unix |
+| Ώρα λήξης | Ώρα λήξης κατοχύρωσης - unix |
 
-**State modifications:**
+**Τροποποιήσεις κατάστασης:**
 
-- Validates if `FromAddress` has enough tokens.
-- Creates new continuous vesting account with address equal to ToAddress and time params according to provided data
-- Sends tokens from `FromAddress` account to `ToAddress`
+- Επικυρώνεται εάν το "FromAddress" έχει αρκετά διακριτικά.
+- Δημιουργεί νέο λογαριασμό συνεχούς κατοχύρωσης με διεύθυνση ίση με ToAddress και χρονικές παραμέτρους σύμφωνα με τα παρεχόμενα δεδομένα
+- Στέλνει διακριτικά από τον λογαριασμό «FromAddress» στο «ToAddress».
 
-### Split vesting
+### Split veting
 
-Split tokens that are locked in vesting to new vesting account. Total number of tokens in vesting, vesting times and token release speed are preserved.
-This mechanism can also be called as a "vesting cession".
+Διαχωρίστε τα διακριτικά που είναι κλειδωμένα στην κατοχύρωση σε νέο λογαριασμό κατοχύρωσης. Ο συνολικός αριθμός των κουπονιών στην κατοχύρωση, οι χρόνοι κατοχύρωσης και η ταχύτητα αποδέσμευσης διακριτικών διατηρούνται.
+Αυτός ο μηχανισμός μπορεί να ονομαστεί και «εκχώρηση κατοχύρωσης».
 
-`MsgSplitVesting` can be submitted by any vesting account via a `MsgSplitVesting` transaction.
+Το "MsgSplitVesting" μπορεί να υποβληθεί από οποιονδήποτε λογαριασμό κατοχύρωσης μέσω μιας συναλλαγής "MsgSplitVesting".
 
 ``` {.go}
-type MsgSplitVesting struct {
-	FromAddress string
-	ToAddress   string
-	Amount      sdk.Coins
+πληκτρολογήστε MsgSplitVesting struct {
+Συμβολοσειρά FromAddress
+Συμβολοσειρά ToAddress
+Ποσό sdk.Κέρματα
 }
 ```
 
-**Params:**
+**Παράμα:**
 
-| Param            | Description                            |
-|------------------|----------------------------------------|
-| FromAddress      | Vesting pool owner address             |
-| ToAddress        | New continuous vesting account address |
-| Amount           | Amount of locked vesting to split      |
+| Param | Περιγραφή |
+|------------------------------------------------- ----------|
+| Από Διεύθυνση | Διεύθυνση ιδιοκτήτη πισίνας |
+| Προς Διεύθυνση | Νέα διεύθυνση λογαριασμού συνεχούς κατοχύρωσης |
+| Ποσό | Ποσό κλειδωμένου κενού προς διάσπαση |
 
-**State modifications:**
+**Τροποποιήσεις κατάστασης:**
 
-- Validates if `FromAddress` has enough locked tokens in the vesting
-- Creates new continuous vesting account with address equal to ToAddress
-  and time parameters set to:
-    - `end time` is set to the vesting account end time
-    - in the case when the start time of the vesting account is in the future - `new account start time = from account start time`
-    - in the case when the start time of the vesting account is in the past `new account start time = transaction time`
-- Sends locked vesting from `FromAddress` account to `ToAddress`
+- Επικυρώνεται εάν το "FromAddress" έχει αρκετά κλειδωμένα διακριτικά στην κατοχύρωση
+- Δημιουργεί νέο λογαριασμό συνεχούς κατοχύρωσης με διεύθυνση ίση με ToAddress
+   και οι παράμετροι χρόνου έχουν οριστεί σε:
+     - Η "ώρα λήξης" ορίζεται στην ώρα λήξης του λογαριασμού κατοχύρωσης
+     - στην περίπτωση που η ώρα έναρξης του λογαριασμού κατοχύρωσης είναι μελλοντική - «ώρα έναρξης νέου λογαριασμού = από την ώρα έναρξης λογαριασμού»
+     - στην περίπτωση που η ώρα έναρξης του λογαριασμού κατοχύρωσης είναι στο παρελθόν «ώρα έναρξης νέου λογαριασμού = χρόνος συναλλαγής»
+- Στέλνει κλειδωμένη κατοχύρωση από τον λογαριασμό «FromAddress» στο «ToAddress».
 
-### Move available vesting
+### Μετακίνηση της διαθέσιμης κατοχύρωσης
 
-Moves all tokens that are locked in vesting to new vesting account. Total number of tokens in vesting, vesting times and token release speed are preserved.
-This mechanism can also be called as a "vesting cession".
+Μετακινεί όλα τα διακριτικά που είναι κλειδωμένα στην κατοχύρωση σε νέο λογαριασμό κατοχύρωσης. Ο συνολικός αριθμός των κουπονιών στην κατοχύρωση, οι χρόνοι κατοχύρωσης και η ταχύτητα αποδέσμευσης διακριτικών διατηρούνται.
+Αυτός ο μηχανισμός μπορεί να ονομαστεί και «εκχώρηση κατοχύρωσης».
 
-`MsgMoveAvailableVesting` can be submitted by any vesting account via a `MsgMoveAvailableVesting` transaction.
+Το "MsgMoveAvailableVesting" μπορεί να υποβληθεί από οποιονδήποτε λογαριασμό κατοχύρωσης μέσω μιας συναλλαγής "MsgMoveAvailableVesting".
 
 ``` {.go}
-type MsgMoveAvailableVesting struct {
-	FromAddress string
-	ToAddress   string
+πληκτρολογήστε MsgMoveAvailableVesting struct {
+Συμβολοσειρά FromAddress
+Συμβολοσειρά ToAddress
 }
 ```
 
-**Params:**
+**Παράμα:**
 
-| Param            | Description                            |
-|------------------|----------------------------------------|
-| FromAddress      | Vesting pool owner address             |
-| ToAddress        | New continuous vesting account address |
+| Param | Περιγραφή |
+|------------------------------------------------- ----------|
+| Από Διεύθυνση | Διεύθυνση ιδιοκτήτη πισίνας |
+| Προς Διεύθυνση | Νέα διεύθυνση λογαριασμού συνεχούς κατοχύρωσης |
 
-**State modifications:**
+**Τροποποιήσεις κατάστασης:**
 
-- Validates if `FromAddress` has any locked tokens in the vesting
-- Creates new continuous vesting account with address equal to ToAddress
-  and time parameters set to:
-    - `end time` is set to the vesting account end time
-    - in the case when the start time of the vesting account is in the future - `new account start time = from account start time`
-    - in the case when the start time of the vesting account is in the past `new account start time = transaction time`
-- Sends locked vesting from `FromAddress` account to `ToAddress`
+- Επικυρώνεται εάν το "FromAddress" έχει κλειδωμένα διακριτικά στην κατοχύρωση
+- Δημιουργεί νέο λογαριασμό συνεχούς κατοχύρωσης wiη διεύθυνση ίση με ToAddress
+   και οι παράμετροι χρόνου έχουν οριστεί σε:
+     - Η "ώρα λήξης" ορίζεται στην ώρα λήξης του λογαριασμού κατοχύρωσης
+     - στην περίπτωση που η ώρα έναρξης του λογαριασμού κατοχύρωσης είναι μελλοντική - «ώρα έναρξης νέου λογαριασμού = από την ώρα έναρξης λογαριασμού»
+     - στην περίπτωση που η ώρα έναρξης του λογαριασμού κατοχύρωσης είναι στο παρελθόν «ώρα έναρξης νέου λογαριασμού = χρόνος συναλλαγής»
+- Στέλνει κλειδωμένη κατοχύρωση από τον λογαριασμό «FromAddress» στο «ToAddress».
 
-### Move available vesting by denoms
+### Μετακινήστε τη διαθέσιμη κατοχύρωση κατά ονομασίες
 
-Moves all tokens that are locked in vesting to new vesting account. This message differs from `MsgMoveAvailableVesting` in
-that you can additionally provide a list of denominations that are to be taken into account when sending a blocked vesting.
-Total number of tokens in vesting, vesting times and token release speed are preserved.
-This mechanism can also be called as a "vesting cession".
+Μετακινεί όλα τα διακριτικά που είναι κλειδωμένα στην κατοχύρωση σε νέο λογαριασμό κατοχύρωσης. Αυτό το μήνυμα διαφέρει από το "MsgMoveAvailableVesting".
+ότι μπορείτε επιπλέον να παράσχετε μια λίστα με ονομαστικές αξίες που πρέπει να ληφθούν υπόψη κατά την αποστολή μιας αποκλεισμένης κατοχύρωσης.
+Ο συνολικός αριθμός των κουπονιών στην κατοχύρωση, οι χρόνοι κατοχύρωσης και η ταχύτητα αποδέσμευσης διακριτικών διατηρούνται.
+Αυτός ο μηχανισμός μπορεί να ονομαστεί και «εκχώρηση κατοχύρωσης».
 
-`MsgMoveAvailableVestingByDenoms` can be submitted by any vesting account via a `MsgMoveAvailableVestingByDenoms` transaction.
+Το "MsgMoveAvailableVestingByDenoms" μπορεί να υποβληθεί από οποιονδήποτε λογαριασμό κατοχύρωσης μέσω μιας συναλλαγής "MsgMoveAvailableVestingByDenoms".
 
 ``` {.go}
-type MsgMoveAvailableVestingByDenoms struct {
-	FromAddress string
-	ToAddress   string
-	Denoms      []string
+πληκτρολογήστε MsgMoveAvailableVestingByDenoms struct {
+Συμβολοσειρά FromAddress
+Συμβολοσειρά ToAddress
+Denoms []string
 }
 ```
 
-**Params:**
+**Παράμα:**
 
-| Param       | Description                                                           |
-|-------------|-----------------------------------------------------------------------|
-| FromAddress | Vesting pool owner address                                            |
-| ToAddress   | New continuous vesting account address                                |
-| Denoms      | List of denominations to be taken into account when unlocking vesting |
+| Param | Περιγραφή |
+|-------------|----------------------------------- -------------------------------------|
+| Από Διεύθυνση | Διεύθυνση ιδιοκτήτη πισίνας |
+| Προς Διεύθυνση | Νέα διεύθυνση λογαριασμού συνεχούς κατοχύρωσης |
+| Denoms | Λίστα ονομαστικών αξιών που πρέπει να λαμβάνονται υπόψη κατά το ξεκλείδωμα της κατοχύρωσης |
 
-**State modifications:**
+**Τροποποιήσεις κατάστασης:**
 
-- Validates if `FromAddress` has any locked tokens (only those highlighted in `denoms`) in the vesting
-- Creates new continuous vesting account with address equal to ToAddress and time parameters set to:
-    - `end time` is set to the vesting account end time
-    - in the case when the start time of the vesting account is in the future - `new account start time = from account start time`
-    - in the case when the start time of the vesting account is in the past `new account start time = transaction time`
-- Sends locked vesting from `FromAddress` account to `ToAddress`
+- Επικυρώνεται εάν το "FromAddress" έχει κλειδωμένα διακριτικά (μόνο αυτά που επισημαίνονται στα "denoms") στην κατοχύρωση
+- Δημιουργεί νέο λογαριασμό συνεχούς κατοχύρωσης με διεύθυνση ίση με ToAddress και παραμέτρους χρόνου που έχουν οριστεί σε:
+     - Η "ώρα λήξης" ορίζεται στην ώρα λήξης του λογαριασμού κατοχύρωσης
+     - στην περίπτωση που η ώρα έναρξης του λογαριασμού κατοχύρωσης είναι μελλοντική - «ώρα έναρξης νέου λογαριασμού = από την ώρα έναρξης λογαριασμού»
+     - στην περίπτωση που η ώρα έναρξης του λογαριασμού κατοχύρωσης είναι στο παρελθόν «ώρα έναρξης νέου λογαριασμού = χρόνος συναλλαγής»
+- Στέλνει κλειδωμένη κατοχύρωση από τον λογαριασμό «FromAddress» στο «ToAddress».
 
-## Events
+## Εκδηλώσεις
 
-Chain4Energy distributor module emits the following events:
+Η μονάδα διανομέα Chain4Energy εκπέμπει τα ακόλουθα συμβάντα:
 
-### Handlers
+### Χειριστές
 
 #### MsgCreateVestingPool
 
-| Type            | Attribute Key | Attribute Value                                        |
-|-----------------|---------------|--------------------------------------------------------|
-| NewVestingPool  | owner         | {owner_address}                                        |
-| NewVestingPool  | name          | {vesting_pool_name}                                    |
-| NewVestingPool  | amount        | {vesting_pool_amount}                                  |
-| NewVestingPool  | duration      | {lock_duration}                                        |
-| NewVestingPool  | vesting_type  | {vesting\_type\_name}                                  |
-| message         | action        | /chain4energy.c4echain.cfevesting.MsgCreateVestingPool |
-| message         | sender        | {sender_address}                                       |
-| transfer        | recipient     | {moduleAccount}                                        |
-| transfer        | sender        | {owner_address}                                        |
-| transfer        | amount        | {amount}                                               |
+| Τύπος | Κλειδί χαρακτηριστικών | Τιμή Χαρακτηριστικού |
+|-------------------------------------------------- ------------------------------------------|
+| NewVestingPool | ιδιοκτήτης | {owner_address} |
+| NewVestingPool | όνομα | {vesting_pool_name} |
+| NewVestingPool | ποσό | {vesting_pool_amount} |
+| NewVestingPool | διάρκεια | {lock_duration} |
+| NewVestingPool | κατοχύρωση_τύπου | {vesting\_type\_name} |
+| μήνυμα | δράση | /chain4energy.c4echain.cfevesting.MsgCreateVestingPool |
+| μήνυμα | αποστολέας | {sender_address} |
+| μεταφορά | παραλήπτης | {moduleAccount} |
+| μεταφορά | αποστολέας | {owner_address} |
+| μεταφορά | ποσό | {amount} |
 
 #### MsgSendToVestingAccount
 
-| Type                             | Attribute Key       | Attribute Value                                                                |
-|----------------------------------|---------------------|--------------------------------------------------------------------------------|
-| WithdrawAvailable                | owner               | {owner_address}                                                                |
-| WithdrawAvailable                | vesting\_pool\_name | {source\_vesting_pool_name}                                                    |
-| WithdrawAvailable                | amount              | {withdrawn_amount}                                                             |
-| NewVestingAccount                | address             | {new\_vesting\_account\_address}                                               |
-| NewVestingAccountFromVestingPool | owner               | {owner_address}                                                                |
-| NewVestingAccountFromVestingPool | address             | {new\_vesting\_account\_address}                                               |
-| NewVestingAccountFromVestingPool | vesting\_pool\_name | {source\_vesting_pool_name}                                                    |
-| NewVestingAccountFromVestingPool | amount              | {amount_to_send_to_new\_vesting\_account}                                      |
-| NewVestingAccountFromVestingPool | restart_vesting     | {restart_vesting} see  **[Send To Vesting Account](#send-to-vesting-account)** |
-| message                          | action              | /chain4energy.c4echain.cfevesting.MsgSendToVestingAccount                      |
-| message                          | sender              | {sender_address}                                                               |
-| transfer                         | recipient           | {module_account}                                                               |
-| transfer                         | sender              | {creator}                                                                      |
-| transfer                         | amount              | {amount}                                                                       |
+| Τύπος | Κλειδί χαρακτηριστικών | Τιμή Χαρακτηριστικού |
+|---------------------------------|--------------- -------|------------------------------------------ ---------------------------------------|
+| ΑπόσυρσηΔιαθέσιμο | ιδιοκτήτης | {owner_address} |
+| ΑπόσυρσηΔιαθέσιμο | κατοχύρωση\_pool\_name | {source\_vesting_pool_name} |
+| ΑπόσυρσηΔιαθέσιμο | ποσό | {αποσύρθηκε_ποσό} |
+| NewVestingAccount | διεύθυνση | {new\_vesting\_account\_address} |
+| NewVestingAccountFromVestingPool | ιδιοκτήτης | {owner_address} |
+| NewVestingAccountFromVestingPool | διεύθυνση | {new\_vesting\_account\_address} |
+| NewVestingAccountFromVestingPool | κατοχύρωση\_pool\_name | {source\_vesting_pool_name} |
+| NewVestingAccountFromVestingPool | ποσό | {amount_to_send_to_new\_vesting\_account} |
+| NewVestingAccountFromVestingPool | restart_vesting | {restart_vesting} δείτε **[Αποστολή σε λογαριασμό κατοχύρωσης](#send-to-vesting-account)** |
+| μήνυμα | δράση | /chain4energy.c4echain.cfevesting.MsgSendToVestingAccount |
+| μήνυμα | αποστολέας | {sender_address} |
+| μεταφορά | παραλήπτης | {module_account} |
+| μεταφορά | αποστολέας | {δημιουργός} |
+| μεταφορά | ποσό | {amount} |
 
 #### MsgWithdrawAllAvailable
 
-| Type              | Attribute Key       | Attribute Value                                           |
-|-------------------|---------------------|-----------------------------------------------------------|
-| WithdrawAvailable | owner               | {owner_address}                                           |
-| WithdrawAvailable | vesting\_pool\_name | {source\_vesting_pool_name}                               |
-| WithdrawAvailable | amount              | {withdrawn_amount}                                        |
-| message           | action              | /chain4energy.c4echain.cfevesting.MsgWithdrawAllAvailable |
-| message           | sender              | {sender_address}                                          |
-| transfer          | recipient           | {module_account}                                          |
-| transfer          | sender              | {creator}                                                 |
-| transfer          | amount              | {amount}                                                  |
+| Τύπος | Κλειδί χαρακτηριστικών | Τιμή Χαρακτηριστικού |
+|-----------------------------------------|------- -------------------------------------------------- --|
+| ΑπόσυρσηΔιαθέσιμο | ιδιοκτήτης | {owner_address} |
+| ΑπόσυρσηΔιαθέσιμο | κατοχύρωση\_pool\_name | {source\_vesting_pool_name} |
+| ΑπόσυρσηΔιαθέσιμο | ποσό | {αποσύρθηκε_ποσό} |
+| μήνυμα | δράση | /chain4energy.c4echain.cfevesting.MsgWithdrawAllAvailable |
+| μήνυμα | αποστολέας | {sender_address} |
+| μεταφορά | παραλήπτης | {module_account} |
+| μεταφορά | αποστολέας | {δημιουργός} |
+| μεταφορά | ποσό | {amount} |
 
 #### MsgCreateVestingAccount
 
-| Type                 | Attribute Key       | Attribute Value                                           |
-|----------------------|---------------------|-----------------------------------------------------------|
-| NewVestingAccount    | address             | {new\_vesting\_account\_address}                          |
-| message              | action              | /chain4energy.c4echain.cfevesting.MsgCreateVestingAccount |
-| message              | sender              | {sender_address}                                          |
-| transfer             | recipient           | {module_account}                                          |
-| transfer             | sender              | {creator}                                                 |
-| transfer             | amount              | {amount}                                                  |
+| Τύπος | Κλειδί χαρακτηριστικών | Τιμή Χαρακτηριστικού |
+|----------------------|--------------------|---- -------------------------------------------------- -----|
+| NewVestingAccount | διεύθυνση | {new\_vesting\_account\_address} |
+| μήνυμα | δράση | /chain4energy.c4echain.cfevesting.MsgCreateVestingAccount |
+| μήνυμα | αποστολέας | {sender_address} |
+| μεταφορά | παραλήπτης | {module_account} |
+| μεταφορά | αποστολέας | {δημιουργός} |
+| μεταφορά | ποσό | {amount} |
 
 #### MsgSplitVesting
 
-| Type                  | Attribute Key | Attribute Value                                   |
-|-----------------------|---------------|---------------------------------------------------|
-| VestingSplit          | source        | {from_account\_address}                           |
-| VestingSplit          | destination   | {to\_account\_address}                            |
-| NewVestingAccount     | address       | {new\_vesting\_account\_address}                  |
-| message               | action        | /chain4energy.c4echain.cfevesting.MsgSplitVesting |
-| message               | sender        | {sender_address}                                  |
-| transfer              | recipient     | {module_account}                                  |
-| transfer              | sender        | {creator}                                         |
-| transfer              | amount        | {amount}                                          |
+| Τύπος | Κλειδί χαρακτηριστικών | Τιμή Χαρακτηριστικού |
+|-----------------------|--------------|---------- -------------------------------------------|
+| VestingSplit | πηγή | {from_account\_address} |
+| VestingSplit | προορισμός | {to\_account\_address} |
+| NewVestingAccount | διεύθυνση | {new\_vesting\_account\_address} |
+| μήνυμα | δράση | /chain4energy.c4echain.cfevesting.MsgSplitVesting |
+| μήνυμα | αποστολέας | {sender_address} |
+| μεταφορά | παραλήπτης | {module_account} |
+| μεταφορά | αποστολέας | {δημιουργός} |
+| μεταφορά | ποσό | {amount} |
 
 #### MsgMoveAvailableVesting
 
-| Type                  | Attribute Key | Attribute Value                                           |
-|-----------------------|---------------|-----------------------------------------------------------|
-| VestingSplit          | source        | {from_account\_address}                                   |
-| VestingSplit          | destination   | {to\_account\_address}                                    |
-| NewVestingAccount     | address       | {new\_vesting\_account\_address}                          |
-| message               | action        | /chain4energy.c4echain.cfevesting.MsgMoveAvailableVesting |
-| message               | sender        | {sender_address}                                          |
-| transfer              | recipient     | {module_account}                                          |
-| transfer              | sender        | {creator}                                                 |
-| transfer              | amount        | {amount}                                                  |
+| Τύπος | Κλειδί χαρακτηριστικών | Τιμή Χαρακτηριστικού |
+|-----------------------|--------------|---------- -------------------------------------------------- |
+| VestingSplit | πηγή | {from_account\_address} |
+| VestingSplit | προορισμός | {to\_account\_address} |
+| NewVestingAccount | διεύθυνση | {new\_vesting\_account\_address} |
+| μήνυμα | δράση | /chain4energy.c4echain.cfevesting.MsgMoveAvailableVesting |
+| μήνυμα | αποστολέας | {sender_address} |
+| μεταφορά | παραλήπτης | {module_account} |
+| μεταφορά | αποστολέας | {δημιουργός} |
+| μεταφορά | ποσό | {amount} |
 
 #### MsgMoveAvailableVestingByDenoms
 
-| Type                  | Attribute Key | Attribute Value                                                   |
-|-----------------------|---------------|-------------------------------------------------------------------|
-| VestingSplit          | source        | {from_account\_address}                                           |
-| VestingSplit          | destination   | {to\_account\_address}                                            |
-| NewVestingAccount     | address       | {new\_vesting\_account\_address}                                  |
-| message               | action        | /chain4energy.c4echain.cfevesting.MsgMoveAvailableVestingByDenoms |
-| message               | sender        | {sender_address}                                                  |
-| transfer              | recipient     | {module_account}                                                  |
-| transfer              | sender        | {creator}                                                         |
-| transfer              | amount        | {amount}                                                          |
-
-## Queries
-
-### Params query
-
-Queries the module params.
-
-See example response:
-
-```json
-{
-  "params": {
-    "denom": "uc4e"
-  }
-}
-```
-### Summary query
-
-Queries the vesting summary data.
-
-See example response:
-
-```json
-{
-  "vesting_all_amount": "32500000000000",
-  "vesting_in_pools_amount": "32500000000000",
-  "vesting_in_accounts_amount": "0",
-  "delegated_vesting_amount": "0"
-}
-```
-
-### Vesting pool query
-
-Queries the vesting pools owned by account with given address.
-
-See example response:
-
-```json
-{
-  "vesting_pools": [
-    {
-      "name": "Advisors pool",
-      "vesting_type": "Advisors pool",
-      "lock_start": "2022-03-30T00:00:00Z",
-      "lock_end": "2025-03-30T00:00:00Z",
-      "withdrawable": "0",
-      "initially_locked": {
-        "denom": "uc4e",
-        "amount": "15000000000000"
-      },
-      "currently_locked": "15000000000000",
-      "sent_amount": "0"
-    },
-    {
-      "name": "Validators pool",
-      "vesting_type": "Validators pool",
-      "lock_start": "2022-03-30T00:00:00Z",
-      "lock_end": "2024-03-30T00:00:00Z",
-      "withdrawable": "0",
-      "initially_locked": {
-        "denom": "uc4e",
-        "amount": "17500000000000"
-      },
-      "currently_locked": "17500000000000",
-      "sent_amount": "0"
-    }
-  ]
-}
-```
-
-### Vesting types query
-
-Queries the vesting types.
-
-See example response:
-
-```json
-{
-  "vesting_types": [
-    {
-      "name": "Advisors pool",
-      "lockup_period": "5",
-      "lockup_period_unit": "minute",
-      "vesting_period": "5",
-      "vesting_period_unit": "day"
-    },
-    {
-      "name": "Validators pool",
-      "lockup_period": "10",
-      "lockup_period_unit": "minute",
-      "vesting_period": "10",
-      "vesting_period_unit": "day"
-    }
-  ]
-}
-```
-
-## Invariants
-
-### Non-Negative Vesting Pool Amounts Invariant
-
-Invariant validates vesting pools state. Checks if all vesting pools amounts are non-negative
-
-### Vesting Pool Consistent Data Invariant
-
-Invariant validates vesting pools state. Checks if all vesting pools amounts are consistent: withdrawn + sent < initially locked
-
-### Module Account Invariant
-
-Invariant validates vesting pools state. Checks if sum of all amounts locked in vesting pools is equal to module account balance.
-
-## Genesis validations
-
-[//]: # (TODO)
+| Τύπος | Κλειδί χαρακτηριστικών | Τιμή Χαρακτηριστικού |
+|-----------------------|--------------|---------- -------------------------------------------------- --------|
+| VestingSplit | πηγή | {from_account\_address}
