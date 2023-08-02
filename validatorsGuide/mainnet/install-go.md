@@ -2,11 +2,11 @@
 order: 3
 -->
 
-# Go installation
+# Εγκατάσταση GO
 
 ## GO
 
-Download go binary and put in /usr/local:
+Κατεβάστε το go binary και τοποθετήστε το /usr/local:
 
 
 ```bash
@@ -14,7 +14,7 @@ wget https://go.dev/dl/go1.19.1.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf go1.19.1.linux-amd64.tar.gz
 ```
 
-Add go to path:
+Τοποθετηστε το GO στο φάκελο:
 
 ```bash
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.profile
@@ -24,4 +24,4 @@ source ~/.profile
 ```
 ## Next {hide}
 
-Learn how to [installation(./.installation.md) {hide}
+Μάθε πως να [installation(./.installation.md) {hide}
