@@ -1,180 +1,180 @@
 <!--
-order: 1
+παραγγελία: 1
 -->
 
 # C4E Strategic Reserve Delegation Program v1.0
 
-**Revision 1.1 - 2023/02/24**
+**Αναθεώρηση 1.1 - 24/02/2023**
 
-## Document versions
+## Εκδόσεις εγγράφου
 
-| Version          |   Date     | Author         | 
+| Έκδοση | Ημερομηνία | Συγγραφέας |
 |------------------|------------|----------------|
-| Revision 1.0     | 2023/-2/17 | C4E Team       |
-| Revision 1.1     | 2023/-2/24 | Greg Sikora    |
+| Αναθεώρηση 1.0 | 2023/-2/17 | Ομάδα C4E |
+| Αναθεώρηση 1.1 | 2023/-2/24 | Greg Sikora |
 
-**Revision 1.1 changes**
+**Αλλαγές αναθεώρησης 1.1**
 
-Small cosmetic changes
-- Should be *"Amount of delegated tokens"* instead *"Amount of delegated nodes"* in [Early supporter criteria](#early-supporter-criteria)
-- Changes FDP to SRDP in the last section
+Μικρές αισθητικές αλλαγές
+- Θα πρέπει να είναι *"Ποσότητα αντιστοιχισμένων διακριτικών"* αντί *"Ποσό εκχωρημένων κόμβων"* στο [Πρώιμα κριτήρια υποστήριξης](#πρώιμα-υποστηρικτικά-κριτήρια)
+- Αλλάζει το FDP σε SRDP στην τελευταία ενότητα
 
-## Overview
+## ΣΦΑΙΡΙΚΗ ΕΙΚΟΝΑ
 
-Chain4Energy will allocate 54.000.000 C4E from the Strategic Pool for the **Strategic Reserve
-Delegation Program**. This allocation will be splitted into four categories: Eligibility, Early supporter, Objective and Subjective.
-Objective criteria will be evaluated automatically based on parameters that are tracked by the Smart Delegation Program (SDP).
-Subjective criteria are parameters which are not possible to evaluate on-chain, therefore the CORE Team will take care of this and score them individually.
+Η Chain4Energy θα διαθέσει 54.000.000 C4E από το Strategic Pool για το **Strategic Reserve
+Πρόγραμμα αντιπροσωπειών**. Αυτή η κατανομή θα χωριστεί σε τέσσερις κατηγορίες: Επιλεξιμότητα, Πρώιμος υποστηρικτής, Αντικειμενικός και Υποκειμενικός.
+Τα αντικειμενικά κριτήρια θα αξιολογηθούν αυτόματα με βάση τις παραμέτρους που παρακολουθούνται από το Πρόγραμμα Έξυπνης Ανάθεσης (SDP).
+Τα υποκειμενικά κριτήρια είναι παράμετροι που δεν είναι δυνατό να αξιολογηθούν on-chain, επομένως η CORE Team θα φροντίσει για αυτό και θα τις βαθμολογήσει μεμονωμένα.
 
-| Delegation Program category          |   Amount of token in the category |
-|:-------------------------------------|----------------------------------:|
-| Delegation Program - Eligibility     |                     4.000.000 C4E |
-| Delegation Program - Early supporter |                    10.000.000 C4E |
-| Delegation Program - Objective       |                    34.000.000 C4E |
-| Delegation Program - Subjective      |                     6.000.000 C4E | 
+| Κατηγορία προγράμματος αντιπροσωπειών | Ποσό διακριτικού στην κατηγορία |
+|:------------------------------------|---------- ------------------------:|
+| Πρόγραμμα αντιπροσωπειών - Επιλεξιμότητα | 4.000.000 C4E |
+| Πρόγραμμα αντιπροσωπειών - Πρώιμος υποστηρικτής | 10.000.000 C4E |
+| Πρόγραμμα αντιπροσωπειών - Στόχος | 34.000.000 C4E |
+| Πρόγραμμα αντιπροσωπειών - Υποκειμενικό | 6.000.000 C4E |
 
-**Note:
-Some validators who are managed by the team or who have a separate contract with Chain4Energy are excluded from this program. This means that most of the tokens from this program may be intended for community validators.**
+**Σημείωση:
+Ορισμένοι επικυρωτές που διοικούνται από την ομάδα ή που έχουν ξεχωριστό συμβόλαιο με το Chain4Energy εξαιρούνται από αυτό το πρόγραμμα. Αυτό σημαίνει ότι τα περισσότερα από τα διακριτικά από αυτό το πρόγραμμα ενδέχεται να προορίζονται για επικυρωτές κοινότητας.**
 
-## Eligibility criteria
+## Κριτήρια καταλληλότητας
 
-1. **Proven track record** - Is active validator for at least 3 months in two other cosmos chains
-2. **Commission rate** - between 1% - 10%
-3. **Geography** - Validator location outside of Countries which are on the embargo list&#185;. At least the following countries are excluded: Russia, Iran, Syria, Venezuela, North Korea, Belarus. The list will be continuously evaluated and updated.
-4. **Not being jailed in last 90d** - Validator missing 9500 blocks out of 10k (missed blocks) or 15.8 hours downtime -> would lead to slashing and being jailed
-5. **Uptime** - 95% of blocks must be signed during the last 90d. Taken into account for disqualification. For qualification not verified.
+1. **Αποδεδειγμένο ιστορικό ** - Είναι ενεργός επικυρωτής για τουλάχιστον 3 μήνες σε δύο άλλες αλυσίδες cosmos
+2. **Ποσοστό προμήθειας** - μεταξύ 1% - 10%
+3. **Γεωγραφία** - Τοποθεσία επικυρωτή εκτός των χωρών που περιλαμβάνονται στη λίστα εμπάργκο&#185;. Εξαιρούνται τουλάχιστον οι ακόλουθες χώρες: Ρωσία, Ιράν, Συρία, Βενεζουέλα, Βόρεια Κορέα, Λευκορωσία. Η λίστα θα αξιολογείται και θα ενημερώνεται συνεχώς.
+4. **Μη φυλακισμένη την τελευταία 90ή** - Ο επικυρωτής χάνει 9500 μπλοκ από τα 10.000 (χαμένα μπλοκ) ή 15,8 ώρες διακοπής λειτουργίας -> θα οδηγούσε σε περικοπή και φυλάκιση
+5. **Uptime** - Το 95% των μπλοκ πρέπει να υπογραφεί κατά τη διάρκεια των τελευταίων 90 ημερών. Λαμβάνεται υπόψη για αποκλεισμό. Για τα προσόντα δεν έχει επαληθευτεί.
 
 ***
-&#185; Embargo lists taken into consideration:
+&#185; Λίστες εμπάργκο που ελήφθησαν υπόψη:
 
 - [https://www.tradecompliance.pitt.edu/embargoed-and-sanctioned-countries](https://www.tradecompliance.pitt.edu/embargoed-and-sanctioned-countries).
 - [https://en.wikipedia.org/wiki/United_States_sanctions ](https://en.wikipedia.org/wiki/United_States_sanctions).
 - [ https://www.sanctionsmap.eu/#/main]( https://www.sanctionsmap.eu/#/main).
 ***
 
-In case you fulfill the eligibility criterias a base delegation of 40.000 C4E is guaranteed in case Objective or Subjective Parameters are met the Validator can receive more delegation on top of it.
-The maximum number of validators eligible is 100. It means that validators who are outside of the active set can receive delegation as well and contribute to the project.
-For Validators who are in the inactive set and fulfill the first 4 eligibility criteria the Uptime criteria will not be applied, as Uptime can’t be tracked from Validator in the inactive set.
+Σε περίπτωση που πληροίτε τα κριτήρια καταλληλότητας, είναι εγγυημένη η βασική ανάθεση 40.000 C4E σε περίπτωση που πληρούνται οι Αντικειμενικές ή Υποκειμενικές Παράμετροι, ο Επικυρωτής μπορεί να λάβει περισσότερες εκχωρήσεις επιπλέον.
+Ο μέγιστος αριθμός επιλέξιμων επικυρωτών είναι 100. Σημαίνει ότι οι επικυρωτές που βρίσκονται εκτός του ενεργού συνόλου μπορούν επίσης να λάβουν ανάθεση και να συνεισφέρουν στο έργο.
+Για Επικυρωτές που βρίσκονται στο ανενεργό σύνολο και πληρούν τα πρώτα 4 κριτήρια καταλληλότητας, τα κριτήρια Uptime δεν θα εφαρμοστούν, καθώς το Uptime δεν μπορεί να παρακολουθηθεί από το Validator στο ανενεργό σύνολο.
 
-Validators who do NOT fulfill this criterias will be ineligible for the current Strategic Reserve Delegation round. But they have the chance to work to improve their performance, adjust their commissions or more their Validator to another location to get eligible for the next round. This will be checked automatically. In case a validator currently gets any kind of Strategic Reserve Delegation and decides to increase their commission above or below the allowed range, move their Node into a prohibited location, provide poor performance he will get ineligible and the Strategic Reserve Delegation will be removed immediately.
+Οι επικυρωτές που ΔΕΝ πληρούν αυτά τα κριτήρια δεν θα είναι επιλέξιμοι για τον τρέχοντα γύρο Στρατηγικής Αποθεματικής Αποστολής. Έχουν όμως την ευκαιρία να εργαστούν για να βελτιώσουν την απόδοσή τους, να προσαρμόσουν τις προμήθειες τους ή περισσότερο τον Επικυρωτή τους σε άλλη τοποθεσία για να είναι επιλέξιμοι για τον επόμενο γύρο. Αυτό θα ελεγχθεί αυτόματα. Σε περίπτωση που ένας επικυρωτής λάβει επί του παρόντος οποιουδήποτε είδους Στρατηγική Αποθεματική Αποστολή και αποφασίσει να αυξήσει την προμήθεια του πάνω ή κάτω από το επιτρεπόμενο εύρος, μετακινήστε τον Κόμβο του σε απαγορευμένη τοποθεσία, παρέχετε κακή απόδοση, θα γίνει μη επιλέξιμος και η Αντιπροσωπεία Στρατηγικής Εφεδρείας θα αφαιρεθεί αμέσως.
 
-## Early supporter criteria
+## Πρώιμα κριτήρια υποστηρικτών
 
-Early supporters are those validators who decided to spin up a node and continue without stopping at the early stage of the project between September and December.
-We want to incentivise them by supporting the project without any incentive at that stage by delegating additional amounts of tokens from the strategic reserve.
+Οι πρώιμοι υποστηρικτές είναι εκείνοι οι επικυρωτές που αποφάσισαν να δημιουργήσουν έναν κόμβο και να συνεχίσουν χωρίς να σταματήσουν στο αρχικό στάδιο του έργου μεταξύ Σεπτεμβρίου και Δεκεμβρίου.
+Θέλουμε να τους δώσουμε κίνητρα υποστηρίζοντας το έργο χωρίς κανένα κίνητρο σε αυτό το στάδιο, εκχωρώντας πρόσθετα ποσά μάρκες από το στρατηγικό απόθεμα.
 
-**Criteria:** As long as your validator node is running without being jailed or disqualified from the Strategic Reserve Delegation program you have rights for this delegation!
-It is untouchable nevertheless what is the score of your node.
+**Κριτήρια:** Εφόσον ο κόμβος επικύρωσής σας εκτελείται χωρίς να φυλακιστεί ή να αποκλειστεί από το πρόγραμμα Στρατηγικής Αποθεματικής Αντιπροσωπείας, έχετε δικαιώματα για αυτήν την αντιπροσωπεία!
+Είναι άθικτο ωστόσο ποια είναι η βαθμολογία του κόμβου σας.
 
-| Spin up node date        | Number of validators | Amount of delegated tokens |
-|:-------------------------|---------------------:|---------------------------:|
-| September - October 2022 |                    6 |                    250.000 |
-| November 1-15 2022       |                   10 |                    200.000 |
-| November 16-30 2022      |                   36 |                    150.000 |
-| December 2022            |                    5 |                    100.000 |
-| **Total**                |                   57 |                ~10.000.000 |
-
-
-## Objective Parameters
-
-The amount of the Strategic Reserve Delegation for Objective Parameters will be consistently tracked and evaluated. Therefore a consistent re-delegation in a period of 14-30 Days will happen.
-
-The importance of specific objective parameters is provided in the following table. The Percentage can vary from quarter to quarter. Once changed it will be updated at least 1 month before the next quarter.
-
-| Percentage | factor                    |
-|:-----------|:--------------------------|
-| 20         | Uptime                    |
-| 30         | Internet Service Provider |
-| 30         | Geographic distribution   |
-| 5          | Commission Rate           |
-| 15         | Governance Participation  |
-
-- Uptime - % signed blocks for last 30 days
-
-Below 95% → score is 0% for this parameter.
-
-Above 99% → score is 100% for this parameter.
-
-9.900 blocks out of every 10k signed would lead to a constant uptime of 99%.
-
-- ISP - Internet Service Provider
-
-Above 20% concentration → score is 0% for this parameter
-
-At 10% concentration and below  → score is 100% for this parameter
-
-- Geography - Location of Validator
-
-Above 20% concentration → score is 0% for this parameter
-
-At 10% concentration and below  → score is 100% for this parameter
-
-- Commision rate -
-
-At 10% Commision rate → score is 50%
-
-At 5% Commission rate → score is 100%
-
-The score is increasing linearly towards 5%, i.e. a Validator with a Commision rate of 7,5% will have a score for this parameter of 75%. Validators with Commision rate below 1% and above 10% are not eligible for Strategic Reserve Delegations anyway.
-
-- Governance participation - Votes on Governance proposals (last 90 days)
-
-Below 75% participation rate → score is 0%
-
-Above and at 75% participation rate → score is 100%
-
-This will allow Validators to abstain on certain Gov. proposals without pushing the turnout rate and reaching quorum.
-
-## Subjective Parameters
-
-The amount of the Strategic Reserve Delegation for the Subjective Parameters will subsequently be quarterly as the C4E-core team evaluates current and future applications as well as contributions.
-
-The subjective Parameters are divided into three different sectors. All sectors are weighted equally. To qualify for Strategic Reserve Delegation within the subjective parameters the Validator has to send in an application with their contributions. More information down below.
+| Spin up ημερομηνία κόμβου | Αριθμός επικυρωτών | Ποσότητα αντιστοιχισμένων κουπονιών |
+|:------------------------------------------------: |----------------------------:|
+| Σεπτέμβριος - Οκτώβριος 2022 | 6 | 250.000 |
+| 1-15 Νοεμβρίου 2022 | 10 | 200,000 |
+| 16-30 Νοεμβρίου 2022 | 36 | 150.000 |
+| Δεκέμβριος 2022 | 5 | 100.000 |
+| **Σύνολο** | 57 | ~10.000.000 |
 
 
-Community Contribution:
-- Tutorials
-- Translations
-- YT Videos
-- Adding Chain4Energy at own web page
-- Marketing materials e.g. Christmas greetings
-- Participation in C4E Twitter Spaces and asking useful questions
-- Social media contribution (writing Threads, posts, and being active across various C4E channels)
-- AMA with validator team
+## Παράμετροι στόχου
 
-Technical Contribution:
-- Code contributions (bug fixes, improvements etc.)
-- Github proposals
-- Adding to documentation
+Το ποσό της Στρατηγικής Αποθεματικής Ανάθεσης για Αντικειμενικές Παραμέτρους θα παρακολουθείται και θα αξιολογείται με συνέπεια. Ως εκ τούτου, θα γίνει μια συνεπής εκ νέου ανάθεση σε μια περίοδο 14-30 Ημερών.
 
-Public Goods:
-- IBC Relayer
-- RPC Nodes
-- Seed Nodes
-- Archive Nodes
-- Building Explorer (forks of Ping.Pub do NOT count)
-- Testnet participation
+Η σημασία των συγκεκριμένων αντικειμενικών παραμέτρων παρέχεται στον παρακάτω πίνακα. Το ποσοστό μπορεί να διαφέρει από τρίμηνο σε τρίμηνο. Μόλις αλλάξει, θα ενημερωθεί τουλάχιστον 1 μήνα πριν από το επόμενο τρίμηνο.
 
-The Applications for any kind of Contributions can be handed in here via google form (LINK) every 3 months so basically 4 times a year. The applications have to be submitted 2 - 4 weeks prior to the new period. These Contributions in kind of public good, technical or community contributions will be evaluated through the C4E Team. As these contributions are difficult to standardize and measure objectively the Foundation decided to evaluate these contributions subjectively. Whereas the scoring and the Strategic Reserve Delegation will remain public and transparent. The C4E Team was in favor of the approach which Stride was following by evaluating the subjective parameters by an Advisory council formed by Validators. But decided to not go with that approach in the beginning as a council needs resources to organize, structure and monitor the council. Furthermore the resources will be concentrated even more in focusing on the product and infrastructure.
+| Ποσοστό | παράγοντας |
+|:-----------|:---------------------------|
+| 20 | Χρόνος λειτουργίας |
+| 30 | Πάροχος υπηρεσιών Διαδικτύου |
+| 30 | Γεωγραφική κατανομή |
+| 5 | Ποσοστό προμήθειας |
+| 15 | Διακυβέρνηση Συμμετοχή |
 
-Strategic Reserve Delegations for subjective parameters starts on the following dates:
+- Χρόνος λειτουργίας - % υπογεγραμμένων μπλοκ για τις τελευταίες 30 ημέρες
 
-Q1 SRDP 01.01 → Q2 SRDP 01.04  → Q3 SRDP 01.07 → Q4 01.09
+Κάτω από 95% → η βαθμολογία είναι 0% για αυτήν την παράμετρο.
 
-To qualify for Q1 (01.12 - 14.12 Application // 15.12 - 30.12. Scoring and evaluating)
+Πάνω από 99% → η βαθμολογία είναι 100% για αυτήν την παράμετρο.
 
-To qualify for Q2 (01.03 - 14.03 Application // 15.03 - 30.03. Scoring and evaluating)
+9.900 μπλοκ σε κάθε 10.000 υπογεγραμμένα θα οδηγούσαν σε σταθερό χρόνο λειτουργίας 99%.
 
-To qualify for Q3 (01.06 - 14.06 Application // 15.06 - 30.06. Scoring and evaluating)
+- ISP - Πάροχος υπηρεσιών Διαδικτύου
 
-To qualify for Q4 (01.08 - 14.08 Application // 15.08 - 30.08. Scoring and evaluating)
+Πάνω από 20% συγκέντρωση → η βαθμολογία είναι 0% για αυτήν την παράμετρο
 
-## Final disclaimer
+Σε συγκέντρωση 10% και κάτω από το → το σκορ είναι 100% για αυτήν την παράμετρο
 
-The program is valid for a 1 year with option to extend for another year, since it was put into effect. The continuation of the program depends on the use of the Strategic Pool in the future.
+- Γεωγραφία - Θέση του Επικυρωτή
 
-The Chain4Energy team reserve rights to discontinue the Strategic Reserve Delegation Program for any reason.
+Πάνω από 20% συγκέντρωση → η βαθμολογία είναι 0% για αυτήν την παράμετρο
 
-The team reserves rights to un-delegate/redelegate tokens if the amount of lost blocks is higher than 7500 and the validator does not sign blocks.
+Σε συγκέντρωση 10% και κάτω από το → το σκορ είναι 100% για αυτήν την παράμετρο
 
-The team reserves rights to un-delegate/redelegate tokens if the validator doesn’t complete the upgrade within the first 5 hours.
+- Ποσοστό προμήθειας -
+
+Στο 10% ποσοστό προμήθειας → η βαθμολογία είναι 50%
+
+Με ποσοστό προμήθειας 5% → η βαθμολογία είναι 100%
+
+Η βαθμολογία αυξάνεται γραμμικά προς το 5%, δηλαδή ένας Επικυρωτής με ποσοστό προμήθειας 7,5% θα έχει βαθμολογία για αυτήν την παράμετρο 75%. Οι επικυρωτές με ποσοστό προμήθειας κάτω από 1% και άνω του 10% δεν είναι ούτως ή άλλως επιλέξιμοι για Στρατηγικές Αποθεματικές Αποστολές.
+
+- Συμμετοχή στη διακυβέρνηση - Ψηφοφορίες επί προτάσεων διακυβέρνησης (τελευταίες 90 ημέρες)
+
+Κάτω από 75% ποσοστό συμμετοχής → η βαθμολογία είναι 0%
+
+Πάνω και σε ποσοστό συμμετοχής 75% → η βαθμολογία είναι 100%
+
+Αυτό θα επιτρέψει στους Επικυρωτές να απέχουν από ορισμένες προτάσεις της Κυβέρνησης χωρίς να αυξηθεί το ποσοστό συμμετοχής και να επιτευχθεί απαρτία.
+
+## Υποκειμενικές παράμετροι
+
+Το ποσό της Στρατηγικής Αποθεματικής Αντιπροσωπείας για τις Υποκειμενικές Παραμέτρους θα είναι στη συνέχεια ανά τρίμηνο καθώς η ομάδα του πυρήνα C4E αξιολογεί τις τρέχουσες και μελλοντικές εφαρμογές καθώς και τις συνεισφορές.
+
+Οι υποκειμενικές Παράμετροι χωρίζονται σε τρεις διαφορετικούς τομείς. Όλοι οι τομείς σταθμίζονται εξίσου. Για να πληροί τις προϋποθέσεις για Στρατηγική Αποθεματική Αντιπροσωπεία εντός των υποκειμενικών παραμέτρων, ο Επικυρωτής πρέπει να στείλει μια αίτηση με τις συνεισφορές του. Περισσότερες πληροφορίες παρακάτω.
+
+
+Κοινοτική συνεισφορά:
+- Φροντιστήρια
+- Μεταφράσεις
+- Βίντεο YT
+- Προσθήκη Chain4Energy στη δική του ιστοσελίδα
+- Υλικά μάρκετινγκ π.χ. Χριστουγεννιάτικες ευχές
+- Συμμετοχή σε C4E Twitter Spaces και υποβολή χρήσιμων ερωτήσεων
+- Συνεισφορά στα μέσα κοινωνικής δικτύωσης (γράψτε νήματα, αναρτήσεις και δραστηριοποιηθείτε σε διάφορα κανάλια C4E)
+- AMA με ομάδα επικύρωσης
+
+Τεχνική Συμβολή:
+- Συνεισφορές κώδικα (διορθώσεις σφαλμάτων, βελτιώσεις κ.λπ.)
+- Προτάσεις Github
+- Προσθήκη στην τεκμηρίωση
+
+Δημόσια αγαθά:
+- Αναμεταδότης IBC
+- Κόμβοι RPC
+- Κόμβοι σπόρων
+- Κόμβοι αρχειοθέτησης
+- Building Explorer (ΔΕΝ μετράνε τα πιρούνια του Ping.Pub)
+- Συμμετοχή Testnet
+
+Οι Αιτήσεις για κάθε είδους Συνεισφορές μπορούν να παραδοθούν εδώ μέσω της φόρμας google (LINK) κάθε 3 μήνες, δηλαδή βασικά 4 φορές το χρόνο. Οι αιτήσεις πρέπει να υποβληθούν 2 - 4 εβδομάδες πριν από τη νέα περίοδο. Αυτές οι συνεισφορές σε είδος δημόσιου αγαθού, τεχνικής ή κοινοτικής συνεισφοράς θα αξιολογηθούν μέσω της Ομάδας C4E. Καθώς αυτές οι συνεισφορές είναι δύσκολο να τυποποιηθούν και να μετρηθούν αντικειμενικά, το Ίδρυμα αποφάσισε να αξιολογήσει αυτές τις συνεισφορές υποκειμενικά. Ενώ η βαθμολόγηση και η Στρατηγική Εφεδρική Αντιπροσωπεία θα παραμείνουν δημόσια και διαφανή. Η ομάδα C4E ήταν υπέρ της προσέγγισης που ακολουθούσε ο Stride αξιολογώντας τις υποκειμενικές παραμέτρους από ένα συμβουλευτικό συμβούλιο που συγκροτήθηκε από τους Validators. Αλλά αποφάσισε να μην ακολουθήσει αυτή την προσέγγιση στην αρχή, καθώς ένα συμβούλιο χρειάζεται πόρους για να οργανώσει, να δομήσει και να παρακολουθήσει το συμβούλιο. Επιπλέον, οι πόροι θα συγκεντρωθούν ακόμη περισσότερο στην εστίαση στο προϊόν και την υποδομή.
+
+Η Στρατηγική Αποθεματική Αντιπροσωπεία για υποκειμενικές παραμέτρους ξεκινά στις ακόλουθες ημερομηνίες:
+
+Q1 SRDP 01,01 → Q2 SRDP 01,04 → Q3 SRDP 01,07 → Q4 01,09
+
+Για να προκριθείτε στο Q1 (01.12 - 14.12 Αίτηση // 15.12 - 30.12. Βαθμολογία και αξιολόγηση)
+
+Για να προκριθείτε στο Q2 (01.03 - 14.03 Αίτηση // 15.03 - 30.03. Βαθμολογία και αξιολόγηση)
+
+Για να προκριθείτε στο 3ο τρίμηνο (01.06 - 14.06 Αίτηση // 15.06 - 30.06. Βαθμολογία και αξιολόγηση)
+
+Για να προκριθείτε στο Q4 (01.08 - 14.08 Αίτηση // 15.08 - 30.08. Βαθμολογία και αξιολόγηση)
+
+## Τελική αποποίηση ευθύνης
+
+Το πρόγραμμα ισχύει για 1 έτος με δυνατότητα παράτασης για άλλο ένα έτος, από τότε που τέθηκε σε ισχύ. Η συνέχιση του προγράμματος εξαρτάται από τη χρήση του Strategic Pool στο μέλλον.
+
+Η ομάδα Chain4Energy διατηρεί το δικαίωμα να διακόψει το the Strategic Reserve Delegation Program για οποιονδήποτε λόγο.
+
+Η ομάδα επιφυλάσσεται του δικαιώματος κατάργησης ανάθεσης/εκ νέου ανάθεσης διακριτικών αν ο αριθμός των χαμένων μπλοκ είναι μεγαλύτερος από 7500 και ο επικυρωτής δεν υπογράφει μπλοκ.
+
+Η ομάδα επιφυλάσσεται του δικαιώματος κατάργησης ανάθεσης/εκ νέου ανάθεσης κουπονιών εάν ο επικυρωτής δεν ολοκληρώσει την αναβάθμιση εντός των πρώτων 5 ωρών.
