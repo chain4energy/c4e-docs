@@ -1,88 +1,88 @@
 <!--
-order: 8
+παραγγελία: 8
 -->
-# Sync with state-sync
+# Συγχρονισμός με state-sync
 
-State-sync is a module built into the Cosmos SDK to allow validators to rapidly join the network by syncing your node with a snapshot enabled RPC from a trusted block height.&#x20;
+Το State-sync είναι μια λειτουργική μονάδα ενσωματωμένη στο Cosmos SDK για να επιτρέπει στους επικυρωτές να ενταχθούν γρήγορα στο δίκτυο συγχρονίζοντας τον κόμβο σας με ένα RPC με δυνατότητα στιγμιότυπου από ένα αξιόπιστο ύψος μπλοκ.&#x20;
 
-This greatly reduces the time required for a validator or sentry to sync with the network from days to minutes. The limitations of this are that there is not a full transaction history, just the most recent state that the state-sync RPC has stored. An advantage of state-sync is that the database is very small in comparison to a fully synced node, therefore using state-sync to resync your node to the network can help keep running costs lower by minimising storage usage.
+Αυτό μειώνει σημαντικά τον χρόνο που απαιτείται για να συγχρονιστεί ένας επικυρωτής ή ο φύλακας με το δίκτυο από ημέρες σε λεπτά. Οι περιορισμοί αυτού είναι ότι δεν υπάρχει πλήρες ιστορικό συναλλαγών, απλώς η πιο πρόσφατη κατάσταση που έχει αποθηκεύσει το RPC συγχρονισμού κατάστασης. Ένα πλεονέκτημα του συγχρονισμού κατάστασης είναι ότι η βάση δεδομένων είναι πολύ μικρή σε σύγκριση με έναν πλήρως συγχρονισμένο κόμβο, επομένως η χρήση του συγχρονισμού κατάστασης για τον επανασυγχρονισμό του κόμβου σας στο δίκτυο μπορεί να σας βοηθήσει να διατηρήσετε το κόστος λειτουργίας χαμηλότερο ελαχιστοποιώντας τη χρήση αποθήκευσης.
 
-By syncing to the network with state-sync, a node can avoid having to go through all the upgrade procedures and can sync with the most recent binary only.
+Συγχρονίζοντας στο δίκτυο με συγχρονισμό κατάστασης, ένας κόμβος μπορεί να αποφύγει όλες τις διαδικασίες αναβάθμισης και μπορεί να συγχρονιστεί μόνο με το πιο πρόσφατο δυαδικό αρχείο.
 
-For nodes that are intended to serve data for dapps, explorers or any other RPC requiring full history, state-syncing to the network would not be appropriate.&#x20;
+Για κόμβους που προορίζονται να εξυπηρετούν δεδομένα για dapps, εξερευνητές ή οποιοδήποτε άλλο RPC που απαιτεί πλήρες ιστορικό, ο συγχρονισμός κατάστασης στο δίκτυο δεν θα ήταν κατάλληλος.&#x20;
 
-## Mainnet state-sync
-Snapshot are operated on rpc1 and rpc2
+## Συγχρονισμός κατάστασης κύριου δικτύου
+Το Snapshot λειτουργούν σε rpc1 και rpc2
 
 
-<mark >
-WARNING:  This documentation assumes you have followed all previous  instructions
+<mark>
+ΠΡΟΕΙΔΟΠΟΙΗΣΗ: Αυτή η τεκμηρίωση προϋποθέτει ότι έχετε ακολουθήσει όλες τις προηγούμενες οδηγίες
 
-The state-sync configuration is as follows:
+Η ρύθμιση παραμέτρων συγχρονισμού κατάστασης είναι η εξής:
 
-```bash
-# snapshot-interval specifies the block interval at which local state sync snapshots are
-# taken (0 to disable). Must be a multiple of pruning-keep-every.
-snapshot-interval = 1000
+``` bash
+Το # snapshot-interval καθορίζει το διάστημα μπλοκ στο οποίο βρίσκονται τα στιγμιότυπα συγχρονισμού τοπικής κατάστασης
+Λήφθηκε # (0 για απενεργοποίηση). Πρέπει να είναι πολλαπλάσιο του κλάδεμα-κρατήστε-κάθε.
+στιγμιότυπο-διάστημα = 1000
 
-# snapshot-keep-recent specifies the number of recent snapshots to keep and serve (0 to keep all).
+Το # snapshot-keep-recent καθορίζει τον αριθμό των πρόσφατων στιγμιότυπων προς διατήρηση και προβολή (0 για να διατηρηθούν όλα).
 snapshot-keep-recent = 10
 ```
 
-Set `SNAP_RPC1` and `SNAP_RPC2` variable
+Ορίστε τις μεταβλητές "SNAP_RPC1" και "SNAP_RPC2".
 
-```bash
+``` bash
 SNAP_RPC1="https://rpc-testnet.c4e.io:443"
 SNAP_RPC2="https://rpc-testnet.c4e.io:443"
 ```
 
-Fetch the `LATEST_HEIGHT` from the snapshot RPC, set the state-sync `BLOCK_HEIGHT` and fetch the `TRUST_HASH` from the snapshot RPC. The `BLOCK_HEIGHT` to sync is determined by subtracting the snapshot-interval from the `LATEST_HEIGHT`.&#x20;
+Λάβετε το "LATEST_HEIGHT" από το στιγμιότυπο RPC, ορίστε τον συγχρονισμό κατάστασης "BLOCK_HEIGHT" και λάβετε το "TRUST_HASH" από το στιγμιότυπο RPC. Το "BLOCK_HEIGHT" προς συγχρονισμό προσδιορίζεται αφαιρώντας το διάστημα του στιγμιότυπου από το "LATEST_HEIGHT".&#x20;
 
-```bash
+``` bash
 LATEST_HEIGHT=$(curl -s https://rpc-testnet.c4e.io:443/block | jq -r .result.block.header.height); \
 BLOCK_HEIGHT=$((LATEST_HEIGHT - 1000)); \
 TRUST_HASH=$(curl -s "https://rpc-testnet.c4e.io:443/block?height=$BLOCK_HEIGHT" | jq -r .result.block_id.hash)
 ```
 
-Check variables to ensure they have been set
+Ελέγξτε τις μεταβλητές για να βεβαιωθείτε ότι έχουν οριστεί
 
-```bash
-echo $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
+``` bash
+ηχώ $LATEST_HEIGHT $BLOCK_HEIGHT $TRUST_HASH
 
-# output should be something similar to:
+Η έξοδος # θα πρέπει να είναι κάτι παρόμοιο με:
 # 29604 28604 2BB3A74046C625CB67D477550D99F2439D48191FD0E840FA42A324B0629A612A
 ```
 
-Stop cosmovisor service
-```bash
+Σταματήστε την υπηρεσία cosmovisor
+``` bash
 sudo systemctl stop cosmovisor
 ```
 
-Set the required variables in `~/.c4ed/config/config.toml`
+Ορίστε τις απαιτούμενες μεταβλητές στο `~/.c4ed/config/config.toml`
 
-```bash
+``` bash
 sed -i.bak -E "s|^(enable[[:space:]]+=[[:space:]]+).*$|\1true| ; \
 s|^(rpc_servers[[:space:]]+=[[:space:]]+).*$|\1\"$SNAP_RPC1,$SNAP_RPC2\"| ; \
 s|^(trust_height[[:space:]]+=[[:space:]]+).*$|\1$BLOCK_HEIGHT| ; \
 s|^(trust_hash[[:space:]]+=[[:space:]]+).*$|\1\"$TRUST_HASH\"|" $HOME/.c4e-chain/config/config.toml
 ```
 
-Reset the node database
+Επαναφέρετε τη βάση δεδομένων του κόμβου
 
 
-<mark >
-WARNING: This will erase your node database. If you are already running validator, be sure you backed up your `config/priv_validator_key.json` and `config/node_key.json` prior to running `unsafe-reset-all`.
+<μαρκάρετε >
+ΠΡΟΕΙΔΟΠΟΙΗΣΗ: Αυτό θα διαγράψει τη βάση δεδομένων του κόμβου σας. Εάν εκτελείτε ήδη το πρόγραμμα επικύρωσης, βεβαιωθείτε ότι έχετε δημιουργήσει αντίγραφα ασφαλείας των "config/priv_validator_key.json" και "config/node_key.json" πριν από την εκτέλεση του "unsafe-reset-all".
 </mark>
 
-It is recommended to copy `data/priv_validator_state.json` to a backup and restore it after `unsafe-reset-all` to avoid potential double signing.
+Συνιστάται να αντιγράψετε το «data/priv_validator_state.json» σε ένα αντίγραφο ασφαλείας και να το επαναφέρετε μετά το «unsafe-reset-all» για να αποφύγετε πιθανή διπλή υπογραφή.
 
 
-```bash
+``` bash
 c4ed tendermint unsafe-reset-all --home $HOME/.c4e-chain
 ```
 
-Restart node and check logs
+Επανεκκινήστε τον κόμβο και ελέγξτε τα αρχεία καταγραφής
 
-```bash
+``` bash
 sudo systemctl restart cosmovisor && journalctl -u cosmovisor -f
 ```
