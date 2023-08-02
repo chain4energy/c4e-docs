@@ -8,8 +8,8 @@
 οι πιθανότητες να μειωθούν λόγω διακοπής λειτουργίας.
 
 ## Απαιτήσεις
-- [Υλικό επικύρωσης] (#validator-hardware)
-   - [Απαιτήσεις] (#απαιτήσεις)
+- [Validator hardware](#validator-hardware)
+     - [Requirements](#requirements)
    - [Mainnet](#mainnet)
 
 
