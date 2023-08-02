@@ -1,35 +1,35 @@
 <!--
-order: 1
+παραγγελία: 1
 -->
 
-# Hardware requirements
-This page contains three main hardware configurations that can be used in order to create a new c4e
-validator machine. Please note that higher the effort you will put into creating a stable and robust machine and lower 
-the chances of getting slashed due to downtime. 
+# Απαιτήσεις υλικού
+Αυτή η σελίδα περιέχει τρεις κύριες διαμορφώσεις υλικού που μπορούν να χρησιμοποιηθούν για τη δημιουργία ενός νέου c4e
+μηχάνημα επικύρωσης. Λάβετε υπόψη ότι μεγαλύτερη προσπάθεια θα καταβάλετε για τη δημιουργία ενός σταθερού και στιβαρού μηχανήματος και χαμηλότερη
+οι πιθανότητες να μειωθούν λόγω διακοπής λειτουργίας.
 
-## Requirements
-- [Validator hardware](#validator-hardware)
-  - [Requirements](#requirements)
-  - [Mainnet](#mainnet)
+## Απαιτήσεις
+- [Υλικό επικύρωσης] (#validator-hardware)
+   - [Απαιτήσεις] (#απαιτήσεις)
+   - [Mainnet](#mainnet)
 
 
 ## Mainnet
-We recommend the following hardware specifications:
+Συνιστούμε τις ακόλουθες προδιαγραφές υλικού:
      
 
-| Characteristic | Specification |
+| Χαρακτηριστικό | Προδιαγραφές |
 | :------------: | :-----------: |
-| Operative System | Ubuntu 20.04 or later LTS |
-| Number of CPUs | 4 |
-| RAM | 16GB |
-| SSD | 300GB | 
+| Λειτουργικό Σύστημα | Ubuntu 20.04 ή μεταγενέστερο LTS |
+| Αριθμός CPU | 4 |
+| RAM | 16 GB |
+| SSD | 300 GB |
 
-Also, we need to make sure the following requirements are met: 
-* Allow incoming connections on port `26656`
-* Have a static IP address
-* Have access to the root user
+Επίσης, πρέπει να βεβαιωθούμε ότι πληρούνται οι ακόλουθες απαιτήσεις:
+* Να επιτρέπονται οι εισερχόμενες συνδέσεις στη θύρα «26656».
+* Να έχετε στατική διεύθυνση IP
+* Έχετε πρόσβαση στον χρήστη root
 
 
-## Next {hide}
+## Επόμενο {απόκρυψη}
 
-Learn how to [System preparation](system-preparation.md) {hide}
+Μάθετε πώς να [System Preparation](system-preparation.md) {hide}
