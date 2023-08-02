@@ -2,20 +2,20 @@
 order: 4
 -->
 
-# Install binary from source code (option A)
+# Εγκατάσταση δυαδικού από τον πηγαίο κώδικα (επιλογή Α)
 
 
-Clone repository and checkout to proper tag
+Κλωνοποιήστε το αποθετήριο και το ταμείο στη σωστή ετικέτα
 ```bash
 git clone --depth 1 --branch  v1.0.1  https://github.com/chain4energy/c4e-chain.git
 ```
-Go to dir and build project
+Μεταβείτε στον κατάλογο και δημιουργήστε το project
 ```bash
 cd c4e-chain/
 make install
 ```
 
-Check binary version should me equal
+Ελέγξτε τη δυαδική έκδοση πρέπει να είναι ίση
 ```bash
 c4ed version
 
