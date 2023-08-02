@@ -2,9 +2,9 @@
 order: 7
 -->
 
-# Cosmovisor setup
+# Ρύθμιση Cosmovisor
 
-## Install cosmovisor
+## Εγκαταστήστε το cosmovisor
 
 Run go install to download cosmovisor:
 
@@ -12,7 +12,7 @@ Run go install to download cosmovisor:
 go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@v1.0.0
 ```
 
-Create dir structure for cosmovisor:
+Δημιουργήστε δομή dir για το cosmovisor:
 
 ```bash
 export DAEMON_NAME=c4ed
@@ -22,8 +22,7 @@ mkdir -p $DAEMON_HOME/cosmovisor/genesis/bin
 mkdir -p $DAEMON_HOME/cosmovisor/upgrades
 ```
 
-Copy c4e binary to cosmovisor genesis bin:
-
+Αντιγράψτε το δυαδικό c4e στο cosmovisor genesis bin:
 ```bash
 cp ~/go/bin/c4ed $DAEMON_HOME/cosmovisor/genesis/bin
 $DAEMON_HOME/cosmovisor/genesis/bin/c4ed version
@@ -60,7 +59,7 @@ sudo systemctl enable cosmovisor
 sudo systemctl start cosmovisor
 ```
 
-Check status
+Ελέγξετε την κατάσταση
 ```bash
 sudo systemctl status cosmovisor
 ```
