@@ -1,111 +1,111 @@
-# Fields in genesis
+# Πεδία στη γένεση
 
-Specifically, the genesis file includes the following fields:
+Συγκεκριμένα, το αρχείο genesis περιλαμβάνει τα ακόλουθα πεδία:
 
 
 
-* "genesis_time": The time of the beginning of the blockchain.
-* "genutil": A variety of genesis utility functionality for usage including genesis transactions creation (gentx) and genesis file validation command as well as Tendermint related initialization.
-* "ibc": Inter-Blockchain Communication across different chains.
-* "chain_id": A unique identifier for the blockchain. See this for further details.
-* "initial_height": The initial height of the blockchain.
-* "consensus_params: Consensus parameters defined in the genesis file.
-* "block":
-* "max_bytes": Maximum size of a block (in bytes).
-* "max_gas": The gas limit per block, default value is "-1", i.e., no rules about gas are enforced.
-* "time_iota_ms": The minimum time increment between consecutive blocks, in milliseconds.
-* "evidence": Evidence storage handling and block proposal detection with the evidence reactor.
-* "max_age_num_blocks": This field is to be deprecated.
-* "max_age_duration": The maximum age of evidence. Any evidence older than this will be rejected.
-* "max_num": The maximum age of evidence (in number of blocks).
-* "validator":
-* "pub_key_types": The supported validator public key types.
-* "app_hash": The initial application state defined in the genesis block.
+* "genesis_time": Η ώρα έναρξης του blockchain.
+* "genutil": Μια ποικιλία λειτουργιών του βοηθητικού προγράμματος γένεσης για χρήση, συμπεριλαμβανομένης της δημιουργίας συναλλαγών γένεσης (gentx) και της εντολής επικύρωσης αρχείου γένεσης καθώς και αρχικοποίησης που σχετίζεται με το Tendermint.
+* "ibc": Επικοινωνία μεταξύ Blockchain σε διαφορετικές αλυσίδες.
+* "chain_id": Ένα μοναδικό αναγνωριστικό για το blockchain. Δείτε αυτό για περισσότερες λεπτομέρειες.
+* "initial_height": Το αρχικό ύψος του blockchain.
+* "consensus_params: Παράμετροι συναίνεσης που ορίζονται στο αρχείο genesis.
+* "ΟΙΚΟΔΟΜΙΚΟ ΤΕΤΡΑΓΩΝΟ":
+* "max_bytes": Μέγιστο μέγεθος ενός μπλοκ (σε byte).
+* "max_gas": Το όριο αερίου ανά μπλοκ, η προεπιλεγμένη τιμή είναι "-1", δηλαδή δεν επιβάλλονται κανόνες σχετικά με το αέριο.
+* "time_iota_ms": Η ελάχιστη χρονική αύξηση μεταξύ διαδοχικών μπλοκ, σε χιλιοστά του δευτερολέπτου.
+* "αποδείξεις": Χειρισμός αποθήκευσης αποδεικτικών στοιχείων και αποκλεισμός ανίχνευσης προτάσεων με τον αντιδραστήρα αποδεικτικών στοιχείων.
+* "max_age_num_blocks": Αυτό το πεδίο πρόκειται να καταργηθεί.
+* "max_age_duration": Η μέγιστη ηλικία αποδείξεων. Οποιοδήποτε αποδεικτικό στοιχείο παλαιότερο από αυτό θα απορριφθεί.
+* "max_num": Η μέγιστη ηλικία αποδεικτικών στοιχείων (σε αριθμό μπλοκ).
+* "επικυρωτής":
+* "pub_key_types": Οι υποστηριζόμενοι τύποι δημόσιου κλειδιού επικύρωσης.
+* "app_hash": Η αρχική κατάσταση εφαρμογής που ορίζεται στο μπλοκ γένεσης.
 * "auth"
-* "params": Parameters of the auth module defined in the genesis file.
-* "max_memo_characters": Maximum number of characters in a memo of a transaction.
-* "tx_sig_limit": The maximum number of signers for a transaction.
-* "tx_size_cost_per_byte": The amount of gas consumed per byte of a transaction.
-* "sig_verify_cost_ed25519": Gas cost on edd2519 signature verification.
-* "sig_verify_cost_secp256k1": Gas cost on secp256k1 signature verification.
-* "accounts": Genesis accounts, which defines the initial allocation of the tokens.
-* "@type": Account type.
-* "address": Address of the genesis accounts.
-* "pub_key": Public key of the genesis accounts.
-* "account_number": The account number of the account in state.
-* "sequence": Used to count the number of transactions sent by this account. It is incremented each time a transaction is included in a block, and used to prevent replay attacks.
+* "params": Παράμετροι της ενότητας auth που ορίζονται στο αρχείο genesis.
+* "max_memo_characters": Μέγιστος αριθμός χαρακτήρων σε ένα σημείωμα μιας συναλλαγής.
+* "tx_sig_limit": Ο μέγιστος αριθμός υπογραφόντων για μια συναλλαγή.
+* "tx_size_cost_per_byte": Η ποσότητα αερίου που καταναλώνεται ανά byte μιας συναλλαγής.
+* "sig_verify_cost_ed25519": Κόστος αερίου στην επαλήθευση υπογραφής edd2519.
+* "sig_verify_cost_secp256k1": Κόστος αερίου στην επαλήθευση υπογραφής secp256k1.
+* "λογαριασμοί": Λογαριασμοί Genesis, που καθορίζουν την αρχική κατανομή των διακριτικών.
+* "@type": Τύπος λογαριασμού.
+* «διεύθυνση»: Διεύθυνση των λογαριασμών γένεσης.
+* "pub_key": Δημόσιο κλειδί των λογαριασμών γένεσης.
+* "account_number": Ο αριθμός λογαριασμού του λογαριασμού στην κατάσταση.
+* "sequence": Χρησιμοποιείται για τη μέτρηση του αριθμού των συναλλαγών που αποστέλλονται από αυτόν τον λογαριασμό. Αυξάνεται κάθε φορά που μια συναλλαγή περιλαμβάνεται σε ένα μπλοκ και χρησιμοποιείται για την αποτροπή επιθέσεων επανάληψης.
 * "base_vesting_account":
-* "original_vesting": Special type of accounting that the token needs to be vested for a period of time before they can be transferred. Tokens can be delegated during the vesting period.
-* "denom": Denomination of the token.
-* "amount": Total amount in the vesting account.
-* "delegated_free": Amount of delegated tokens that can be transferred after they've been vested.
-* "delegated_vesting": Amount of delegated tokens that are still under vesting.
-* "endtime": Vesting end time.
-* "bank" The bank module handles tokens.
-* "params": Parameters of the bank module defined in the genesis file.
-* "send_enabled": The transfer capability in the genesis.
-* "default_send_enabled": The default value for "send_enabled" value controls send transfer capability.
-* "distribution":The module that handles the logic of distribution block provisions and fees to validators and delegators.
+* "original_vesting": Ειδικός τύπος λογιστικής που το διακριτικό πρέπει να κατοχυρωθεί για μια χρονική περίοδο προτού μπορέσει να μεταφερθεί. Τα διακριτικά μπορούν να εκχωρηθούν κατά τη διάρκεια της περιόδου κατοχύρωσης.
+* "denom": Ονομασία της μάρκας.
+* "ποσό": Συνολικό ποσό στον λογαριασμό κατοχύρωσης.
+* "delegated_free": Ποσότητα αντιστοιχισμένων διακριτικών που μπορούν να μεταφερθούν αφού κατοχυρωθούν.
+* "delegated_vesting": Το ποσό των εκχωρημένων διακριτικών που είναι ακόμη υπό κατοχύρωση.
+* "endtime": Ώρα λήξης κατοχύρωσης.
+* "bank" Η μονάδα τράπεζας χειρίζεται μάρκες.
+* "params": Παράμετροι της μονάδας τράπεζας που ορίζονται στο αρχείο genesis.
+* "send_enabled": Η δυνατότητα μεταφοράς στη γένεση.
+* "default_send_enabled": Η προεπιλεγμένη τιμή για τα στοιχεία ελέγχου τιμής "send_enabled" δυνατότητα μεταφοράς αποστολής.
+* "Distribution": Η ενότητα που χειρίζεται τη λογική των παροχών και των τελών του μπλοκ διανομής σε επικυρωτές και αντιπροσώπους.
 * "delegator_starting_infos":
-* "delegator_withdraw_infos": List of delegators withdraw address.
+* "delegator_withdraw_infos": Λίστα αντιπροσώπων που αποσύρουν τη διεύθυνση.
 * "fee_pool":
-* "community_pool": Allocated funds in the community pool, if any.
-* "outstanding_rewards": Uncollected rewards, if any.
-* "params": Parameters of the distribution module defined in the genesis file.
-* "base_proposer_reward": Base bonus on transaction fees collected in a valid block.
-* "bonus_proposer_reward": Maximum bonus on transaction fees collected in a valid block.
-* "community_tax": The rate of community tax.
-* "withdraw_addr_enabled": Whether delegators can set a different address to withdraw their rewards.
-* "previous_proposer": Proposer of the previous block, if any.
-* "validator_accumulated_commissions": Uncollected commission of validators, if any.
-* "validator_current_rewards": Information related to the current rewards of validators, if any.
-* "validator_historical_rewards": Information related to the historical rewards of validators, if any.
-* "validator_slash_events": Information related to the historical slashing events of validators, if any.
-* "gov": The governance module.
-* "deposit_params": Parameters for the deposit required for governance proposal.
-* "max_deposit_period": The maximum deposit period for governance proposal.
-* "min_deposit": The minimum deposit required for governance proposal.
-* "deposits": List of deposits for each proposal ID, if any.
-* "proposals": List of proposals for proposals, if any.
-* "starting_proposal_id": The initial proposals id, starting from "1"
-* "tally_params": Parameters for tally.
-* "quorum": Minimum percentage of bonded staking tokens that needs to vote for the result to be valid.
-* "threshold": Minimum percentage of votes that need to be YES for the result to be valid.
-* "veto_threshold": Maximum percentage NO_WITH_VETO votes for the result to be valid.
-* "votes": List of votes for each proposal ID, if any.
-* "voting_params": Parameters for voting.
-* "voting_period": The voting period for governance proposal.
-* "mint": The minting module for token minting.
+* "community_pool": Κατανεμημένα κεφάλαια στο κοινοτικό pool, εάν υπάρχουν.
+* "outstanding_rewards": Μη συγκεντρωμένες ανταμοιβές, εάν υπάρχουν.
+* "params": Παράμετροι της μονάδας διανομής που ορίζονται στο αρχείο genesis.
+* "base_proposer_reward": Βασικό μπόνους για χρεώσεις συναλλαγής που συλλέγονται σε έγκυρο μπλοκ.
+* "bonus_proposer_reward": Μέγιστο μπόνους για χρεώσεις συναλλαγής που συλλέγονται σε έγκυρο μπλοκ.
+* "community_tax": Ο συντελεστής του κοινοτικού φόρου.
+* "withdraw_addr_enabled": Εάν οι εκπρόσωποι μπορούν να ορίσουν διαφορετική διεύθυνση για να αποσύρουν τις ανταμοιβές τους.
+* "previous_proposer": Προτάτης του προηγούμενου μπλοκ, εάν υπάρχει.
+* "validator_accumulated_commissions": Μη είσπραξη προμήθεια επικυρωτών, εάν υπάρχουν.
+* "validator_current_rewards": Πληροφορίες που σχετίζονται με τις τρέχουσες ανταμοιβές των επικυρωτών, εάν υπάρχουν.
+* "validator_historical_rewards": Πληροφορίες που σχετίζονται με τις ιστορικές ανταμοιβές των επικυρωτών, εάν υπάρχουν.
+* "validator_slash_events": Πληροφορίες που σχετίζονται με τα ιστορικά γεγονότα κοπής των επικυρωτών, εάν υπάρχουν.
+* "gov": Η ενότητα διακυβέρνησης.
+* "deposit_params": Παράμετροι για την κατάθεση που απαιτείται για την πρόταση διακυβέρνησης.
+* "max_deposit_period": Η μέγιστη περίοδος κατάθεσης για πρόταση διακυβέρνησης.
+* "min_deposit": Η ελάχιστη κατάθεση που απαιτείται για την πρόταση διακυβέρνησης.
+* "καταθέσεις": Λίστα καταθέσεων για κάθε ID πρότασης, εάν υπάρχει.
+* "προτάσεις": Κατάλογος προτάσεων για προτάσεις, εάν υπάρχουν.
+* "starting_proposal_id": Το αρχικό αναγνωριστικό προτάσεων, ξεκινώντας από "1"
+* "tally_params": Παράμετροι για την καταμέτρηση.
+* "απαρτία": Ελάχιστο ποσοστό δεσμευμένων πονταρισμάτων που πρέπει να ψηφίσουν για να είναι έγκυρο το αποτέλεσμα.
+* "όριο": Ελάχιστο ποσοστό ψήφων που πρέπει να είναι ΝΑΙ για να είναι έγκυρο το αποτέλεσμα.
+* "veto_threshold": Μέγιστο ποσοστό NO_WITH_VETO ψήφους για να είναι έγκυρο το αποτέλεσμα ταυτότητα.
+* "votes": Λίστα ψήφων για κάθε ID πρότασης, εάν υπάρχει.
+* "voting_params": Παράμετροι για ψηφοφορία.
+* "voting_period": Η περίοδος ψηφοφορίας για πρόταση διακυβέρνησης.
+* "mint": Η μονάδα κοπής για νομισματοκοπεία.
 * "minter":
-* "annual_provisions": Annual expected provisions (set to zero in genesis).
-* "inflation": The target yearly inflation rate, compounded weekly.
-* "params": Parameters of the mint module defined in the genesis file.
-* "blocks_per_year": The expected number of blocks being produced per year.
-* "goal_bonded": Target bonded token in percentage.
-* "inflation_max": Maximum inflation rate.
-* "inflation_min": Minimum inflation rate.
-* "inflation_rate_change": Maximum annual change in inflation rate.
-* "mint_denom": Token type being minted.
-* "slashing": The slashing module for the punishment of validator's misbehavior.
-* "missed_blocks": Information related to validators missed blocks, if any.
-* "params": Parameters of the slashing module defined in the genesis file.
-* "downtime_jail_duration": The jailing duration for validators with low availability.
-* "min_signed_per_window": Threshold of total missed blocks, in percentage.
-* "signed_blocks_window": Window to calculate validators's liveness.
-* "slash_fraction_double_sign": Maximum percentage of stake reduction for byzantine validators.
-* "slash_fraction_downtime": Maximum percentage of stake reduction for validators with low availability.
-* "signing_infos": Information related to each validator for the slashing module, if any.
-* "staking": The staking module that handles Proof-of-Stake related logics.
-* "delegations": Information related to the delegation state of validators, if any.
-* "exported": Wether this genesis file was generated by exporting of a previous state.
-* "last_total_power": Total voting power in the genesis, if any.
-* "last_validator_powers": The voting power of each validator in last known state, if any.
-* "params": Parameters of the staking module defined in the genesis file.
-* "bond_denom": Coin denomination for staking.
-* "historical_entries": The number of historical entries to persist.
-* "max_entries": The max entries for either unbonding delegation or redelegation.
-* "max_validators": The maximum number of validator.
-* "unbonding_time": The time duration of unbonding.
-* "redelegations": List of redelegations for validators, if any.
-* "unbonding_delegations": List of unbonding delegations for validators, if any.
-* "validators": List of existing validators, if any.
+* "annual_provisions": Ετήσιες αναμενόμενες προβλέψεις (μηδενίζονται στη γένεση).
+* "πληθωρισμός": Ο στόχος ετήσιος ρυθμός πληθωρισμού, σε συνδυασμό εβδομαδιαίως.
+* "params": Παράμετροι της μονάδας νομισματοκοπείου που ορίζονται στο αρχείο genesis.
+* "blocks_per_year": Ο αναμενόμενος αριθμός μπλοκ που παράγονται ανά έτος.
+* "goal_bonded": Στόχος δεσμευμένου διακριτικού σε ποσοστό.
+* "inflation_max": Μέγιστος ρυθμός πληθωρισμού.
+* "inflation_min": Ελάχιστο ποσοστό πληθωρισμού.
+* "inflation_rate_change": Μέγιστη ετήσια μεταβολή του ρυθμού πληθωρισμού.
+* "mint_denom": Ο τύπος διακριτικού κόβεται.
+* "slashing": Η μονάδα κοπής για την τιμωρία της κακής συμπεριφοράς του επικυρωτή.
+* "missed_blocks": Πληροφορίες που σχετίζονται με τους επικυρωτές χαμένα μπλοκ, εάν υπάρχουν.
+* "params": Παράμετροι της μονάδας κοπής που ορίζονται στο αρχείο genesis.
+* "downtime_jail_duration": Η διάρκεια φυλάκισης για επικυρωτές με χαμηλή διαθεσιμότητα.
+* "min_signed_per_window": Όριο συνολικών χαμένων μπλοκ, σε ποσοστό.
+* "signed_blocks_window": Παράθυρο για τον υπολογισμό της ενεργότητας των επικυρωτών.
+* "slash_fraction_double_sign": Μέγιστο ποσοστό μείωσης πονταρίσματος για βυζαντινούς επικυρωτές.
+* "slash_fraction_downtime": Μέγιστο ποσοστό μείωσης πονταρίσματος για επικυρωτές με χαμηλή διαθεσιμότητα.
+* "signing_infos": Πληροφορίες που σχετίζονται με κάθε εργαλείο επικύρωσης για τη μονάδα κοπής, εάν υπάρχει.
+* "ποντάρισμα": Η ενότητα πονταρίσματος που χειρίζεται λογικές σχετικές με την Απόδειξη στοιχήματος.
+* "αντιπροσωπείες": Πληροφορίες σχετικά με την κατάσταση ανάθεσης των επικυρωτών, εάν υπάρχουν.
+* "exported": Εάν αυτό το αρχείο γένεσης δημιουργήθηκε με εξαγωγή προηγούμενης κατάστασης.
+* "last_total_power": Συνολική ισχύς ψήφου στη γένεση, εάν υπάρχει.
+* "last_validator_powers": Η ισχύς ψήφου κάθε επικυρωτή στην τελευταία γνωστή κατάσταση, εάν υπάρχει.
+* "params": Παράμετροι της μονάδας πονταρίσματος που ορίζονται στο αρχείο genesis.
+* "bond_denom": Ονομασία κερμάτων για ποντάρισμα.
+* "historical_entries": Ο αριθμός των ιστορικών εγγραφών που θα διατηρηθούν.
+* "max_entries": Οι μέγιστες εγγραφές είτε για μη δεσμευτική ανάθεση είτε για εκ νέου ανάθεση.
+* "max_validators": Ο μέγιστος αριθμός επικυρωτών.
+* "unbonding_time": Η χρονική διάρκεια της αποδέσμευσης.
+* "redelegations": Λίστα επαναδιανομών για επικυρωτές, εάν υπάρχουν.
+* "unbonding_delegations": Λίστα unbonding αντιπροσωπειών για επικυρωτές, εάν υπάρχουν.
+* "validators": Λίστα υπαρχόντων επικυρωτών, εάν υπάρχουν.
