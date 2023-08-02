@@ -1,19 +1,19 @@
 <!--
-order: 1
+παραγγελία: 1
 -->
 
 
-# Modules description
+# Περιγραφή ενοτήτων
 
 ## Chain4Energy Modules
-Chain4Energy implements the following custom modules:
+Το Chain4Energy υλοποιεί τις ακόλουθες προσαρμοσμένες ενότητες:
 
-* **[`cfedistributor`](./cfedistributor)** - Controls the distribution of tokens on the network. Allows to elastically define distribution flow.
-* **[`cfeminter`](./cfeminter)** - Controls token supply emissions.
-* **[`cfevesting`](./cfevesting)** - Controls vesting pools and creates vesting accounts from these vesting pools.
+* **[`cfedistributor`](./cfedistributor)** - Ελέγχει τη διανομή των διακριτικών στο δίκτυο. Επιτρέπει τον ελαστικό καθορισμό της ροής διανομής.
+* **[`cfeminter`](./cfeminter)** - Ελέγχει τις εκπομπές τροφοδοσίας διακριτικών.
+* **[`cfevesting`](./cfevesting)** - Ελέγχει τις ομάδες κατοχύρωσης και δημιουργεί λογαριασμούς κατοχύρωσης από αυτές τις ομάδες κατοχύρωσης.
 
-## Cosmos Modules
+## Ενότητες Cosmos
 
-C4E Chain utilizes Cosmos SDK and the Tendermint Core consensus engine underneath. Specifically, the Cosmos SDK is a framework that facilitates the development of secure state-machines on top of Tendermint. In particular, we utilize different SDK modules to facilitate the special features of the Crypto.org Chain.
+Η αλυσίδα C4E χρησιμοποιεί το Cosmos SDK και τη μηχανή συναίνεσης Tendermint Core από κάτω. Συγκεκριμένα, το Cosmos SDK είναι ένα πλαίσιο που διευκολύνει την ανάπτυξη ασφαλών κρατικών μηχανών πάνω από το Tendermint. Συγκεκριμένα, χρησιμοποιούμε διαφορετικές μονάδες SDK για να διευκολύνουμε τις ειδικές δυνατότητες της αλυσίδας Crypto.org.
 
-* **[`cosmos modules`](./cosmosModules.md)** - Cosmos modules documentation.
+* **[`cosmos modules`](./cosmosModules.md)** - Τεκμηρίωση λειτουργικών μονάδων Cosmos.
