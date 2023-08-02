@@ -1,77 +1,77 @@
 <!--
-order: 7
+παραγγελία: 7
 -->
 
-# Cosmovisor setup
+# Ρύθμιση Cosmovisor
 
-## Install cosmovisor
+## Εγκαταστήστε το cosmovisor
 
-Run go install to download cosmovisor:
+Εκτελέστε το go install για να κατεβάσετε το cosmovisor:
 
-```bash
-go install github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@v1.0.0
+```μπας
+εγκαταστήστε το github.com/cosmos/cosmos-sdk/cosmovisor/cmd/cosmovisor@v1.0.0
 ```
 
-Create dir structure for cosmovisor:
+Δημιουργήστε δομή dir για το cosmovisor:
 
-```bash
-export DAEMON_NAME=c4ed
-export DAEMON_HOME=$HOME/.c4e-chain/
-echo $DAEMON_NAME
+```μπας
+εξαγωγή DAEMON_NAME=c4ed
+εξαγωγή DAEMON_HOME=$HOME/.c4e-chain/
+ηχώ $DAEMON_NAME
 mkdir -p $DAEMON_HOME/cosmovisor/genesis/bin
-mkdir -p $DAEMON_HOME/cosmovisor/upgrades
+mkdir -p $DAEMON_HOME/cosmovisor/αναβαθμίσεις
 ```
 
-Copy c4e binary to cosmovisor genesis bin:
+Αντιγράψτε το δυαδικό c4e στο cosmovisor genesis bin:
 
-```bash
+```μπας
 cp ~/go/bin/c4ed $DAEMON_HOME/cosmovisor/genesis/bin
-$DAEMON_HOME/cosmovisor/genesis/bin/c4ed version
+Έκδοση $DAEMON_HOME/cosmovisor/genesis/bin/c4ed
 ```
 
 
-Setup systemd:
+Ρύθμιση συστήματος:
 
-```bash
+```μπας
 sudo tee /etc/systemd/system/cosmovisor.service> /dev/null <<EOF
-[Unit]
-Description=cosmovisor
+[Μονάδα]
+Περιγραφή=cosmovisor
 After=network-online.target
 
-[Service]
-User=$USER
+[Υπηρεσία]
+Χρήστης=$USER
 ExecStart=/home/$USER/go/bin/cosmovisor start
-Restart=always
+Επανεκκίνηση=πάντα
 RestartSec=3
 LimitNOFILE=4096
 Environment="DAEMON_NAME=c4ed"
 Environment="DAEMON_HOME=/home/$USER/.c4e-chain"
-Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false”
+Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false"
 Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
-[Install]
+[Εγκαθιστώ]
 WantedBy=multi-user.target
 
-EOF
+ΕΟΦ
 ```
 
-Run a node:
-```bash
-sudo systemctl enable cosmovisor  
+Εκτελέστε έναν κόμβο:
+```μπας
+sudo systemctl ενεργοποιεί το cosmovisor
 sudo systemctl start cosmovisor
 ```
 
-Check status
-```bash
+Ελέγξετε την κατάσταση
+```μπας
 sudo systemctl status cosmovisor
 ```
 
-Logs from cosmovisor
-```bash
+Καταγραφές από το cosmovisor
+```μπας
 sudo journalctl -f -u cosmovisor
 ```
 
 
 
-## Next {hide}
+## Επόμενο {απόκρυψη}
 
-Learn how to [run validator](validator-setup.md) {hide}
+Μάθετε πώς να [run validator](validator-setup.md) {hide}
