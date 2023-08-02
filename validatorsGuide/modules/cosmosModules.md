@@ -1,264 +1,263 @@
 <!--
-order: 5
+παραγγελία: 5
 -->
 
 
-# Cosmos modules
+# Ενότητες Cosmos
 
-* Authz - Facilitates authorizations granted to one account to perform actions on behalf of another account;
+* Authz - Διευκολύνει τις εξουσιοδοτήσεις που χορηγούνται σε έναν λογαριασμό για την εκτέλεση ενεργειών για λογαριασμό άλλου λογαριασμού.
 
-  The authz module facilitates granting authorizations to perform actions, such as spending tokens, on behalf of one account to other accounts.
+   Η ενότητα authz διευκολύνει τη χορήγηση εξουσιοδοτήσεων για την εκτέλεση ενεργειών, όπως η δαπάνη κουπονιών, για λογαριασμό ενός λογαριασμού σε άλλους λογαριασμούς.
 
 
-An authorization is an allowance to execute an action by the grantee on behalf of the authorization granter, e.g. to send tokens to an account from the granter, or to delegate tokens to a validator from the granter. There are 3 major built-in authorization types:
+Μια εξουσιοδότηση είναι ένα δικαίωμα για την εκτέλεση μιας ενέργειας από τον δικαιούχο για λογαριασμό του χορηγούντος την εξουσιοδότηση, π.χ. για να στείλετε διακριτικά σε έναν λογαριασμό από τον παραχωρητή ή για να εκχωρήσετε διακριτικά σε έναν επικυρωτή από τον παραχωρητή. Υπάρχουν 3 κύριοι ενσωματωμένοι τύποι εξουσιοδότησης:
 
-1. SendAuthorization
+1. Αποστολή Εξουσιοδότησης
 
-SendAuthorization implements an authorization to the grantee to perform, on behalf of the granter, a basic send action defined in the bank module. It takes a SpendLimit that is greater than 0 to specify the maximum amount of tokens the grantee can spend with. The SpendLimit keeps track of how many tokens allowed are left in the authorization and is updated as the tokens are spent until the SendAuthorization gets cleared when the SpendLimitreaches 0. Sending an amount greater than the SpendLimit is not allowed
+Το SendAuthorization υλοποιεί μια εξουσιοδότηση προς τον δικαιούχο να εκτελέσει, εκ μέρους του χορηγού, μια βασική ενέργεια αποστολής που ορίζεται στη μονάδα τράπεζας. Χρειάζεται ένα SpendLimit που είναι μεγαλύτερο από 0 για να καθοριστεί το μέγιστο ποσό των κουπονιών με τα οποία μπορεί να ξοδέψει ο δικαιούχος. Το SpendLimit παρακολουθεί πόσα επιτρεπόμενα διακριτικά έχουν απομείνει στην εξουσιοδότηση και ενημερώνεται καθώς δαπανώνται τα διακριτικά μέχρι να διαγραφεί το SendAuthorization όταν το SpendLimitreaches 0. Η αποστολή ποσού μεγαλύτερου από το SpendLimit δεν επιτρέπεται
 
-2. StakeAuthorization
+2. Εξουσιοδότηση συμμετοχής
 
-StakeAuthorization implements an authorization to the grantee to perform, on behalf of the granter, delegate, unbond (undelegate), or redelegate actions defined in the staking module. Each of the above actions need to be authorized separately, with which either an AllowList or a DenyList must be specified to restrict which validators to or not to perform a staking action with. Optionally, MaxTokens can also be specified in the authorization that keeps track of a limit to the amount of tokens to be delegated/undelegated/redelegated. If left unspecified, the amount is unlimited. Similar to the SpendLimit in SendAuthorization, MaxTokens gets updated after each valid authorized staking action. An authorized staking action that uses tokens beyond the MaxTokens is not allowed
+Το StakeAuthorization υλοποιεί μια εξουσιοδότηση προς τον δικαιούχο να εκτελεί, εκ μέρους του χορηγού, να εκχωρήσει, να αποδεσμεύσει (μη ανάθεση) ή να αναθέσει ενέργειες που ορίζονται στην ενότητα πονταρίσματος. Κάθε μία από τις παραπάνω ενέργειες πρέπει να εξουσιοδοτηθεί ξεχωριστά, με την οποία πρέπει να καθοριστεί είτε μια Λίστα Επιτρεπόμενης Λίστας είτε μια Λίστα Απαγόρευσης, ώστε να περιοριστεί με ποιους επικυρωτές να εκτελούν ή όχι μια ενέργεια πονταρίσματος. Προαιρετικά, τα MaxTokens μπορούν επίσης να καθοριστούν στην εξουσιοδότηση που παρακολουθεί ένα όριο στην ποσότητα των διακριτικών προς ανάθεση/μη ανάθεση/εκ νέου ανάθεση. Εάν αφεθεί απροσδιόριστο, το ποσό είναι απεριόριστο. Παρόμοια με το SpendLimit στο SendAuthorization, το MaxTokens ενημερώνεται μετά από κάθε έγκυρη εξουσιοδοτημένη ενέργεια πονταρίσματος. Δεν επιτρέπεται μια εξουσιοδοτημένη ενέργεια πονταρίσματος που χρησιμοποιεί διακριτικά πέρα από τα MaxTokens
 
-3. GenericAuthorization
+3. Γενική Εξουσιοδότηση
 
-GenericAuthorization implements an authorization to the grantee to perform, on behalf of the granter, a generic action. In other words, GenericAuthorization facilitates an arbitrary action grant, where a MsgTypeURL must be specified to correspond to an action defined in the modules. A GenericAuthorization is currently unrestricted beyond the MsgTypeURL. For example, when granting someone to send tokens, the SpendLimit in SendAuthorization will not be enforced. Therefore, a SendAuthorization without a spend limit may in fact be implemented as a GenericAuthorization with the MsgTypeURL been set to /cosmos.bank.v1beta1.MsgSend. The following are some common MsgTypeURLs:
+Η GenericAuthorization εφαρμόζει μια εξουσιοδότηση στον δικαιούχο να εκτελέσει, για λογαριασμό του χορηγού, μια γενική ενέργεια. Με άλλα λόγια, η GenericAuthorization διευκολύνει μια επιχορήγηση αυθαίρετης ενέργειας, όπου ένα MsgTypeURL πρέπει να καθοριστεί ώστε να αντιστοιχεί σε μια ενέργεια που ορίζεται στις ενότητες. Μια Γενική Εξουσιοδότηση είναι προς το παρόν απεριόριστη πέρα από το MsgTypeURL. Για παράδειγμα, όταν παραχωρείτε σε κάποιον να στείλει διακριτικά, το SpendLimit στο SendAuthorization δεν θα επιβληθεί. Επομένως, μια Εξουσιοδότηση Send χωρίς όριο δαπανών μπορεί στην πραγματικότητα να εφαρμοστεί ως GenericAuthorization με το MsgTypeURL να έχει οριστεί σε /cosmos.bank.v1beta1.MsgSend. Τα παρακάτω είναι μερικά κοινά MsgTypeURL:
 
-* Send: /cosmos.bank.v1beta1.MsgSend
-* Delegate: /cosmos.staking.v1beta1.MsgDelegate
+* Αποστολή: /cosmos.bank.v1beta1.MsgΑποστολή
+* Εκπρόσωπος: /cosmos.staking.v1beta1.MsgDelegate
 * Unbond/Undelegate: /cosmos.staking.v1beta1.MsgUndelegate
 * Redelegate: /cosmos.staking.v1beta1.MsgBeginRedelegate
-* Withdraw delegator reward: /cosmos.distribution.v1beta1.MsgWithdrawDelegatorReward
-* Bank - Token transfer functionalities and query support for the total supply of all assets;
+* Ανάληψη ανταμοιβής αντιπροσώπου: /cosmos.distribution.v1beta1.MsgWithdrawDelegatorReward
+* Τράπεζα - Λειτουργίες μεταφοράς διακριτικών και υποστήριξη ερωτημάτων για τη συνολική προσφορά όλων των περιουσιακών στοιχείων.
 
-  The bank module maintains the state of two primary objects:
+   Η μονάδα τράπεζας διατηρεί την κατάσταση δύο πρωταρχικών αντικειμένων:
 
 
-Account balances by address;
+Υπόλοιπα λογαριασμών ανά διεύθυνση.
 
 
-Total supply of tokens of the chain
+Συνολική προμήθεια μαρκών της αλυσίδας
 
 
-bank module tracks and provides query support for the total supply of all assets used in the application. It also supports token transfer functionalities. Specifically, the total supply is updated whenever a token is:
+Η μονάδα τράπεζας παρακολουθεί και παρέχει υποστήριξη ερωτημάτων για τη συνολική προσφορά όλων των περιουσιακών στοιχείων που χρησιμοποιούνται στην εφαρμογή. Υποστηρίζει επίσης λειτουργίες μεταφοράς διακριτικών. Συγκεκριμένα, η συνολική προσφορά ενημερώνεται κάθε φορά που ένα διακριτικό είναι:
 
 
-Minted, e.g. Token created by the mint module; or
+Κοπή, π.χ. Token που δημιουργήθηκε από τη μονάδα νομισματοκοπείου. ή
 
 
-Burned, e.g. Token distorted by the slashing module
+Καμένο, π.χ. Το διακριτικό παραμορφώθηκε από τη μονάδα κοπής
 
-* Distribution - Fee distribution, and staking rewards to the validators and delegator;
+* Διανομή - Κατανομή τελών και ποντάρισμα ανταμοιβών στους επικυρωτές και τους εκχωρητές.
 
-  The distribution module is responsible for the distribution of rewards to the validators and delegators.
+   Η ενότητα διανομής είναι υπεύθυνη για τη διανομή των ανταμοιβών στους επικυρωτές και στους αντιπροσώπους.
 
 
-## Network Parameters
+## Παράμετροι δικτύου
 
 
-Below are all the network parameters for the distribution module:
+Παρακάτω είναι όλες οι παράμετροι δικτύου για τη μονάδα διανομής:
 
 
-community_tax - The rate of community tax;
+κοινοτικός_φόρος - Ο συντελεστής κοινοτικού φόρου.
 
 
-base_proposer_reward - Base bonus on transaction fees collected in a valid block;
+base_proposer_reward - Βασικό μπόνους σε χρεώσεις συναλλαγής που συλλέγονται σε έγκυρο μπλοκ.
 
 
-bonus_proposer_reward - Maximum bonus on transaction fees collected in a valid block;
+bonus_proposer_reward - Μέγιστο μπόνους για χρεώσεις συναλλαγής που συλλέγονται σε έγκυρο μπλοκ.
 
 
-withdraw_addr_enabled - Whether delegators can set a different address to withdraw their rewards.
+draw_addr_enabled - Εάν οι αντιπρόσωποι μπορούν να ορίσουν διαφορετική διεύθυνση για να αποσύρουν τις ανταμοιβές τους.
 
 
-## Rewards
+## Ανταμοιβές
 
 
-There are two main types of rewards
+Υπάρχουν δύο βασικοί τύποι ανταμοιβών
 
 
-Block rewards, governed by the mint module; and
+Αποκλεισμός ανταμοιβών, που διέπονται από τη μονάδα νομισματοκοπείου. και
 
 
-Transaction fees bonus.
+Μπόνους χρεώσεων συναλλαγής.
 
 
-## Block reward
+## Αποκλεισμός ανταμοιβής
 
 
-Block rewards are distributed proportionally to all validators relative to their voting power. This means that even though each validator gains CRO with each reward, all validators will maintain equal weight over time.
+Οι ανταμοιβές μπλοκ κατανέμονται αναλογικά σε όλους τους επικυρωτές σε σχέση με την εκλογική τους δύναμη. Αυτό σημαίνει ότι παρόλο που κάθε επικυρωτής κερδίζει CRO με κάθε ανταμοιβή, όλοι οι επικυρωτές θα διατηρήσουν το ίδιο βάρος με την πάροδο του χρόνου.
 
 
-For the validator operator, the distribution information is updated if:
+Για τον χειριστή επικύρωσης, οι πληροφορίες διανομής ενημερώνονται εάν:
 
 
-the amount of delegation to a validator is updated (delegation, unbond, slashing, etc.);
+το ποσό της ανάθεσης σε έναν επικυρωτή ενημερώνεται (ανάθεση, αποδέσμευση, περικοπή κ.λπ.)
 
 
-a validator successfully proposes a block and receives the reward;
+ένας επικυρωτής προτείνει με επιτυχία ένα μπλοκ και λαμβάνει την ανταμοιβή.
 
 
-any delegator withdraws from a validator, or
+οποιοσδήποτε αντιπρόσωπος αποσύρεται από έναν επικυρωτή, ή
 
 
-the validator withdraws it's commission.
+ο επικυρωτής αποσύρει την προμήθεια του.
 
 
-For delegators, once they have delegated to a validator, they will be entitled to a portion of the total reward obtained by the validators. The reward is proportional to their delegated amount, and the commission charged by the validator operator (if any).
+Για τους εκπροσώπους, αφού έχουν αναθέσει σε έναν επικυρωτή, θα δικαιούνται ένα μέρος της συνολικής ανταμοιβής που λαμβάνεται από τους επικυρωτές. Η ανταμοιβή είναι ανάλογη με το ποσό που τους έχει ανατεθεί και την προμήθεια που χρεώνεται από τον χειριστή επικύρωσης (εάν υπάρχει).
 
 
-## Transaction Fees Bonus
+# 
+# Μπόνους χρεώσεων συναλλαγής
 
 
-When a validator is selected to propose the next block, they must include at least 66% precommits of the previous block. To incentivise validators to include more than 66% precommits, the module provide a bonus reward (portion of the transaction fee in the block) to the proposer.
+Όταν επιλέγεται ένας επικυρωτής για να προτείνει το επόμενο μπλοκ, πρέπει να περιλαμβάνει τουλάχιστον 66% προδεσμεύσεις του προηγούμενου μπλοκ. Για να δοθούν κίνητρα στους επικυρωτές να συμπεριλάβουν περισσότερες από 66% προδεσμεύσεις, η ενότητα παρέχει μια ανταμοιβή μπόνους (τμήμα της χρέωσης συναλλαγής στο μπλοκ) στον προτείνοντα.
 
 
-This bonus reward is dependent linearly on the precommits from the other validators. Starting from 66% of the precommits, the basic bonus will be base_proposer_reward and increase linearly to bonus_proposer_reward when the validator includes 100% of the precommits.
+Αυτή η ανταμοιβή μπόνους εξαρτάται γραμμικά από τις προδεσμεύσεις από τους άλλους επικυρωτές. Ξεκινώντας από το 66% των προδεσμεύσεων, το βασικό μπόνους θα είναι base_proposer_reward και θα αυξηθεί γραμμικά σε bonus_proposer_reward όταν ο επικυρωτής περιλαμβάνει το 100% των προδεσμεύσεων.
 
 
-This mechanism aims to incentivize non-empty block proposals, better networking between validators as well as to mitigate censorship. For further example, kindly refer to this link.
+Αυτός ο μηχανισμός στοχεύει στο να δώσει κίνητρα για μη κενές προτάσεις μπλοκ, στην καλύτερη δικτύωση μεταξύ των επικυρωτών καθώς και στον μετριασμό της λογοκρισίας. Για περαιτέρω παράδειγμα, ανατρέξτε σε αυτόν τον σύνδεσμο.
 
 
-## Community tax
+## Κοινοτικός φόρος
 
 
-The community_tax is the tax rate of the reward obtained by the validator. Specifically, part of the reward will be taxed and sent to the community pool. The funds in the community pool can be withdrawn by submitting a community pool spend proposal with the gov module.
+Ο κοινοτικός φόρος είναι ο φορολογικός συντελεστής της ανταμοιβής που λαμβάνεται από τον επικυρωτή. Συγκεκριμένα, μέρος της ανταμοιβής θα φορολογηθεί και θα αποσταλεί στο κοινοτικό pool. Τα κεφάλαια στο κοινοτικό pool μπορούν να αποσυρθούν υποβάλλοντας μια πρόταση δαπανών κοινοτικής συγκέντρωσης με τη μονάδα gov.
 
 
-Even if the community_tax is set to be zero, the balance of the community pool could be non-zero. For example, the truncated remainder in some accounting edge cases will be sent to the community pool as well. Besides that, users can fund the community pool voluntarily, and there could be funds allocated to the community pool in the genesis
+Ακόμα κι αν ο κοινοτικός φόρος έχει οριστεί ως μηδέν, το υπόλοιπο της ομάδας κοινότητας μπορεί να είναι μη μηδενικό. Για παράδειγμα, το περικομμένο υπόλοιπο σε ορισμένες περιπτώσεις λογιστικών αιχμής θα αποσταλεί και στο κοινοτικό pool. Εκτός αυτού, οι χρήστες μπορούν να χρηματοδοτήσουν εθελοντικά την κοινοτική ομάδα και θα μπορούσαν να διατεθούν κεφάλαια στην κοινοτική ομάδα στη γένεση
 
-* Governance - On-chain proposals and voting;
+* Διακυβέρνηση - Προτάσεις και ψηφοφορία στην αλυσίδα.
 
-  The gov module enables on-chain governance which allows C4E Chain token holders to participate in the decision-making processes. For example, users can:
+   Η ενότητα gov επιτρέπει τη διακυβέρνηση εντός της αλυσίδας που επιτρέπει στους κατόχους διακριτικών της αλυσίδας C4E να συμμετέχουν στις διαδικασίες λήψης αποφάσεων. Για παράδειγμα, οι χρήστες μπορούν:
 
-1. Form an idea and seek feedback; (in development)
-2. Create the proposal and adjust according to feedback as needed  (in development) ;
-3. Submit a proposal along with an initial deposit;
-4. Deposit tokens and fund an active proposal;
-5. Vote for an active proposal.
+1. Σχηματίστε μια ιδέα και αναζητήστε ανατροφοδότηση. (σε ανάπτυξη)
+2. Δημιουργήστε την πρόταση και προσαρμόστε ανάλογα με την ανατροφοδότηση όπως απαιτείται (σε εξέλιξη) .
+3. Υποβάλετε μια πρόταση μαζί με μια αρχική κατάθεση.
+4. Καταθέστε μάρκες και χρηματοδοτήστε μια ενεργή πρόταση.
+5. Ψηφίστε για μια ενεργή πρόταση.
 
-   Below are all the network parameters for the gov module:
+    Ακολουθούν όλες οι παράμετροι δικτύου για τη μονάδα gov:
 
 
-deposit_params - Deposit related parameters:
+depozit_params - Παράμετροι που σχετίζονται με την κατάθεση:
 
 
-min_deposit: Minimum deposit for a proposal to enter voting period; and
+min_deposit: Ελάχιστη κατάθεση για μια πρόταση για είσοδο στην περίοδο ψηφοφορίας. και
 
 
-max_deposit_period: Maximum period for C4E holders to deposit on a proposal.
+max_deposit_period: Μέγιστη περίοδος για τους κατόχους C4E για κατάθεση σε μια πρόταση.
 
 
-voting_params - Voting related parameters
+voting_params - Παράμετροι που σχετίζονται με την ψηφοφορία
 
 
-voting_period: The length of the voting period.
+voting_period: Η διάρκεια της περιόδου ψηφοφορίας.
 
 
-tally_params - Tally related parameters
+tally_params - Παράμετροι που σχετίζονται με το Tally
 
 
-quorum: The minimum percentage of voting power that needs to be casted on a proposal for the result to be valid;
+απαρτία: Το ελάχιστο ποσοστό της δύναμης ψήφου που πρέπει να δοθεί σε μια πρόταση για να είναι έγκυρο το αποτέλεσμα.
 
 
-threshold: Minimum proportion of Yes votes (excluding Abstain votes) for the proposal to be accepted; and
+όριο: Ελάχιστο ποσοστό ψήφων ναι (εξαιρουμένων των ψήφων αποχής) για να γίνει αποδεκτή η πρόταση. και
 
 
-veto: Minimum proportion of Veto votes to total votes ratio for proposal to be vetoed
+βέτο: Ελάχιστη αναλογία ψήφων βέτο προς το σύνολο των ψήφων για την πρόταση που θα ασκηθεί βέτο
 
 
-## The Governance Procedure
+## Η Διαδικασία Διακυβέρνησης
 
 
-Phase 0 - Submit a proposal along with an initial deposit:
+Φάση 0 - Υποβάλετε μια πρόταση μαζί με μια αρχική κατάθεση:
 
 
-Users can submit a proposal with an initial deposit. The proposal will then become "active" and enter the deposit period.
+Οι χρήστες μπορούν να υποβάλουν πρόταση με αρχική κατάθεση. Στη συνέχεια, η πρόταση θα γίνει "ενεργή" και θα εισέλθει στην περίοδο κατάθεσης.
 
 
-Phase 1 - Deposit period
+Φάση 1 - Περίοδος κατάθεσης
 
 
-During the deposit period, users can deposit and support an active proposal. Once the deposit of the proposal reaches min_deposit, it will enter the voting period. Otherwise, if the proposal is not successfully funded within max_deposit_period, it will become inactive and the entire deposit will be refunded.
+Κατά τη διάρκεια της περιόδου κατάθεσης, οι χρήστες μπορούν να καταθέσουν και να υποστηρίξουν μια ενεργή πρόταση. Μόλις η κατάθεση της πρότασης φτάσει στο min_deposit, θα μπει στην περίοδο ψηφοφορίας. Διαφορετικά, εάν η πρόταση δεν χρηματοδοτηθεί με επιτυχία εντός max_deposit_period, θα καταστεί ανενεργή και θα επιστραφεί ολόκληρη η κατάθεση.
 
 
-Phase 2 - Voting period
+Φάση 2 - Περίοδος ψηφοφορίας
 
 
-During the voting period, staked (bonded) tokens will be able to participate in the voting. Users can choose one of the following option: "yes", "no", "no_with_veto" and "abstain"
+Κατά τη διάρκεια της περιόδου ψηφοφορίας, θα μπορούν να συμμετέχουν στην ψηφοφορία πονταρισμένα (δεσμευμένα) μάρκες. Οι χρήστες μπορούν να επιλέξουν μία από τις ακόλουθες επιλογές: "ναι", "όχι", "no_with_veto" και "αποχή"
 
 
-After the voting_period has passed, there are several scenarios where a proposal will be considered to be "Rejected", for example, if
+Αφού παρέλθει η περίοδος ψηφοφορίας, υπάρχουν πολλά σενάρια όπου μια πρόταση θα θεωρηθεί ως "Απορρίφθηκε", για παράδειγμα, εάν
 
 
-No one votes (everyone "abstain");
+Κανείς δεν ψηφίζει (όλοι «απέχουν»).
 
-Votes did not reach the quorum;
+Οι ψήφοι δεν έφτασαν σε απαρτία.
 
 
-More than veto of voters vote for "no_with_veto";
+Περισσότερο από το βέτο των ψηφοφόρων που ψηφίζουν υπέρ του "no_with_veto".
 
 
-More than the threshold of non-abstaining voters vote "no".
+Πάνω από το όριο των μη απεχόντων ψηφίζουν «όχι».
 
 
-Otherwise, the proposal will be accepted and changes will be implemented according to the proposal.
+Σε αντίθετη περίπτωση, η πρόταση θα γίνει αποδεκτή και οι αλλαγές θα εφαρμοστούν σύμφωνα με την πρόταση.
 
-* Slashing - Validator punishment mechanisms;
+* Slashing - Μηχανισμοί τιμωρίας Validator.
 
-  Validators are responsible for signing or proposing a block at each consensus round. A penalty should be imposed on validators' misbehaviour to reinforce this.
+   Οι επικυρωτές είναι υπεύθυνοι για την υπογραφή ή την πρόταση μπλοκ σε κάθε γύρο συναίνεσης. Θα πρέπει να επιβληθεί ποινή για την κακή συμπεριφορά των επικυρωτών για να ενισχυθεί αυτό.
 
 
-Specifically, slashing functionality that aims to dis-incentivize network-observable actions, such as faulty validations. The penalties may include losing some amount of their stake, losing their ability to perform the network functionality for a period of time, collect rewards, etc
+Συγκεκριμένα, περικοπή λειτουργικότητας που στοχεύει στην αποτροπή κινήτρων για παρατηρήσιμες από το δίκτυο ενέργειες, όπως ελαττωματικές επικυρώσεις. Οι ποινές μπορεί να περιλαμβάνουν απώλεια κάποιου ποσού του μεριδίου τους, απώλεια της ικανότητάς τους να εκτελούν τη λειτουργικότητα του δικτύου για ένα χρονικό διάστημα, να συλλέγουν ανταμοιβές κ.λπ.
 
 
-Below are all the network parameters used to configure the behavior of validator punishments. Details of all these parameters and their effect on behavior of validator punishments is discussed later in this document:
+Παρακάτω είναι όλες οι παράμετροι δικτύου που χρησιμοποιούνται για τη διαμόρφωση της συμπεριφοράς των τιμωριών επικυρωτή. Λεπτομέρειες όλων αυτών των παραμέτρων και η επίδρασή τους στη συμπεριφορά των τιμωριών επικυρωτή συζητούνται αργότερα σε αυτό το έγγραφο:
 
-1. signed_blocks_window: Number of blocks for which the liveness is calculated for uptime tracking;
-2. min_signed_per_window: Maximum percentage of blocks with faulty/missed validations allowed for an account in last; signed_blocks_window blocks before it gets deactivated;
-3. downtime_jail_duration: Duration for jailing;
-4. slash_fraction_double_sign: Percentage of funds being slashed when validator makes a byzantine fault; and
-5. slash_fraction_downtime: Percentage of funds being slashed when a validator is non-live.
+1. signed_blocks_window: Αριθμός μπλοκ για τα οποία υπολογίζεται η ζωντανότητα για παρακολούθηση χρόνου λειτουργίας.
+2. min_signed_per_window: Μέγιστο ποσοστό μπλοκ με ελαττωματικές/χαμένες επικυρώσεις που επιτρέπεται για έναν λογαριασμό στο τελευταίο. Το signed_blocks_window μπλοκάρει πριν απενεργοποιηθεί.
+3. downtime_jail_duration: Διάρκεια φυλάκισης.
+4. slash_fraction_double_sign: Ποσοστό κεφαλαίων που περικόπτονται όταν ο επικυρωτής κάνει ένα βυζαντινό σφάλμα. και
+5. slash_fraction_downtime: Ποσοστό κεφαλαίων που περικόπτονται όταν ένα εργαλείο επικύρωσης δεν είναι ενεργό. Οι τιμωρίες για έναν επικυρωτή ενεργοποιούνται όταν είτε κάνουν βυζαντινό σφάλμα είτε γίνονται μη ζωντανοί:
 
-   Punishments for a validator are triggered when they either make a byzantine fault or become non-live:
 
 
+1. Σφάλματα ζωντάνιας (Χαμηλή διαθεσιμότητα)
 
-1. Liveness Faults (Low availability)
+    Ένας επικυρωτής λέγεται ότι δεν είναι ενεργός όταν αποτυγχάνει να υπογράψει με επιτυχία τουλάχιστον min_signed_per_window block (σε ποσοστό) στα τελευταία blocks signed_blocks_window. Τα signed_blocks_window και min_signed_per_window είναι παράμετροι δικτύου και μπορούν να διαμορφωθούν κατά τη γένεση και μπορούν να ενημερωθούν κατά τη διάρκεια του χρόνου εκτέλεσης από τη μονάδα διακυβέρνησης.
 
-   A validator is said to be non-live when they fail to successfully sign at least min_signed_per_window blocks (in percentage) in the last signed_blocks_window blocks. signed_blocks_window and min_signed_per_window are network parameters and can be configured during genesis and can be updated during runtime by the governance module.
+* Staking - Επίπεδο απόδειξης στοιχήματος για δημόσιες αλυσίδες μπλοκ.
+* Προμήθεια - Ανάκτηση ολικής και υγρής παροχής
+2. Βυζαντινά Ρήγματα
 
-* Staking - Proof-of-Stake layer for public blockchains;
-* Supply - Retrieve total and liquid supply
-2. Byzantine Faults
+    Ένας επικυρωτής λέγεται ότι κάνει βυζαντινό σφάλμα όταν υπογράφει αντικρουόμενα μηνύματα/μπλοκ στο ίδιο ύψος και γύρο. Το Tendermint διαθέτει μηχανισμούς για τη δημοσίευση αποδεικτικών στοιχείων επικυρωτών που υπέγραψαν αντικρουόμενες ψήφους, ώστε να μπορούν να τιμωρηθούν από τη μονάδα κοπής. Για παράδειγμα:
 
-   A validator is said to make a byzantine fault when they sign conflicting messages/blocks at the same height and round. Tendermint has mechanisms to publish evidence of validators that signed conflicting votes so they can be punished by the slashing module. For example:
-
-* Validator who votes for two different blocks within a single round ("Equivocation validator"/ "Double signing");
+* Επικυρωτής που ψηφίζει για δύο διαφορετικά μπλοκ σε έναν μόνο γύρο ("Επικυρωτής Equivocation"/ "Διπλή υπογραφή").
 *
-* Validator who signs commit messages for arbitrary application state ( "Lunatic validator").
+* Ο επικυρωτής που υπογράφει δεσμεύει μηνύματα για αυθαίρετη κατάσταση εφαρμογής ( "Lunatic validator").
 
-  Remark: The evidence of a set of validators attempting to mislead a light client can also be detected and captured. However, even the Amnesia attack can be detected, punishment can not be applied at this stage, as we can not deduce the malicious validators.
+   Παρατήρηση: Μπορούν επίσης να εντοπιστούν και να καταγραφούν τα στοιχεία ενός συνόλου επικυρωτών που επιχειρούν να παραπλανήσουν έναν ελαφρύ πελάτη. Ωστόσο, ακόμη και η επίθεση της Αμνησίας μπορεί να ανιχνευθεί, η τιμωρία δεν μπορεί να εφαρμοστεί σε αυτό το στάδιο, καθώς δεν μπορούμε να συμπεράνουμε τους κακόβουλους επικυρωτές.
 
-3. Inactivity Slashing
+3. Αδράνεια Slashing
 
-   It is important that the validators maintain excellent availability and network connectivity to perform their tasks. A penalty should be imposed on validators' misbehaviour to reinforce this.
+    Είναι σημαντικό οι επικυρωτές να διατηρούν εξαιρετική διαθεσιμότητα και συνδεσιμότητα δικτύου για την εκτέλεση των καθηκόντων τους. Θα πρέπει να επιβληθεί ποινή για την κακή συμπεριφορά των επικυρωτών για να ενισχυθεί αυτό.
 
 
-When a validator fails to successfully sign missed_block_threshold blocks in the last block_signing_window blocks, it is immediately jailed and punished by deducting funds from their bonded and unbonded amount and removing them from the active validator set. The funds to be deducted are calculated based on slash_fraction_downtime. Kindly refer to this link on the logic of the liveness tracking.
+Όταν ένας επικυρωτής αποτυγχάνει να υπογράψει με επιτυχία μπλοκ missed_block_threshold στα τελευταία block_signing_window blocks, φυλάσσεται αμέσως και τιμωρείται αφαιρώντας χρήματα από το δεσμευμένο και μη δεσμευμένο ποσό και αφαιρώντας τα από το ενεργό σύνολο εργαλείου επικύρωσης. Τα χρήματα που θα αφαιρεθούν υπολογίζονται με βάση το slash_fraction_downtime. Ανατρέξτε σε αυτόν τον σύνδεσμο σχετικά με τη λογική της παρακολούθησης ζωντάνιας.
 
-4. Jailing
+4. Φυλακισμός
 
-   A validator is jailed when they make liveness or Byzantine fault. When a validator is jailed, it will no longer be considered as an active validator until they are un-jailed. Futhermore, it cannot be un-jailed before downtime_jail_duration. This downtime_jail_duration is a network parameter which can be configured during genesis.
+    Ένας επικυρωτής φυλακίζεται όταν κάνει ζωντάνια ή βυζαντινό σφάλμα. Όταν ένας επικυρωτής τεθεί σε φυλάκιση, δεν θα θεωρείται πλέον ως ενεργός επικυρωτής έως ότου αποδεσμευτεί. Επιπλέον, δεν μπορεί να αποδεσμευτεί πριν από το downtime_jail_duration. Αυτό το downtime_jail_duration είναι μια παράμετρος δικτύου που μπορεί να διαμορφωθεί κατά τη δημιουργία.
 
-5. Un-jailing
+5. Κατάργηση της φυλάκισης
 
-   When a jailed validator wishes to resume normal operations (after downtime_jail_duration has passed), they can create an unjail transaction which marks them as un-jailed. Validator will then rejoin the validator set once it has been successful un-jailed.
+    Όταν ένας δεσμευμένος επικυρωτής επιθυμεί να συνεχίσει τις κανονικές λειτουργίες (αφού περάσει το downtime_jail_duration), μπορεί να δημιουργήσει μια συναλλαγή unjail που τον επισημαίνει ως un-jailed. Στη συνέχεια, το Validator θα επανενταχθεί στο σετ επικύρωσης μόλις ολοκληρωθεί με επιτυχία η απεγκατάσταση του.
 
-6. Slashing for Byzantine Fault
+6. Καθαρισμός για Βυζαντινό Ρήγμα
 
-   When there is byzantine fault detected, they are immediately slashed other than jailed. The funds to be deducted are calculated based on slash_fraction_double_sign. Furthermore, validators who commit this double-signing fault will also be put into the "tombstone state", which means it will be blacklisted and jailed foreve
+    Όταν ανιχνευθεί βυζαντινό ρήγμα, τεμαχίζονται αμέσως εκτός από τη φυλακή. Τα χρήματα που θα αφαιρεθούν υπολογίζονται με βάση το slash_fraction_double_sign. Επιπλέον, οι επικυρωτές που διαπράττουν αυτό το σφάλμα διπλής υπογραφής θα τεθούν επίσης στην "κατάσταση ταφόπλακα", πράγμα που σημαίνει ότι θα μπει στη μαύρη λίστα και θα φυλακιστεί για πάντα
 
-* Staking - Proof-of-Stake layer for public blockchains;
+* Staking - Επίπεδο απόδειξης στοιχήματος για δημόσιες αλυσίδες μπλοκ.
 
-  The staking module handles Proof-of-Stake related logics, which plays a very important part to the underneath consensus protocol.
+   Η μονάδα πονταρίσματος χειρίζεται λογικές σχετικές με την Απόδειξη Ποσοστού, η οποία παίζει πολύ σημαντικό ρόλο στο παρακάτω πρωτόκολλο συναίνεσης.
