@@ -1,7 +1,7 @@
 <!--
 order: 2
 -->
-# Installing the software requirements
+# Εγκατάσταση των απαιτήσεων λογισμικού
 
 
 
