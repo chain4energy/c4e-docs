@@ -26,13 +26,13 @@ aside: false
 
 ## Αναφορά
 
-- **[Building Modules](./building-modules/)**: Important concepts for module developers like `message`s, `keeper`s, `handler`s and `querier`s.
-- **[Interfaces](./interfaces/)**: Τεκμηρίωση για διεπαφές κτιρίου για εφαρμογές Ethermint.
+- **[Δομικές Ενότητες](./building-modules/)**: Important concepts for module developers like `message`s, `keeper`s, `handler`s and `querier`s.
+- **[Διεπαφές](./interfaces/)**: Τεκμηρίωση για διεπαφές κτιρίου για εφαρμογές Ethermint.
 
 ## Άλλοι πόροι
 
 - **[Κατάλογος Ενοτήτων](../x/)**: Υλοποιήσεις ενοτήτων και η αντίστοιχη τεκμηρίωσή τους.
-- **[Προδιαγραφές API REST](https://cosmos.network/rpc/)**: Λίστα τελικών σημείων REST για αλληλεπίδραση με έναν πλήρη κόμβο μέσω του REST.
+- **[Προδιαγραφές REST API ](https://cosmos.network/rpc/)**: Λίστα τελικών σημείων REST για αλληλεπίδραση με έναν πλήρη κόμβο μέσω του REST.
 
 
 ## Άδεια 
