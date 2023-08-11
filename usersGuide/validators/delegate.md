@@ -10,7 +10,7 @@ To delegate coins to validators you have to be Loged in with Keplr and should do
 
 
 
-1. Go to “Stacking” page and select the validator to stake
+1. Go to “[Staking](https://wallet.c4e.io/staking)” page and select the validator to stake
 
 ![alt_text](./images/delegate/1.png "image_tooltip")
 
