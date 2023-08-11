@@ -21,7 +21,7 @@ Complete reundelegation is passing 21 day, so after undelegation started  user:
 
 ### To start the process of redelegation user need to do following steps:
 
-1. Go to “Stacking” page and select the validator from which you will redelegate tokens;
+1. Go to “[Staking](https://wallet.c4e.io/staking)” page and select the validator from which you will redelegate tokens;
 
 ![alt_text](./images/delegate/1.png "image_tooltip")
 
