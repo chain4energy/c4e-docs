@@ -35,7 +35,7 @@ Subdistributor is responsible for sending coins from its source accounts to its 
 
 See the grapical represenation of subdistributor.
 
-![Subdistributor](./../../docs/modules/cfedistributor/subdistributor.svg?raw=1)
+![Subdistributor](./images/subdistributor.svg?raw=1)
 
 Subdistributors are executed in predefined order so destinations of one subdistributor can become sources of another subdistributor.
 
@@ -92,7 +92,7 @@ We also have following incentive booster pools distribution:
 
 See the graphical representation of this distribution.
 
-![ExampleDistribution](./../../docs/modules/cfedistributor/example-distribution.svg?raw=1)
+![ExampleDistribution](./images/example-distribution.svg?raw=1)
 
 Let's also assume that:
 * inflation is minted directly to cfedistributor module account
@@ -105,19 +105,19 @@ Let's also assume that:
 Then we can model our distribution flow with following subdistributors:
 * inflation subdistributor
 
-![inflation subdistributor](./../../docs/modules/cfedistributor/example-inflation-subdistributor.svg?raw=1)
+![inflation subdistributor](./images/example-inflation-subdistributor.svg?raw=1)
 
 * transaction fees subdistributor
 
-![transaction fees subdistributor](./../../docs/modules/cfedistributor/example-tx-fees-subdistributor.svg?raw=1)
+![transaction fees subdistributor](./images/example-tx-fees-subdistributor.svg?raw=1)
 
 * module fees subdistributor
 
-![module fees subdistributor](./../../docs/modules/cfedistributor/example-module-fees-subdistributor.svg?raw=1)
+![module fees subdistributor](./images/example-module-fees-subdistributor.svg?raw=1)
 
 * incentive boosters subdistributor
 
-![incentive boosters subdistributor](./../../docs/modules/cfedistributor/example-boosters-subdistributor.svg?raw=1)
+![incentive boosters subdistributor](./images/example-boosters-subdistributor.svg?raw=1)
 
 ## Parameters
 
