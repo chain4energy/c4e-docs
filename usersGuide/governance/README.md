@@ -10,7 +10,7 @@ To vote follow the next steps:
 
 
 
-1. Go to governance page in wallet application;
+1. Go to “[governace](https://wallet.c4e.io/governance)” page in wallet application;
 2. Find proposal that you want to vote;
 
 ![alt_text](./images/1.png "image_tooltip")
