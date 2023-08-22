@@ -30,7 +30,7 @@ To start undelegation process user have to:
 
 
 
-1. Go to “Stacking” page and select the validator from which you will undelegate tokens;
+1. Go to “[Staking](https://wallet.c4e.io/staking)” page and select the validator from which you will undelegate tokens;
 
 
 ![alt_text](./images/delegate/1.png "image_tooltip")
