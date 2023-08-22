@@ -99,7 +99,7 @@ module.exports = {
           children: [
             {
               title: 'Billing system',
-              path: 'https://platformadlaenergii.pl'
+              path: 'https://platform.c4e.io'
             },
             {
               title: 'Wallet',
@@ -127,13 +127,6 @@ module.exports = {
         url: 'https://t.me/Chain4Energy_Official',
         bg: 'linear-gradient(103.75deg, #1B1E36 0%, #22253F 100%)',
         logo: '/logo.svg',
-      },
-      forum: {
-        title: 'Cosmos Developer Forum',
-        text: 'Cosmos Developer Forum to learn more.',
-        url: 'https://forum.cosmos.network/',
-        bg: 'linear-gradient(221.79deg, #3D6B99 -1.08%, #336699 95.88%)',
-        logo: 'ethereum-white'
       },
       github: {
         title: 'Found an Issue?',
@@ -175,8 +168,8 @@ module.exports = {
         {
           title: 'Community',
           children: [{
-              title: 'Cosmos Community',
-              url: 'https://discord.gg/W8trcGV'
+              title: 'C4E Community',
+              url: 'https://discord.gg/Chain4Energy'
             }
           ]
         },
