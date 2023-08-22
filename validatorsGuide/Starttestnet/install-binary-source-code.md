@@ -4,7 +4,6 @@ order: 4
 
 # Install binary from source code (option A)
 
-
 Clone repository and checkout to proper tag
 ```bash
 git clone --depth 1 --branch  v1.2.0  https://github.com/chain4energy/c4e-chain.git
@@ -15,7 +14,7 @@ cd c4e-chain/
 make install
 ```
 
-Check binary version should me equal
+Check binary version should be equal
 ```bash
 c4ed version
 
