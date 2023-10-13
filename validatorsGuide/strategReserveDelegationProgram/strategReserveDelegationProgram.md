@@ -2,9 +2,9 @@
 order: 1
 -->
 
-# C4E Strategic Reserve Delegation Program v1.0
+# C4E Strategic Reserve Delegation Program v1.2
 
-**Revision 1.1 - 2023/02/24**
+**Revision 1.2 - 2023/10/13**
 
 ## Document versions
 
@@ -12,6 +12,11 @@ order: 1
 |------------------|------------|----------------|
 | Revision 1.0     | 2023/-2/17 | C4E Team       |
 | Revision 1.1     | 2023/-2/24 | Greg Sikora    |
+| Revision 1.2     | 2023/10/13 | Greg Sikora    |
+
+**Revision 1.2 changes**
+
+Rebalancing Subjective/Objective ratio based on the [proposal #6](https://wallet.c4e.io/governance/6)
 
 **Revision 1.1 changes**
 
@@ -30,8 +35,8 @@ Subjective criteria are parameters which are not possible to evaluate on-chain, 
 |:-------------------------------------|----------------------------------:|
 | Delegation Program - Eligibility     |                     4.000.000 C4E |
 | Delegation Program - Early supporter |                    10.000.000 C4E |
-| Delegation Program - Objective       |                    34.000.000 C4E |
-| Delegation Program - Subjective      |                     6.000.000 C4E | 
+| Delegation Program - Objective       |                    30.000.000 C4E |
+| Delegation Program - Subjective      |                    10.000.000 C4E | 
 
 **Note:
 Some validators who are managed by the team or who have a separate contract with Chain4Energy are excluded from this program. This means that most of the tokens from this program may be intended for community validators.**
