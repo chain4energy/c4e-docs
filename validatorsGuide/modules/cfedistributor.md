@@ -1,18 +1,24 @@
+<!--
+order: 2
+-->
+
+
 # Cfedistributor
 
 ## Abstract
 
-Chain4Energy distributor module provides functionality of tokens distribution mechanism. Tokens distribution mechanism sends tokens from source accounts to destination accounts according to configuration.
+Chain4Energy distributor module provides functionality of tokens distribution mechanism.
+Tokens distribution mechanism sends tokens from source accounts to destination accounts according to configuration.
 
 ## Contents
 
-1. [**Concept**](cfedistributor.md#concepts)
-2. [**Params**](cfedistributor.md#parameters)
-3. [**State**](cfedistributor.md#state)
-4. [**Events**](cfedistributor.md#events)
-5. [**Queries**](cfedistributor.md#queries)
-6. [**Invariants**](cfedistributor.md#invariants)
-7. [**Genesis validations**](cfedistributor.md#genesis-validations)
+1. **[Concept](#concepts)**
+2. **[Params](#parameters)**
+3. **[State](#state)**
+4. **[Events](#events)**
+5. **[Queries](#queries)**
+6. **[Invariants](#invariants)**
+7. **[Genesis validations](#genesis-validations)**
 
 ## Concepts
 
@@ -20,7 +26,8 @@ The purpose of `cfedistributor` module is to provide functionality of flexible t
 
 ### Tokens distribition mechanism
 
-Tokens distribution mechanism is based on the list of configured subdistributors. Tokens distribution mechanism iterates through all subdistributors in predefined order and executes each subdistributor per each block.
+Tokens distribution mechanism is based on the list of configured subdistributors.
+Tokens distribution mechanism iterates through all subdistributors in predefined order and executes each subdistributor per each block.
 
 ### Subdistributor
 
@@ -28,21 +35,19 @@ Subdistributor is responsible for sending coins from its source accounts to its 
 
 See the grapical represenation of subdistributor.
 
-![Subdistributor](images/subdistributor.svg)
+![Subdistributor](./images/subdistributor.svg?raw=1)
 
 Subdistributors are executed in predefined order so destinations of one subdistributor can become sources of another subdistributor.
 
 #### Subdistributor sources and destinations
 
 Subdistributor supports several types of sources:
-
 * main module account
 * base account
 * module account
 * internal account
 
 Subdistributor supports several types of destinations:
-
 * main module account
 * base account
 * module account
@@ -50,8 +55,9 @@ Subdistributor supports several types of destinations:
 * Burn destination
 
 where:
-
-* Main module account - Chain4Energy distributor module account. Some other modules can send tokens directly to Chain4Energy distributor module. It is required to define one subdistributor where main module account is the source to prevent token accumulation.
+* Main module account - Chain4Energy distributor module account.
+  Some other modules can send tokens directly to Chain4Energy distributor module.
+  It is required to define one subdistributor where main module account is the source to prevent token accumulation.
 * Base account - Standard Cosmos SDK account configured as account address.
 * Module account - Cosmos SDK module account configured as module account name.
 * Internal account - helper virtual account internal to Chain4Energy distributor module. Useful in case of designing more complicated token flow.
@@ -60,107 +66,101 @@ where:
 #### Example
 
 Let's consider an example of tokens distribution. In our example we have following token sources:
-
 * inflation
 * transaction fees
-* some module functionality fees. Our fictional module provides some functionality for which user is required to pay some fee and part of this fee is shared with the blockchain.
+* some module functionality fees. Our fictional module provides some functionality for which
+  user is required to pay some fee and part of this fee is shared with the blockchain.
 
 Inflation distribution:
-
 * 60% to distribution module for standard validators rewarding functionality
 * 5% to development fund
 * 35% to incentive booster pools
 
 Transaction fees distribution:
-
 * 80% to distribution module for standard validators rewarding functionality
 * 5% to burn
 * 15% to incentive booster pools
 
 Fictional module functionality fees distribution:
-
 * 50% to distribution module for standard validators rewarding functionality
 * 30% to development fund
 * 20% to incentive booster pools
 
 We also have following incentive booster pools distribution:
-
 * 65% to governance booster pool
 * 35% to weekend booster pool
 
 See the graphical representation of this distribution.
 
-![ExampleDistribution](images/example-distribution.svg)
+![ExampleDistribution](./images/example-distribution.svg?raw=1)
 
 Let's also assume that:
-
 * inflation is minted directly to cfedistributor module account
-* cosmos sdk distribution module fetches tokens from module account named "validators\_rewards"
+* cosmos sdk distribution module fetches tokens from module account named "validators_rewards"
 * development fund is base account with address "c4edwijhdhwqu43efvc3543ec34c2erc342dw"
-* governance booster pool is module account named "governance\_booster"
-* weekend booster pool is module account named "weekend\_booster"
-* fictional module fees are stored in module account named "fictional\_module\_fee\_collector"
+* governance booster pool is module account named "governance_booster"
+* weekend booster pool is module account named "weekend_booster"
+* fictional module fees are stored in module account named "fictional_module_fee_collector"
 
 Then we can model our distribution flow with following subdistributors:
-
 * inflation subdistributor
 
-![inflation subdistributor](images/example-inflation-subdistributor.svg)
+![inflation subdistributor](./images/example-inflation-subdistributor.svg?raw=1)
 
 * transaction fees subdistributor
 
-![transaction fees subdistributor](images/example-tx-fees-subdistributor.svg)
+![transaction fees subdistributor](./images/example-tx-fees-subdistributor.svg?raw=1)
 
 * module fees subdistributor
 
-![module fees subdistributor](images/example-module-fees-subdistributor.svg)
+![module fees subdistributor](./images/example-module-fees-subdistributor.svg?raw=1)
 
 * incentive boosters subdistributor
 
-![incentive boosters subdistributor](images/example-boosters-subdistributor.svg)
+![incentive boosters subdistributor](./images/example-boosters-subdistributor.svg?raw=1)
 
 ## Parameters
 
 The Chain4Energy distributor module contains the following configurations parameters:
 
-| Key               | Type                        | Description                     |
-| ----------------- | --------------------------- | ------------------------------- |
-| sub\_distributors | List of Subdistributor type | list of defined subdistributors |
+| Key                    | Type                          | Description                     |
+|------------------------|-------------------------------|---------------------------------|
+| sub_distributors       | List of Subdistributor type   | list of defined subdistributors |
 
 ### Subdistributor type
 
 | Param        | Type                 | Description                       |
-| ------------ | -------------------- | --------------------------------- |
+|--------------|----------------------|-----------------------------------|
 | name         | string               | unique name of the subdistributor |
 | sources      | List of Account type | list of source accounts           |
 | destinations | Destinations type    | destinations definition           |
 
 ### Destinations type
 
-| Param          | Type                          | Description                                                                 |
-| -------------- | ----------------------------- | --------------------------------------------------------------------------- |
-| primary\_share | Account type                  | primary destination - all remaining tokens from others shares are sent here |
-| burn\_share    | sdk.Dec type                  | share to burn (0-1)                                                         |
-| shares         | List of DestinationShare type | List of destination accounts with share percentage                          |
+| Param         | Type                          | Description                                                                 |
+|---------------|-------------------------------|-----------------------------------------------------------------------------|
+| primary_share | Account type                  | primary destination - all remaining tokens from others shares are sent here |
+| burn_share    | sdk.Dec type                  | share to burn (0-1)                                                         |
+| shares        | List of DestinationShare type | List of destination accounts with share percentage                          |
 
 ### DestinationShare type
 
-| Param       | Type         | Description              |
-| ----------- | ------------ | ------------------------ |
-| name        | string       | unique name of the share |
-| destination | Account type | destination account      |
-| share       | sdk.Dec      | share percentage (0-1)   |
+| Param       | Type           | Description              |
+|-------------|----------------|--------------------------|
+| name        | string         | unique name of the share |
+| destination | Account type   | destination account      |
+| share       | sdk.Dec        | share percentage (0-1)   |
 
 ### Account type
 
-| Param | Type        | Description                                                                                                                                                                                                         |
-| ----- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| type  | enum string | <p>account type:<br>- MAIN - main module account<br>- MODULE_ACCOUNT - module account<br>- BASE_ACCOUNT - base account<br>- INTERNAL_ACCOUNT - cfedistributor internal account</p>                                  |
-| id    | string      | <p>account identifier dependant on the type::<br>- MAIN - empty<br>- MODULE_ACCOUNT - module account name<br>- BASE_ACCOUNT - base account address<br>- INTERNAL_ACCOUNT - cfedistributor internal account name</p> |
+| Param     | Type          | Description                                                                                                                                                                                                          |
+|-----------|---------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| type      | enum string   | account type:<br />- MAIN - main module account<br />- MODULE_ACCOUNT - module account<br />- BASE_ACCOUNT - base account<br />- INTERNAL_ACCOUNT - cfedistributor internal account                                  |
+| id        | string        | account identifier dependant on the type::<br />- MAIN - empty<br />- MODULE_ACCOUNT - module account name<br />- BASE_ACCOUNT - base account address<br />- INTERNAL_ACCOUNT - cfedistributor internal account name |
 
 ### Example params
 
-See the configuration params for [**example**](cfedistributor.md#example) from [**Concept**](cfedistributor.md#concepts) section
+See the configuration params for **[example](#example)** from **[Concept](#concepts)** section
 
 ```json
 
@@ -293,23 +293,24 @@ See the configuration params for [**example**](cfedistributor.md#example) from [
 
 ## State
 
-Chain4Energy distributor module state contains decimal amounts left from previous block that were impossible to send due value less than 1 token. Module state contains following data:
+Chain4Energy distributor module state contains decimal amounts left from previous block that were impossible to send due value less than 1 token.
+Module state contains following data:
 
-| Key    | Type               | Description                                                                                               |
-| ------ | ------------------ | --------------------------------------------------------------------------------------------------------- |
-| states | List of State type | list of states for burn and per each destination account in all subdistributors (except main distributor) |
+| Key          | Type                 | Description                                                                                               |
+|--------------|----------------------|-----------------------------------------------------------------------------------------------------------|
+| states       | List of State type   | list of states for burn and per each destination account in all subdistributors (except main distributor) |
 
 ### State type
 
-| Param   | Type                                                                  | Description                                                   |
-| ------- | --------------------------------------------------------------------- | ------------------------------------------------------------- |
-| account | Account type (see [**Account type**](cfedistributor.md#account-type)) | destination account or empty in case of burn flag set to true |
-| burn    | bool                                                                  | specifies if this is burn destination state                   |
-| remains | DecCoin                                                               | list of coins to distribute left by previous block            |
+| Param     | Type                                                 | Description                                                   |
+|-----------|------------------------------------------------------|---------------------------------------------------------------|
+| account   | Account type (see **[Account type](#account-type)**) | destination account or empty in case of burn flag set to true |
+| burn      | bool                                                 | specifies if this is burn destination state                   |
+| remains   | DecCoin                                              | list of coins to distribute left by previous block            |
 
 ### Example state
 
-See the state for [**example**](cfedistributor.md#example) from [**Concept**](cfedistributor.md#concepts) section
+See the state for **[example](#example)** from **[Concept](#concepts)** section
 
 ```json
 
@@ -396,31 +397,31 @@ Chain4Energy distributor module emits the following events:
 #### Tokens distribution
 
 | Type                  | Attribute Key         | Description       |
-| --------------------- | --------------------- | ----------------- |
+|-----------------------|-----------------------|-------------------|
 | EventDistribution     | Distribution type     | Distribution data |
 | EventDistributionBurn | DistributionBurn type | Burn data         |
 
-**EventDistribution type**
+##### EventDistribution type
 
 Distribution type represents one send operation to one destination in one block
 
-| Param          | Type                                                                          | Description                                                                                             |
-| -------------- | ----------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| subdistributor | string                                                                        | Name of the subdisributor                                                                               |
-| share\_name    | string                                                                        | Name of the DestinationShare (see [**DestinationShare type**](cfedistributor.md#destinationshare-type)) |
-| sources        | list of Account type (see [**Account type**](cfedistributor.md#account-type)) | list of sources                                                                                         |
-| destination    | Account type (see [**Account type**](cfedistributor.md#account-type))         | destination                                                                                             |
-| amount         | DecCoins                                                                      | coins sent to destination                                                                               |
+| Param          | Type                                                         | Description                                                                            |
+|----------------|--------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| subdistributor | string                                                       | Name of the subdisributor                                                              | 
+| share_name     | string                                                       | Name of the DestinationShare (see **[DestinationShare type](#destinationshare-type)**) | 
+| sources        | list of Account type (see **[Account type](#account-type)**) | list of sources                                                                        |
+| destination    | Account type (see **[Account type](#account-type)**)         | destination                                                                            |
+| amount         | DecCoins                                                     | coins sent to destination                                                              |
 
-**EventDistributionBurn type**
+##### EventDistributionBurn type
 
 DistributionBurn type represents one burn operation
 
-| Param          | Type                                                                          | Description               |
-| -------------- | ----------------------------------------------------------------------------- | ------------------------- |
-| subdistributor | string                                                                        | Name of the subdisributor |
-| sources        | list of Account type (see [**Account type**](cfedistributor.md#account-type)) | list of sources           |
-| amount         | DecCoins                                                                      | coins burned              |
+| Param          | Type                                                         | Description                     |
+|----------------|--------------------------------------------------------------|---------------------------------|
+| subdistributor | string                                                       | Name of the subdisributor       | 
+| sources        | list of Account type (see **[Account type](#account-type)**) | list of sources                 |
+| amount         | DecCoins                                                     | coins burned                    |
 
 ## Queries
 
@@ -523,7 +524,6 @@ See example response:
   }
 }
 ```
-
 ### States query
 
 Queries the module state.
@@ -624,6 +624,9 @@ Invariant validates module state. Checks if all coins states of all destinations
 
 ### State Sum Balance Check Invariant
 
-Invariant validates module state. Checks sum of all coins states of one denom of all destinations is always integer value and is equal to cfedistributor module account balance
+Invariant validates module state. Checks sum of all coins states of one denom of all destinations is always
+integer value and is equal to cfedistributor module account balance
 
 ## Genesis validations
+
+[//]: # (TODO)

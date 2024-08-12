@@ -48,6 +48,8 @@ Environment="DAEMON_NAME=c4ed"
 Environment="DAEMON_HOME=/home/$USER/.c4e-chain"
 Environment="DAEMON_ALLOW_DOWNLOAD_BINARIES=false”
 Environment="DAEMON_RESTART_AFTER_UPGRADE=true"
+Environment="LD_LIBRARY_PATH=/home/$USER/.c4e-chain/lib:$LD_LIBRARY_PATH"
+
 [Install]
 WantedBy=multi-user.target
 

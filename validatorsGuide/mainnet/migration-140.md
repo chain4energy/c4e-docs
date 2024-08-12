@@ -50,7 +50,7 @@ wget https://github.com/CosmWasm/wasmvm/releases/download/v1.5.2/libwasmvm.x86_6
 
 Add the library to the path
 ```bash
-echo 'export LD_LIBRARY_PATH=/path/to/directory:$LD_LIBRARY_PATH' >> ~/.profile
+echo 'export LD_LIBRARY_PATH=/home/$USER/.c4e-chain/lib:$LD_LIBRARY_PATH' >> ~/.profile
 source ~/.profile
 ```
 
@@ -62,6 +62,20 @@ c4ed version
 You should see the following:
 ```bash
 1.4.0
+```
+
+### Add wasmvm path to cosmovisor service
+
+Add the following line to the cosmovisor service file under the `[Service]` section.
+Remember to change `user_path` to your actual path
+```bash
+Environment="LD_LIBRARY_PATH=/home/user_path/.c4e-chain/lib:$LD_LIBRARY_PATH"
+```
+
+Restart the cosmovisor service
+```bash
+sudo systemctl daemon-reload
+sudo systemctl restart cosmovisor
 ```
 
 ### For Linux Distributions by building binary
