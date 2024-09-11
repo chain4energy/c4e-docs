@@ -61,7 +61,7 @@ c4ed version
 
 You should see the following:
 ```bash
-1.4.0
+1.4.1
 ```
 
 ### Add wasmvm path to cosmovisor service
