@@ -2,31 +2,31 @@
 order: 16
 -->
 
-# Migration 1.4.1
+# Migration 1.4.3
 ### For Linux Distributions using prebuild binary
 
 Download the tar.gz file:
 
 ```bash
-curl -LO https://github.com/chain4energy/c4e-chain/releases/download/v1.4.1/c4ed_v1.4.1_linux_amd64.tar.gz
+curl -LO https://github.com/chain4energy/c4e-chain/releases/download/v1.4.3/c4ed_v1.4.3_linux_amd64.tar.gz
 ```
 
 Verify the checksum:
 
 ```bash
-sha256sum c4ed_v1.4.1_linux_amd64.tar.gz
+sha256sum c4ed_v1.4.3_linux_amd64.tar.gz
 ```
 
 You should see the following:
 
 ```bash
-f1bec15f5a17b477a48f1c03a677bd7f1377a48cafac3c627adc7ff438e8bbac  c4ed_v1.4.1_linux_amd64.tar.gz
+f6b272ae4898a03afc76ea38564b999355bfd6aeb2c92e85c151af63fc9cbf38  c4ed_v1.4.3_linux_amd64.tar.gz
 ```
 
 Unpack the tar.gz file:
 
 ```bash
-tar -xvf c4ed_v1.4.1_linux_amd64.tar.gz
+tar -xvf c4ed_v1.4.3_linux_amd64.tar.gz
 ```
 
 Move the binary to your local bin directory:
@@ -61,7 +61,7 @@ c4ed version
 
 You should see the following:
 ```bash
-1.4.1
+1.4.3
 ```
 
 ### Add wasmvm path to cosmovisor service
@@ -81,7 +81,7 @@ sudo systemctl restart cosmovisor
 ### For Linux Distributions by building binary
 Clone repository
 ```bash
-git clone --depth 1 --branch  v1.4.1  https://github.com/chain4energy/c4e-chain.git
+git clone --depth 1 --branch  v1.4.3  https://github.com/chain4energy/c4e-chain.git
 ```
 go to repo directory
 ```bash
@@ -100,7 +100,7 @@ c4ed version
 
 You should see the following:
 ```bash
-1.4.1
+1.4.3
 ```
 
 ### Setup cosmovisor
@@ -108,15 +108,15 @@ You should see the following:
 Create cosmovisor upgrade dir
 ```bash
 export DAEMON_HOME=$HOME/.c4e-chain/
-mkdir -p $DAEMON_HOME/cosmovisor/upgrades/v1.4.1/bin
+mkdir -p $DAEMON_HOME/cosmovisor/upgrades/v1.4.3/bin
 ```
 
 Put binary in proper dir
 ```bash
-cp ~/go/bin/c4ed $DAEMON_HOME/cosmovisor/upgrades/v1.4.1/bin
+cp ~/go/bin/c4ed $DAEMON_HOME/cosmovisor/upgrades/v1.4.3/bin
 ```
 
 Just to be sure check version
 ```bash
-$DAEMON_HOME/cosmovisor/upgrades/v1.4.1/bin/c4ed version
+$DAEMON_HOME/cosmovisor/upgrades/v1.4.3/bin/c4ed version
 ```
